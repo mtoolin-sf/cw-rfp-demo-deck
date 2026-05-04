@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chemist Warehouse × Salesforce — RFP Demo Q2FY27</title>
+  <link rel="stylesheet" href="tokens.css" />
+  <link rel="stylesheet" href="components.css" />
+  <style>
+    :root {
+      --accent:   #E4002B;
+      --accent-l: #FF3352;
+    }
+
+    /* ── Slide shell ── */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: var(--font-body);
+      background: #0a0a0a;
+      color: #fff;
+      overflow: hidden;
+    }
+
+    .deck {
+      width: 100vw;
+      height: 100vh;
+      position: relative;
+    }
+
+    .slide {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 72px 96px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s ease;
+    }
+
+    .slide.active {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    /* ── Backgrounds ── */
+    .bg-dark    { background: var(--grad-evening); }
+    .bg-navy    { background: var(--sf-navy); }
+    .bg-white   { background: #fff; color: #001E5B; }
+    .bg-offwhite { background: var(--off-white); color: #001E5B; }
+    .bg-accent  { background: linear-gradient(135deg, #E4002B 0%, #8B0018 100%); }
+
+    /* ── Typography ── */
+    .eyebrow {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--sf-blue-l);
+      margin-bottom: 16px;
+    }
+
+    .bg-white .eyebrow,
+    .bg-offwhite .eyebrow { color: var(--sf-blue); }
+
+    .bg-accent .eyebrow { color: rgba(255,255,255,0.7); }
+
+    h1.headline {
+      font-family: var(--font-display);
+      font-size: clamp(36px, 4.5vw, 62px);
+      font-weight: 400;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: #fff;
+      margin-bottom: 24px;
+    }
+
+    h1.headline em {
+      color: var(--sf-blue-l);
+      font-style: normal;
+    }
+
+    .bg-white h1.headline,
+    .bg-offwhite h1.headline { color: var(--sf-navy); }
+
+    .bg-white h1.headline em,
+    .bg-offwhite h1.headline em { color: var(--sf-blue); }
+
+    h2.section-title {
+      font-family: var(--font-display);
+      font-size: clamp(28px, 3vw, 44px);
+      font-weight: 400;
+      line-height: 1.15;
+      color: #fff;
+      margin-bottom: 20px;
+    }
+
+    .bg-white h2.section-title,
+    .bg-offwhite h2.section-title { color: var(--sf-navy); }
+
+    .lead {
+      font-size: clamp(16px, 1.6vw, 20px);
+      line-height: 1.6;
+      color: rgba(255,255,255,0.8);
+      max-width: 680px;
+      margin-bottom: 32px;
+    }
+
+    .bg-white .lead,
+    .bg-offwhite .lead { color: #334; }
+
+    .number-large {
+      font-family: var(--font-display);
+      font-size: clamp(48px, 6vw, 80px);
+      color: var(--sf-blue-l);
+      line-height: 1;
+    }
+
+    .bg-white .number-large,
+    .bg-offwhite .number-large { color: var(--sf-blue); }
+
+    /* ── Logo lockup ── */
+    .lockup {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      margin-bottom: 48px;
+    }
+
+    .lockup-divider {
+      width: 1px;
+      height: 36px;
+      background: rgba(255,255,255,0.3);
+    }
+
+    .lockup img { height: 28px; }
+
+    .cw-logo-text {
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 400;
+      color: #fff;
+      letter-spacing: 0.02em;
+    }
+
+    /* ── Agenda table ── */
+    .agenda {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      width: 100%;
+      max-width: 800px;
+    }
+
+    .agenda-row {
+      display: grid;
+      grid-template-columns: 120px 1fr 80px;
+      align-items: center;
+      gap: 24px;
+      padding: 16px 20px;
+      border-radius: 10px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .agenda-row.highlight {
+      background: rgba(0,179,255,0.1);
+      border-color: rgba(0,179,255,0.25);
+    }
+
+    .agenda-num {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--sf-blue-l);
+    }
+
+    .agenda-label { font-size: 15px; color: rgba(255,255,255,0.9); }
+    .agenda-time  { font-size: 13px; color: rgba(255,255,255,0.45); text-align: right; }
+
+    /* ── Card grid ── */
+    .card-row {
+      display: grid;
+      gap: 20px;
+      width: 100%;
+    }
+
+    .card-row.cols-3 { grid-template-columns: repeat(3, 1fr); }
+    .card-row.cols-2 { grid-template-columns: repeat(2, 1fr); }
+    .card-row.cols-4 { grid-template-columns: repeat(4, 1fr); }
+
+    .card-item {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 14px;
+      padding: 28px 24px;
+    }
+
+    .bg-white .card-item,
+    .bg-offwhite .card-item {
+      background: #fff;
+      border-color: rgba(0,30,91,0.1);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+
+    .card-item .eyebrow { margin-bottom: 10px; }
+
+    .card-title {
+      font-family: var(--font-display);
+      font-size: 17px;
+      color: #fff;
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+
+    .bg-white .card-title,
+    .bg-offwhite .card-title { color: var(--sf-navy); }
+
+    .card-body {
+      font-size: 13.5px;
+      line-height: 1.6;
+      color: rgba(255,255,255,0.65);
+    }
+
+    .bg-white .card-body,
+    .bg-offwhite .card-body { color: #445; }
+
+    .card-body strong { color: #fff; }
+    .bg-white .card-body strong,
+    .bg-offwhite .card-body strong { color: var(--sf-navy); }
+
+    /* ── Tell/Land badges ── */
+    .tell-badge, .land-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .tell-badge {
+      background: rgba(0,179,255,0.15);
+      border: 1px solid rgba(0,179,255,0.4);
+      color: var(--sf-blue-l);
+    }
+
+    .land-badge {
+      background: rgba(228,0,43,0.15);
+      border: 1px solid rgba(228,0,43,0.4);
+      color: #FF3352;
+    }
+
+    .tell-badge::before { content: "→"; }
+    .land-badge::before { content: "✓"; }
+
+    /* ── Journey flow diagram ── */
+    .journey-flow {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      width: 100%;
+      max-width: 900px;
+      margin-top: 8px;
+    }
+
+    .flow-step {
+      flex: 1;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 10px;
+      padding: 16px 14px;
+      text-align: center;
+    }
+
+    .flow-step .step-icon {
+      font-size: 20px;
+      margin-bottom: 6px;
+    }
+
+    .flow-step .step-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--sf-blue-l);
+      margin-bottom: 4px;
+    }
+
+    .flow-step .step-desc {
+      font-size: 12px;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.4;
+    }
+
+    .flow-arrow {
+      font-size: 18px;
+      color: rgba(255,255,255,0.25);
+      padding: 0 6px;
+      flex-shrink: 0;
+    }
+
+    /* ── KPI row ── */
+    .kpi-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      width: 100%;
+      max-width: 860px;
+    }
+
+    .kpi-item { text-align: left; }
+
+    .kpi-value {
+      font-family: var(--font-display);
+      font-size: clamp(32px, 3.5vw, 48px);
+      color: var(--sf-blue-l);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .kpi-label {
+      font-size: 13px;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.4;
+    }
+
+    /* ── Two-col layout ── */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      width: 100%;
+      align-items: start;
+    }
+
+    .two-col.wide-left { grid-template-columns: 3fr 2fr; }
+
+    /* ── Bullet list ── */
+    .bullet-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .bullet-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 15px;
+      color: rgba(255,255,255,0.8);
+      line-height: 1.5;
+    }
+
+    .bg-white .bullet-list li,
+    .bg-offwhite .bullet-list li { color: #334; }
+
+    .bullet-list li::before {
+      content: "";
+      display: block;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--sf-blue-l);
+      margin-top: 7px;
+      flex-shrink: 0;
+    }
+
+    .bg-white .bullet-list li::before,
+    .bg-offwhite .bullet-list li::before { background: var(--sf-blue); }
+
+    .bullet-list li strong { color: #fff; }
+    .bg-white .bullet-list li strong,
+    .bg-offwhite .bullet-list li strong { color: var(--sf-navy); }
+
+    /* ── Progress dots ── */
+    .progress {
+      position: fixed;
+      bottom: 28px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 8px;
+      z-index: 100;
+    }
+
+    .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.2);
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .dot.active { background: var(--sf-blue-l); }
+
+    /* ── Nav arrows ── */
+    .nav-btn {
+      position: fixed;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      color: rgba(255,255,255,0.6);
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 100;
+      font-size: 18px;
+      transition: all 0.2s;
+    }
+
+    .nav-btn:hover { background: rgba(255,255,255,0.15); color: #fff; }
+    .nav-btn.prev { left: 20px; }
+    .nav-btn.next { right: 20px; }
+
+    /* ── Slide counter ── */
+    .slide-counter {
+      position: fixed;
+      bottom: 28px;
+      right: 32px;
+      font-size: 11px;
+      color: rgba(255,255,255,0.3);
+      z-index: 100;
+      letter-spacing: 0.06em;
+    }
+
+    /* ── Section divider label ── */
+    .section-label {
+      position: fixed;
+      top: 24px;
+      right: 32px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.25);
+      z-index: 100;
+    }
+
+    /* ── Divider line ── */
+    .rule {
+      width: 48px;
+      height: 3px;
+      background: var(--accent);
+      border-radius: 2px;
+      margin-bottom: 28px;
+    }
+
+    /* ── Tag chips ── */
+    .chip {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin: 3px;
+    }
+
+    .chip-blue  { background: rgba(0,179,255,0.15); color: var(--sf-blue-l); border: 1px solid rgba(0,179,255,0.3); }
+    .chip-red   { background: rgba(228,0,43,0.15);  color: #FF3352;          border: 1px solid rgba(228,0,43,0.3); }
+    .chip-green { background: rgba(4,225,203,0.15); color: #04E1CB;          border: 1px solid rgba(4,225,203,0.3); }
+    .chip-white { background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.7); border: 1px solid rgba(255,255,255,0.15); }
+  </style>
+</head>
+<body>
+
+<div class="deck" id="deck">
+
+  <!-- ── SLIDE 1: COVER ── -->
+  <div class="slide bg-dark active" data-section="">
+    <div class="lockup">
+      <img src="assets/logos/Salesforce-Corporate-Logo-Horiz-White-RGB.svg" alt="Salesforce" />
+      <div class="lockup-divider"></div>
+      <span class="cw-logo-text">Chemist Warehouse</span>
+    </div>
+    <p class="eyebrow">RFP Response — Q2 FY27</p>
+    <h1 class="headline">The marketing platform<br><em>built for what's next.</em></h1>
+    <p class="lead">A 90-minute demonstration of omnichannel lifecycle marketing at scale — audience intelligence, journey orchestration, dynamic personalisation, and real attribution.</p>
+    <div style="margin-top: 12px; display: flex; gap: 12px; flex-wrap: wrap;">
+      <span class="chip chip-blue">Email · SMS · Push · WhatsApp</span>
+      <span class="chip chip-green">Data Cloud · AI</span>
+      <span class="chip chip-white">Marketing Intelligence</span>
+    </div>
+  </div>
+
+  <!-- ── SLIDE 2: AGENDA ── -->
+  <div class="slide bg-navy" data-section="Overview">
+    <p class="eyebrow">Today's agenda</p>
+    <h2 class="section-title" style="margin-bottom: 28px;">90 minutes. Live in-platform.</h2>
+    <div class="agenda">
+      <div class="agenda-row">
+        <span class="agenda-num">01</span>
+        <span class="agenda-label">Platform Overview &amp; Context</span>
+        <span class="agenda-time">5 min — Slides</span>
+      </div>
+      <div class="agenda-row highlight">
+        <span class="agenda-num">02</span>
+        <span class="agenda-label">Audience, Targeting &amp; Data Foundations</span>
+        <span class="agenda-time">15 min — Live</span>
+      </div>
+      <div class="agenda-row highlight">
+        <span class="agenda-num">03</span>
+        <span class="agenda-label">Core Journey Build — Oral-B Replenishment</span>
+        <span class="agenda-time">20 min — Live</span>
+      </div>
+      <div class="agenda-row highlight">
+        <span class="agenda-num">04</span>
+        <span class="agenda-label">Reporting &amp; Insights Dashboard</span>
+        <span class="agenda-time">10 min — Live</span>
+      </div>
+      <div class="agenda-row">
+        <span class="agenda-num">05</span>
+        <span class="agenda-label">Wrap-Up &amp; Discussion</span>
+        <span class="agenda-time">10 min — Slides</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── SLIDE 3: SF ADVANTAGE ── -->
+  <div class="slide bg-dark" data-section="Platform Overview">
+    <p class="eyebrow">Salesforce advantage</p>
+    <h1 class="headline">One platform.<br><em>Every channel. Every moment.</em></h1>
+    <div class="card-row cols-3" style="max-width: 900px;">
+      <div class="card-item">
+        <p class="eyebrow">Data Foundation</p>
+        <p class="card-title">Data Cloud 360</p>
+        <p class="card-body">Unified customer profiles from every source — Meiro, Snowflake, transactional, behavioural. <strong>One identity. Real time.</strong></p>
+      </div>
+      <div class="card-item">
+        <p class="eyebrow">Activation</p>
+        <p class="card-title">Marketing Cloud Next</p>
+        <p class="card-body">Email, SMS, Push, WhatsApp, Web Push. Triggered journeys with <strong>AI-powered decisioning</strong> at every step.</p>
+      </div>
+      <div class="card-item">
+        <p class="eyebrow">Intelligence</p>
+        <p class="card-title">Marketing Intelligence</p>
+        <p class="card-body">Multi-touch attribution, campaign optimisation, and <strong>true engagement signals</strong> — machine opens filtered out.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── SLIDE 4: MEIRO INTEGRATION ── -->
+  <div class="slide bg-offwhite" data-section="Platform Overview">
+    <p class="eyebrow">Integration approach</p>
+    <h2 class="section-title">How Meiro connects to Salesforce</h2>
+    <div class="two-col wide-left">
+      <div>
+        <div class="card-row cols-3" style="margin-bottom: 0;">
+          <div class="card-item">
+            <p class="eyebrow">REST API</p>
+            <p class="card-title">Real-time events</p>
+            <p class="card-body">Behavioural signals and profile updates streamed directly into Data Cloud.</p>
+          </div>
+          <div class="card-item">
+            <p class="eyebrow">SFTP</p>
+            <p class="card-title">Batch data loads</p>
+            <p class="card-body">Scheduled file drops for transaction history, product catalogues, depletion windows.</p>
+          </div>
+          <div class="card-item">
+            <p class="eyebrow">OOTB Connectors</p>
+            <p class="card-title">Pre-built pipelines</p>
+            <p class="card-body">Native Data Cloud connectors for common CDP schemas — minimal custom development.</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <p class="eyebrow" style="color: var(--sf-blue);">What Meiro sends</p>
+        <ul class="bullet-list" style="margin-top: 8px;">
+          <li>Unified customer identity &amp; attributes</li>
+          <li>Purchase history &amp; product SKUs</li>
+          <li>Browse and engagement behaviour</li>
+          <li>Segment membership &amp; scores</li>
+          <li>Depletion window metadata per product</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── SLIDE 5: ROADMAP ── -->
+  <div class="slide bg-dark" data-section="Platform Overview">
+    <p class="eyebrow">Product roadmap — 12–24 months</p>
+    <h2 class="section-title" style="margin-bottom: 32px;">What's coming that matters to CW</h2>
+    <div class="card-row cols-2" style="max-width: 760px;">
+      <div class="card-item" style="border-color: rgba(228,0,43,0.4); background: rgba(228,0,43,0.08);">
+        <p class="eyebrow" style="color: #FF3352;">Now → 6 months</p>
+        <p class="card-title">Web Push Notifications</p>
+        <p class="card-body">Browser-based push for web shoppers — <strong>no app install required.</strong> Triggered by browse abandonment, replenishment cues, price drops.</p>
+      </div>
+      <div class="card-item">
+        <p class="eyebrow">6–24 months</p>
+        <p class="card-title">Deeper Agentic Automation</p>
+        <p class="card-body">AI agents that <strong>build, optimise and report on campaigns</strong> autonomously — human-in-loop approvals, full audit trail.</p>
+      </div>
+    </div>
+    <p style="margin-top: 24px; font-size: 13px; color: rgba(255,255,255,0.35); font-style: italic;">Full roadmap available under NDA — today's focus is live platform capability.</p>
+  </div>
+
+  <!-- ── SLIDE 6: TELL — AUDIENCE & DATA ── -->
+  <div class="slide bg-navy" data-section="Audience & Data">
+    <div class="tell-badge">Coming up — Live Demo</div>
+    <p class="eyebrow">Section 02 — Audience, Targeting &amp; Data Foundations</p>
+    <h1 class="headline">Building the audience<br><em>that drives the journey.</em></h1>
+    <p class="lead">You're about to see how Salesforce Data Cloud 360 ingests, maps and unifies CW's customer data — then turns it into high-intent, AI-scored segments ready for activation.</p>
+    <div style="margin-top: 8px;">
+      <p style="font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.4); margin-bottom: 12px;">Watch for</p>
+      <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+        <span class="chip chip-blue">Identity resolution across Meiro + Snowflake</span>
+        <span class="chip chip-blue">Behavioural segmentation — browse, email, purchase</span>
+        <span class="chip chip-blue">Einstein predictive scoring</span>
+        <span class="chip chip-blue">Machine opens — how we filter bot signals</span>
+        <span class="chip chip-green">Waterfall inclusion / exclusion logic</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── SLIDE 7: LAND — AUDIENCE & DATA ── -->
+  <div class="slide bg-offwhite" data-section="Audience & Data">
+    <div class="land-badge">What this means for Chemist Warehouse</div>
+    <p class="eyebrow">Section 02 — Key takeouts</p>
+    <h2 class="section-title">You saw the data foundation.<br>Here's what it unlocks.</h2>
+    <div class="card-row cols-3">
+      <div class="card-item">
+        <p class="eyebrow">No more batch lag</p>
+        <p class="card-title">Real-time unified profiles</p>
+        <p class="card-body">Every Meiro signal lands in Data Cloud within seconds. <strong>CW customers are known the moment they act</strong> — not the next morning.</p>
+      </div>
+      <div class="card-item">
+        <p class="eyebrow">True engagement only</p>
+        <p class="card-title">Einstein Metrics Guard</p>
+        <p class="card-body"><strong>Machine opens are filtered at source.</strong> Every open, click and conversion in your reports is a real human — no inflated signals distorting campaign decisions.</p>
+      </div>
+      <div class="card-item">
+        <p class="eyebrow">Predictive, not reactive</p>
+        <p class="card-title">AI-scored audiences</p>
+        <p class="card-body">Einstein scores tell you who's likely to buy, churn, or lapse — <strong>before they do.</strong> Reach them with the right message in the right window.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── SLIDE 8: TELL — JOURNEY BUILD ── -->
+  <div class="slide bg-navy" data-section="Journey Build">
+    <div class="tell-badge">Coming up — Live Build</div>
+    <p class="eyebrow">Section 03 — Core Journey Build</p>
+    <h1 class="headline">The Oral-B replenishment<br><em>journey — built live.</em></h1>
+    <p class="lead">The brief: build one automated replenishment journey for Oral-B Toothbrushes that handles 20+ individual SKUs, multi-channel delivery, dynamic personalisation, and exits on purchase.</p>
+    <div style="margin-top: 12px;">
+      <p style="font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.4); margin-bottom: 12px;">The challenge we're solving</p>
+      <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+        <span class="chip chip-red">20+ SKUs — no manual duplication</span>
+        <span class="chip chip-blue">Depletion window per product</span>
+        <span class="chip chip-blue">Email · SMS · Push channels</span>
+        <span class="chip chip-green">Dynamic product content + fallback</span>
+        <span class="chip chip-blue">Exit on conversion → cross-sell</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── SLIDE 9: JOURNEY FLOW DIAGRAM ── -->
+  <div class="slide bg-dark" data-section="Journey Build">
+    <p class="eyebrow">Oral-B replenishment — journey architecture</p>
+    <h2 class="section-title" style="margin-bottom: 28px;">How the journey runs end-to-end</h2>
+    <div class="journey-flow">
+      <div class="flow-step">
+        <div class="step-icon">🎯</div>
+        <div class="step-label">Entry trigger</div>
+        <div class="step-desc">Purchase date + depletion window<br>20+ SKUs via "Is In" operator</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step">
+        <div class="step-icon">📧</div>
+        <div class="step-label">Email</div>
+        <div class="step-desc">Dynamic SKU insert<br>Personalised + fallback</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color: rgba(0,179,255,0.3); background: rgba(0,179,255,0.08);">
+        <div class="step-icon">⚡</div>
+        <div class="step-label">Decision split</div>
+        <div class="step-desc">Engagement click<br>or conversion event</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step">
+        <div class="step-icon">💬</div>
+        <div class="step-label">SMS / Push</div>
+        <div class="step-desc">Non-engaged path<br>channel escalation</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color: rgba(4,225,203,0.3); background: rgba(4,225,203,0.08);">
+        <div class="step-icon">✅</div>
+        <div class="step-label">Exit on purchase</div>
+        <div class="step-desc">Activates cross-sell<br>journey via Data Cloud</div>
+      </div>
+    </div>
+    <div style="margin-top: 28px; display: flex; gap: 10px; flex-wrap: wrap;">
+      <span class="chip chip-blue">Calculated Insight — depletion per SKU</span>
+      <span class="chip chip-green">Data Graph — personalisation + fallback</span>
+      <span class="chip chip-white">Debug Mode — channel sequencing preview</span>
+    </div>
+  </div>
+
+  <!-- ── SLIDE 10: LAND — JOURNEY BUILD ── -->
+  <div class="slide bg-offwhite" data-section="Journey Build">
+    <div class="land-badge">What this means for Chemist Warehouse</div>
+    <p class="eyebrow">Section 03 — Key takeouts</p>
+    <h2 class="section-title">One journey. 20+ products.<br>Zero manual duplication.</h2>
+    <div class="two-col">
+      <div>
+        <div class="card-row cols-2" style="margin-bottom: 0;">
+          <div class="card-item">
+            <p class="eyebrow">Scale without complexity</p>
+            <p class="card-title">SKU logic in the data layer</p>
+            <p class="card-body">Product lists load into Data Cloud once. <strong>The journey never needs updating</strong> when you add or retire a SKU.</p>
+          </div>
+          <div class="card-item">
+            <p class="eyebrow">Always-on relevance</p>
+            <p class="card-title">Dynamic content + fallback</p>
+            <p class="card-body">The exact product a customer needs is inserted at send time. <strong>If it's out of stock, a fallback recommendation fires automatically.</strong></p>
+          </div>
+          <div class="card-item">
+            <p class="eyebrow">No wasted sends</p>
+            <p class="card-title">Purchase-triggered exit</p>
+            <p class="card-body">The moment a customer buys, they exit the replenishment flow and enter the <strong>cross-sell or next lifecycle stage</strong> — automatically.</p>
+          </div>
+          <div class="card-item">
+            <p class="eyebrow">Cross-channel reach</p>
+            <p class="card-title">Email → SMS → Push</p>
+            <p class="card-body">Customers who don't engage on email are <strong>reached on their preferred channel</strong> — no duplicate journeys required.</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <p class="eyebrow" style="color: var(--sf-blue);">RFP scoring criteria addressed</p>
+        <ul class="bullet-list" style="margin-top: 8px;">
+          <li><strong>Journey Orchestration</strong> — multi-step, multi-channel, decision-driven</li>
+          <li><strong>Content &amp; Personalisation</strong> — Data Graph, dynamic SKU, fallback</li>
+          <li><strong>Audience &amp; AI</strong> — Calculated Insights, Einstein scoring</li>
+          <li><strong>Campaign Operations</strong> — no manual duplication at scale</li>
+          <li><strong>Usability</strong> — built live, no code, debug mode shown</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── SLIDE 11: TELL — REPORTING ── -->
+  <div class="slide bg-navy" data-section="Reporting">
+    <div class="tell-badge">Coming up — Live Demo</div>
+    <p class="eyebrow">Section 04 — Reporting &amp; Insights</p>
+    <h1 class="headline">Metrics you can<br><em>actually trust.</em></h1>
+    <p class="lead">You're about to see Marketing Intelligence — CW's command centre for campaign performance, multi-touch attribution, and the signal quality problem every email marketer has.</p>
+    <div style="margin-top: 8px;">
+      <p style="font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.4); margin-bottom: 12px;">Watch for</p>
+      <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+        <span class="chip chip-blue">Campaign performance KPIs — journey we just built</span>
+        <span class="chip chip-blue">Multi-touch attribution — not just last click</span>
+        <span class="chip chip-red">Machine opens — how Einstein Metrics Guard filters them</span>
+        <span class="chip chip-green">Optimisation insight — one data-driven decision example</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── SLIDE 12: LAND — REPORTING ── -->
+  <div class="slide bg-offwhite" data-section="Reporting">
+    <div class="land-badge">What this means for Chemist Warehouse</div>
+    <p class="eyebrow">Section 04 — Key takeouts</p>
+    <h2 class="section-title">Report on what's real.<br>Optimise what matters.</h2>
+    <div class="card-row cols-3">
+      <div class="card-item">
+        <p class="eyebrow">Signal quality</p>
+        <p class="card-title">Machine opens — solved</p>
+        <p class="card-body">Einstein Metrics Guard scores every open and click. <strong>Bot activity never reaches your dashboards.</strong> Open rates, trigger logic, and reporting all reflect real humans only.</p>
+      </div>
+      <div class="card-item">
+        <p class="eyebrow">Attribution</p>
+        <p class="card-title">Beyond last click</p>
+        <p class="card-body">Multi-touch attribution shows the <strong>full journey a customer took before converting</strong> — email, SMS, push, paid media — so budget goes where it actually works.</p>
+      </div>
+      <div class="card-item">
+        <p class="eyebrow">Actionable intelligence</p>
+        <p class="card-title">Optimisation at the insight level</p>
+        <p class="card-body">Marketing Intelligence surfaces specific recommendations — <strong>not just what happened, but what to do next.</strong> Campaign optimisation built into the dashboard.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── SLIDE 13: DIFFERENTIATORS ── -->
+  <div class="slide bg-dark" data-section="Wrap-Up">
+    <p class="eyebrow">Why Salesforce</p>
+    <h1 class="headline">What you won't get<br><em>anywhere else.</em></h1>
+    <div class="card-row cols-2" style="max-width: 860px;">
+      <div class="card-item">
+        <p class="eyebrow">Data Cloud native</p>
+        <p class="card-title">CDP + activation in one platform</p>
+        <p class="card-body">Most vendors need a separate CDP. Salesforce Data Cloud is <strong>built into the same platform</strong> as your journey builder — no sync lag, no data contracts, no double licensing.</p>
+      </div>
+      <div class="card-item">
+        <p class="eyebrow">AI that's connected</p>
+        <p class="card-title">Einstein runs on your data</p>
+        <p class="card-body">Einstein scoring, Metrics Guard, and content recommendations all run on <strong>CW's actual unified profile data</strong> — not generic models trained on someone else's customers.</p>
+      </div>
+      <div class="card-item">
+        <p class="eyebrow">Scale by design</p>
+        <p class="card-title">One journey. Any number of SKUs.</p>
+        <p class="card-body">The 20+ SKU challenge you set is solved in the data layer, not the journey builder. <strong>Add 200 more SKUs tomorrow — the journey doesn't change.</strong></p>
+      </div>
+      <div class="card-item">
+        <p class="eyebrow">Two-way by default</p>
+        <p class="card-title">WhatsApp, SMS reply flows</p>
+        <p class="card-body">Conversations, not broadcasts. <strong>Customers can respond, confirm, and transact</strong> directly in the channel — connected to Service Cloud for escalation.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── SLIDE 14: CUSTOM VS OOTB ── -->
+  <div class="slide bg-offwhite" data-section="Wrap-Up">
+    <p class="eyebrow">Implementation honesty</p>
+    <h2 class="section-title">What's out-of-box. What's custom.</h2>
+    <div class="two-col">
+      <div>
+        <p class="eyebrow" style="color: var(--sf-blue); margin-bottom: 16px;">Out of box — no custom dev</p>
+        <ul class="bullet-list">
+          <li>Data Cloud ingestion via REST API, SFTP, OOTB connectors</li>
+          <li>Identity resolution and unified profile</li>
+          <li>Journey Builder — triggers, splits, multi-channel</li>
+          <li>Einstein Email Engagement scoring</li>
+          <li>Einstein Metrics Guard (machine opens)</li>
+          <li>Marketing Intelligence dashboards + attribution</li>
+          <li>Web Push notifications</li>
+          <li>WhatsApp two-way messaging</li>
+        </ul>
+      </div>
+      <div>
+        <p class="eyebrow" style="color: var(--accent); margin-bottom: 16px;">Requires configuration / custom</p>
+        <ul class="bullet-list">
+          <li><strong>Meiro data mapping</strong> — schema alignment to Data Cloud objects (SI scope)</li>
+          <li><strong>Calculated Insights</strong> — depletion window logic per SKU category</li>
+          <li><strong>Data Graph setup</strong> — product recommendation graph build</li>
+          <li><strong>Email templates</strong> — dynamic product content blocks with fallback</li>
+          <li><strong>Conversion event tracking</strong> — purchase event schema from transactional system</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── SLIDE 15: THANK YOU / Q&A ── -->
+  <div class="slide bg-dark" data-section="Wrap-Up">
+    <div class="lockup">
+      <img src="assets/logos/Salesforce-Corporate-Logo-Horiz-White-RGB.svg" alt="Salesforce" />
+      <div class="lockup-divider"></div>
+      <span class="cw-logo-text">Chemist Warehouse</span>
+    </div>
+    <p class="eyebrow">Thank you</p>
+    <h1 class="headline">Questions &amp; discussion.</h1>
+    <p class="lead">We're here for the next 10 minutes. No question is too detailed — limitations, edge cases, implementation approach, what we didn't show.</p>
+    <div style="margin-top: 24px; display: flex; gap: 10px; flex-wrap: wrap;">
+      <span class="chip chip-white">Platform &amp; Architecture</span>
+      <span class="chip chip-white">Audience &amp; AI</span>
+      <span class="chip chip-white">Journey Orchestration</span>
+      <span class="chip chip-white">Personalisation</span>
+      <span class="chip chip-white">Reporting &amp; Attribution</span>
+      <span class="chip chip-white">Usability</span>
+    </div>
+    <div style="margin-top: 36px; padding-top: 28px; border-top: 1px solid rgba(255,255,255,0.1);">
+      <p style="font-size: 13px; color: rgba(255,255,255,0.35);">Next steps: Proof of concept scoping session — we'll map Meiro schema to Data Cloud objects and define the Oral-B data model together.</p>
+    </div>
+  </div>
+
+</div><!-- /deck -->
+
+<!-- Navigation -->
+<button class="nav-btn prev" onclick="navigate(-1)">‹</button>
+<button class="nav-btn next" onclick="navigate(1)">›</button>
+<div class="progress" id="progress"></div>
+<div class="slide-counter" id="counter"></div>
+<div class="section-label" id="section-label"></div>
+
+<script>
+  const slides = document.querySelectorAll('.slide');
+  let current = 0;
+
+  function buildProgress() {
+    const p = document.getElementById('progress');
+    slides.forEach((_, i) => {
+      const dot = document.createElement('div');
+      dot.className = 'dot' + (i === 0 ? ' active' : '');
+      dot.onclick = () => goTo(i);
+      p.appendChild(dot);
+    });
+  }
+
+  function goTo(n) {
+    slides[current].classList.remove('active');
+    document.querySelectorAll('.dot')[current].classList.remove('active');
+    current = Math.max(0, Math.min(n, slides.length - 1));
+    slides[current].classList.add('active');
+    document.querySelectorAll('.dot')[current].classList.add('active');
+    document.getElementById('counter').textContent = (current + 1) + ' / ' + slides.length;
+    document.getElementById('section-label').textContent = slides[current].dataset.section || '';
+  }
+
+  function navigate(dir) { goTo(current + dir); }
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === ' ') navigate(1);
+    if (e.key === 'ArrowLeft'  || e.key === 'ArrowUp')                    navigate(-1);
+  });
+
+  buildProgress();
+  document.getElementById('counter').textContent = '1 / ' + slides.length;
+</script>
+</body>
+</html>
