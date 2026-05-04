@@ -162,8 +162,8 @@
       gap: 24px;
       padding: 16px 20px;
       border-radius: 10px;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(0,30,91,0.35);
+      border: 1px solid rgba(6,106,254,0.25);
     }
 
     .agenda-row.highlight {
@@ -194,8 +194,8 @@
     .card-row.cols-4 { grid-template-columns: repeat(4, 1fr); }
 
     .card-item {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.1);
+      background: rgba(2,42,192,0.18);
+      border: 1px solid rgba(6,106,254,0.35);
       border-radius: 14px;
       padding: 28px 24px;
     }
@@ -274,8 +274,8 @@
 
     .flow-step {
       flex: 1;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.1);
+      background: rgba(2,42,192,0.18);
+      border: 1px solid rgba(6,106,254,0.35);
       border-radius: 10px;
       padding: 16px 14px;
       text-align: center;
@@ -397,7 +397,7 @@
       width: 6px;
       height: 6px;
       border-radius: 50%;
-      background: rgba(255,255,255,0.2);
+      background: rgba(0,179,255,0.25);
       cursor: pointer;
       transition: background 0.2s;
     }
@@ -409,9 +409,9 @@
       position: fixed;
       top: 50%;
       transform: translateY(-50%);
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.15);
-      color: rgba(255,255,255,0.6);
+      background: transparent;
+      border: 1px solid rgba(6,106,254,0.4);
+      color: rgba(0,179,255,0.8);
       width: 44px;
       height: 44px;
       border-radius: 50%;
@@ -473,10 +473,10 @@
       margin: 3px;
     }
 
-    .chip-blue  { background: rgba(0,179,255,0.15); color: var(--sf-blue-l); border: 1px solid rgba(0,179,255,0.3); }
-    .chip-red   { background: rgba(228,0,43,0.15);  color: #FF3352;          border: 1px solid rgba(228,0,43,0.3); }
-    .chip-green { background: rgba(4,225,203,0.15); color: #04E1CB;          border: 1px solid rgba(4,225,203,0.3); }
-    .chip-white { background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.7); border: 1px solid rgba(255,255,255,0.15); }
+    .chip-blue  { background: #022AC0; color: #90D0FE; border: 1px solid #066AFE; }
+    .chip-red   { background: #DA1710; color: #fff;   border: 1px solid #FF4A3D; }
+    .chip-green { background: #023434; color: #04E1CB; border: 1px solid #06A59A; }
+    .chip-white { background: #001E5B; color: #90D0FE; border: 1px solid #022AC0; }
   </style>
 </head>
 <body>
@@ -541,40 +541,40 @@
       <!-- LEFT: three-tier bands -->
       <div style="display:flex; flex-direction:column; gap:10px;">
         <!-- Tier 1: Agentforce -->
-        <div style="background:rgba(0,25,80,0.7); border:1px solid rgba(0,120,255,0.3); border-radius:10px; padding:14px 18px;">
-          <p style="font-size:10px; font-weight:700; letter-spacing:0.12em; color:rgba(0,179,255,0.9); margin-bottom:10px; text-transform:uppercase;">Agentforce</p>
+        <div style="background:#001E5B; border:1px solid #022AC0; border-radius:10px; padding:14px 18px;">
+          <p style="font-size:10px; font-weight:700; letter-spacing:0.12em; color:#00B3FF; margin-bottom:10px; text-transform:uppercase;">Agentforce</p>
           <div style="display:flex; gap:8px; flex-wrap:wrap;">
-            <span style="background:rgba(0,60,140,0.6); border:1px solid rgba(0,120,255,0.3); color:rgba(255,255,255,0.85); font-size:11px; padding:5px 12px; border-radius:16px; white-space:nowrap;">Campaign planning &amp; creation</span>
-            <span style="background:rgba(0,60,140,0.6); border:1px solid rgba(0,120,255,0.3); color:rgba(255,255,255,0.85); font-size:11px; padding:5px 12px; border-radius:16px; white-space:nowrap;">Autonomous personalisation</span>
-            <span style="background:rgba(0,60,140,0.6); border:1px solid rgba(0,120,255,0.3); color:rgba(255,255,255,0.85); font-size:11px; padding:5px 12px; border-radius:16px; white-space:nowrap;">Real-time recs &amp; offers</span>
-            <span style="background:rgba(0,60,140,0.6); border:1px solid rgba(0,120,255,0.3); color:rgba(255,255,255,0.85); font-size:11px; padding:5px 12px; border-radius:16px; white-space:nowrap;">Two-way conversations</span>
-            <span style="background:rgba(0,60,140,0.6); border:1px solid rgba(0,120,255,0.3); color:rgba(255,255,255,0.85); font-size:11px; padding:5px 12px; border-radius:16px; white-space:nowrap;">Self-optimising campaigns</span>
+            <span style="background:#022AC0; border:1px solid #066AFE; color:#90D0FE; font-size:11px; padding:5px 12px; border-radius:16px; white-space:nowrap;">Campaign planning &amp; creation</span>
+            <span style="background:#022AC0; border:1px solid #066AFE; color:#90D0FE; font-size:11px; padding:5px 12px; border-radius:16px; white-space:nowrap;">Autonomous personalisation</span>
+            <span style="background:#022AC0; border:1px solid #066AFE; color:#90D0FE; font-size:11px; padding:5px 12px; border-radius:16px; white-space:nowrap;">Real-time recs &amp; offers</span>
+            <span style="background:#022AC0; border:1px solid #066AFE; color:#90D0FE; font-size:11px; padding:5px 12px; border-radius:16px; white-space:nowrap;">Two-way conversations</span>
+            <span style="background:#022AC0; border:1px solid #066AFE; color:#90D0FE; font-size:11px; padding:5px 12px; border-radius:16px; white-space:nowrap;">Self-optimising campaigns</span>
           </div>
         </div>
         <!-- Tier 2: Agentforce Marketing -->
-        <div style="background:rgba(0,40,110,0.6); border:1px solid rgba(0,100,220,0.3); border-radius:10px; padding:14px 18px;">
-          <p style="font-size:10px; font-weight:700; letter-spacing:0.12em; color:rgba(100,160,255,0.9); margin-bottom:10px; text-transform:uppercase;">Agentforce Marketing</p>
+        <div style="background:#022AC0; border:1px solid #066AFE; border-radius:10px; padding:14px 18px;">
+          <p style="font-size:10px; font-weight:700; letter-spacing:0.12em; color:#90D0FE; margin-bottom:10px; text-transform:uppercase;">Agentforce Marketing</p>
           <div style="display:flex; gap:8px; flex-wrap:wrap;">
-            <span style="background:rgba(0,50,130,0.55); border:1px solid rgba(0,100,200,0.3); color:rgba(255,255,255,0.85); font-size:11px; padding:5px 12px; border-radius:16px; white-space:nowrap;">Email</span>
-            <span style="background:rgba(0,50,130,0.55); border:1px solid rgba(0,100,200,0.3); color:rgba(255,255,255,0.85); font-size:11px; padding:5px 12px; border-radius:16px; white-space:nowrap;">SMS &amp; Push</span>
-            <span style="background:rgba(0,50,130,0.55); border:1px solid rgba(0,100,200,0.3); color:rgba(255,255,255,0.85); font-size:11px; padding:5px 12px; border-radius:16px; white-space:nowrap;">WhatsApp</span>
-            <span style="background:rgba(0,50,130,0.55); border:1px solid rgba(0,100,200,0.3); color:rgba(255,255,255,0.85); font-size:11px; padding:5px 12px; border-radius:16px; white-space:nowrap;">Web Push</span>
-            <span style="background:rgba(0,50,130,0.55); border:1px solid rgba(0,100,200,0.3); color:rgba(255,255,255,0.85); font-size:11px; padding:5px 12px; border-radius:16px; white-space:nowrap;">Journey orchestration</span>
-            <span style="background:rgba(0,50,130,0.55); border:1px solid rgba(0,100,200,0.3); color:rgba(255,255,255,0.85); font-size:11px; padding:5px 12px; border-radius:16px; white-space:nowrap;">Personalisation</span>
-            <span style="background:rgba(0,50,130,0.55); border:1px solid rgba(0,100,200,0.3); color:rgba(255,255,255,0.85); font-size:11px; padding:5px 12px; border-radius:16px; white-space:nowrap;">Marketing Intelligence</span>
+            <span style="background:#066AFE; border:1px solid #00B3FF; color:#fff; font-size:11px; padding:5px 12px; border-radius:16px; white-space:nowrap;">Email</span>
+            <span style="background:#066AFE; border:1px solid #00B3FF; color:#fff; font-size:11px; padding:5px 12px; border-radius:16px; white-space:nowrap;">SMS &amp; Push</span>
+            <span style="background:#066AFE; border:1px solid #00B3FF; color:#fff; font-size:11px; padding:5px 12px; border-radius:16px; white-space:nowrap;">WhatsApp</span>
+            <span style="background:#066AFE; border:1px solid #00B3FF; color:#fff; font-size:11px; padding:5px 12px; border-radius:16px; white-space:nowrap;">Web Push</span>
+            <span style="background:#066AFE; border:1px solid #00B3FF; color:#fff; font-size:11px; padding:5px 12px; border-radius:16px; white-space:nowrap;">Journey orchestration</span>
+            <span style="background:#066AFE; border:1px solid #00B3FF; color:#fff; font-size:11px; padding:5px 12px; border-radius:16px; white-space:nowrap;">Personalisation</span>
+            <span style="background:#066AFE; border:1px solid #00B3FF; color:#fff; font-size:11px; padding:5px 12px; border-radius:16px; white-space:nowrap;">Marketing Intelligence</span>
           </div>
         </div>
-        <!-- Tier 3: Data 360 -->
-        <div style="background:rgba(0,55,130,0.45); border:1px solid rgba(0,90,200,0.3); border-radius:10px; padding:14px 18px;">
-          <p style="font-size:10px; font-weight:700; letter-spacing:0.12em; color:rgba(150,200,255,0.9); margin-bottom:10px; text-transform:uppercase;">Unified Actionable Data Layer</p>
+        <!-- Tier 3: Unified Actionable Data Layer -->
+        <div style="background:#023434; border:1px solid #06A59A; border-radius:10px; padding:14px 18px;">
+          <p style="font-size:10px; font-weight:700; letter-spacing:0.12em; color:#04E1CB; margin-bottom:10px; text-transform:uppercase;">Unified Actionable Data Layer</p>
           <div style="display:flex; gap:8px; flex-wrap:wrap;">
-            <span style="background:rgba(0,60,130,0.45); border:1px solid rgba(0,90,180,0.3); color:rgba(255,255,255,0.75); font-size:11px; padding:5px 12px; border-radius:16px; white-space:nowrap;">Unified profiles</span>
-            <span style="background:rgba(0,60,130,0.45); border:1px solid rgba(0,90,180,0.3); color:rgba(255,255,255,0.75); font-size:11px; padding:5px 12px; border-radius:16px; white-space:nowrap;">Identity resolution</span>
-            <span style="background:rgba(0,60,130,0.45); border:1px solid rgba(0,90,180,0.3); color:rgba(255,255,255,0.75); font-size:11px; padding:5px 12px; border-radius:16px; white-space:nowrap;">Calculated Insights</span>
-            <span style="background:rgba(0,60,130,0.45); border:1px solid rgba(0,90,180,0.3); color:rgba(255,255,255,0.75); font-size:11px; padding:5px 12px; border-radius:16px; white-space:nowrap;">Real-time segments</span>
-            <span style="background:rgba(0,60,130,0.45); border:1px solid rgba(0,90,180,0.3); color:rgba(255,255,255,0.75); font-size:11px; padding:5px 12px; border-radius:16px; white-space:nowrap;">Data Graph</span>
-            <span style="background:rgba(0,60,130,0.45); border:1px solid rgba(0,90,180,0.3); color:rgba(255,255,255,0.75); font-size:11px; padding:5px 12px; border-radius:16px; white-space:nowrap;">Zero-copy (Snowflake)</span>
-            <span style="background:rgba(0,60,130,0.45); border:1px solid rgba(0,90,180,0.3); color:rgba(255,255,255,0.75); font-size:11px; padding:5px 12px; border-radius:16px; white-space:nowrap;">Meiro connector</span>
+            <span style="background:#06A59A; border:1px solid #04E1CB; color:#fff; font-size:11px; padding:5px 12px; border-radius:16px; white-space:nowrap;">Unified profiles</span>
+            <span style="background:#06A59A; border:1px solid #04E1CB; color:#fff; font-size:11px; padding:5px 12px; border-radius:16px; white-space:nowrap;">Identity resolution</span>
+            <span style="background:#06A59A; border:1px solid #04E1CB; color:#fff; font-size:11px; padding:5px 12px; border-radius:16px; white-space:nowrap;">Calculated Insights</span>
+            <span style="background:#06A59A; border:1px solid #04E1CB; color:#fff; font-size:11px; padding:5px 12px; border-radius:16px; white-space:nowrap;">Real-time segments</span>
+            <span style="background:#06A59A; border:1px solid #04E1CB; color:#fff; font-size:11px; padding:5px 12px; border-radius:16px; white-space:nowrap;">Data Graph</span>
+            <span style="background:#06A59A; border:1px solid #04E1CB; color:#fff; font-size:11px; padding:5px 12px; border-radius:16px; white-space:nowrap;">Zero-copy (Snowflake)</span>
+            <span style="background:#06A59A; border:1px solid #04E1CB; color:#fff; font-size:11px; padding:5px 12px; border-radius:16px; white-space:nowrap;">Meiro connector</span>
           </div>
         </div>
       </div>
