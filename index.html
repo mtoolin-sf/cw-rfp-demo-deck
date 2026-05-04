@@ -645,139 +645,142 @@
   </div>
 
   <!-- ── SLIDE 4b: MEIRO INTEGRATION FLOW DIAGRAM ── -->
-  <div class="slide bg-dark" data-section="Platform Overview">
+  <div class="slide bg-white" data-section="Platform Overview">
     <p class="eyebrow">Data integration architecture</p>
     <h2 class="section-title" style="margin-bottom: 16px;">Meiro amplifies what Salesforce activates</h2>
     <!-- Colour legend -->
     <div style="display:flex; gap:20px; margin-bottom:14px; flex-wrap:wrap;">
-      <span style="display:flex; align-items:center; gap:6px; font-size:10px; color:rgba(255,255,255,0.5);"><span style="width:10px;height:10px;border-radius:3px;background:#7B61FF;display:inline-block;"></span>Meiro CDP</span>
-      <span style="display:flex; align-items:center; gap:6px; font-size:10px; color:rgba(255,255,255,0.5);"><span style="width:10px;height:10px;border-radius:3px;background:#00B3FF;display:inline-block;"></span>Integration methods</span>
-      <span style="display:flex; align-items:center; gap:6px; font-size:10px; color:rgba(255,255,255,0.5);"><span style="width:10px;height:10px;border-radius:3px;background:#1B5EC7;display:inline-block;"></span>Salesforce Data Cloud</span>
-      <span style="display:flex; align-items:center; gap:6px; font-size:10px; color:rgba(255,255,255,0.5);"><span style="width:10px;height:10px;border-radius:3px;background:#04E1CB;display:inline-block;"></span>Activation output</span>
+      <span style="display:flex; align-items:center; gap:6px; font-size:10px; color:#445;"><span style="width:10px;height:10px;border-radius:3px;background:#7B61FF;display:inline-block;"></span>Meiro CDP</span>
+      <span style="display:flex; align-items:center; gap:6px; font-size:10px; color:#445;"><span style="width:10px;height:10px;border-radius:3px;background:#0070D2;display:inline-block;"></span>Integration methods</span>
+      <span style="display:flex; align-items:center; gap:6px; font-size:10px; color:#445;"><span style="width:10px;height:10px;border-radius:3px;background:#1B5EC7;display:inline-block;"></span>Salesforce Data Cloud</span>
+      <span style="display:flex; align-items:center; gap:6px; font-size:10px; color:#445;"><span style="width:10px;height:10px;border-radius:3px;background:#00A693;display:inline-block;"></span>Activation output</span>
     </div>
     <div style="width:100%; max-width:960px; position:relative;">
       <svg viewBox="0 0 960 370" width="100%" height="auto" font-family="inherit" font-size="12">
         <defs>
           <marker id="arr" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
-            <polygon points="0 0,7 3.5,0 7" fill="#00B3FF" />
+            <polygon points="0 0,7 3.5,0 7" fill="#0070D2" />
           </marker>
           <marker id="arr-teal" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
-            <polygon points="0 0,7 3.5,0 7" fill="#04E1CB" />
+            <polygon points="0 0,7 3.5,0 7" fill="#00A693" />
+          </marker>
+          <marker id="arr-purple" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+            <polygon points="0 0,7 3.5,0 7" fill="#6B4FCC" />
           </marker>
         </defs>
 
-        <!-- ── LEFT: Meiro zone (purple) ── -->
-        <rect x="0" y="8" width="212" height="348" rx="10" fill="rgba(123,97,255,0.08)" stroke="rgba(123,97,255,0.35)" stroke-width="1.5" stroke-dasharray="5 3"/>
-        <text x="106" y="27" text-anchor="middle" fill="rgba(168,148,255,0.95)" font-size="10" font-weight="700" letter-spacing="1.2">MEIRO CDP</text>
+        <!-- ── LEFT: Meiro zone ── -->
+        <rect x="0" y="8" width="212" height="318" rx="10" fill="#F3F0FF" stroke="#7B61FF" stroke-width="1.5" stroke-dasharray="5 3"/>
+        <text x="106" y="27" text-anchor="middle" fill="#5B3FCC" font-size="10" font-weight="700" letter-spacing="1.2">MEIRO CDP</text>
 
-        <rect x="14" y="36" width="182" height="40" rx="7" fill="rgba(123,97,255,0.18)" stroke="rgba(123,97,255,0.4)" stroke-width="1"/>
-        <text x="105" y="54" text-anchor="middle" fill="#fff" font-size="11" font-weight="600">Unified Customer Profiles</text>
-        <text x="105" y="69" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="9">Identity graph · attributes · scores</text>
+        <rect x="14" y="36" width="182" height="40" rx="7" fill="#EBE6FF" stroke="#9B7FFF" stroke-width="1"/>
+        <text x="105" y="54" text-anchor="middle" fill="#2D1B7A" font-size="11" font-weight="600">Unified Customer Profiles</text>
+        <text x="105" y="69" text-anchor="middle" fill="#6B5BAB" font-size="9">Identity graph · attributes · scores</text>
 
-        <rect x="14" y="88" width="182" height="40" rx="7" fill="rgba(123,97,255,0.18)" stroke="rgba(123,97,255,0.4)" stroke-width="1"/>
-        <text x="105" y="106" text-anchor="middle" fill="#fff" font-size="11" font-weight="600">Behavioural Signals</text>
-        <text x="105" y="121" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="9">Browse · email · purchase events</text>
+        <rect x="14" y="88" width="182" height="40" rx="7" fill="#EBE6FF" stroke="#9B7FFF" stroke-width="1"/>
+        <text x="105" y="106" text-anchor="middle" fill="#2D1B7A" font-size="11" font-weight="600">Behavioural Signals</text>
+        <text x="105" y="121" text-anchor="middle" fill="#6B5BAB" font-size="9">Browse · email · purchase events</text>
 
-        <rect x="14" y="140" width="182" height="40" rx="7" fill="rgba(123,97,255,0.18)" stroke="rgba(123,97,255,0.4)" stroke-width="1"/>
-        <text x="105" y="158" text-anchor="middle" fill="#fff" font-size="11" font-weight="600">Segment Membership</text>
-        <text x="105" y="173" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="9">Audience lists · propensity scores</text>
+        <rect x="14" y="140" width="182" height="40" rx="7" fill="#EBE6FF" stroke="#9B7FFF" stroke-width="1"/>
+        <text x="105" y="158" text-anchor="middle" fill="#2D1B7A" font-size="11" font-weight="600">Segment Membership</text>
+        <text x="105" y="173" text-anchor="middle" fill="#6B5BAB" font-size="9">Audience lists · propensity scores</text>
 
-        <rect x="14" y="192" width="182" height="40" rx="7" fill="rgba(123,97,255,0.18)" stroke="rgba(123,97,255,0.4)" stroke-width="1"/>
-        <text x="105" y="210" text-anchor="middle" fill="#fff" font-size="11" font-weight="600">Product Depletion Windows</text>
-        <text x="105" y="225" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="9">SKU-level replenishment timing</text>
+        <rect x="14" y="192" width="182" height="40" rx="7" fill="#EBE6FF" stroke="#9B7FFF" stroke-width="1"/>
+        <text x="105" y="210" text-anchor="middle" fill="#2D1B7A" font-size="11" font-weight="600">Product Depletion Windows</text>
+        <text x="105" y="225" text-anchor="middle" fill="#6B5BAB" font-size="9">SKU-level replenishment timing</text>
 
-        <rect x="14" y="244" width="182" height="40" rx="7" fill="rgba(123,97,255,0.18)" stroke="rgba(123,97,255,0.4)" stroke-width="1"/>
-        <text x="105" y="262" text-anchor="middle" fill="#fff" font-size="11" font-weight="600">Transaction History</text>
-        <text x="105" y="277" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="9">Purchase records · basket data</text>
+        <rect x="14" y="244" width="182" height="40" rx="7" fill="#EBE6FF" stroke="#9B7FFF" stroke-width="1"/>
+        <text x="105" y="262" text-anchor="middle" fill="#2D1B7A" font-size="11" font-weight="600">Transaction History</text>
+        <text x="105" y="277" text-anchor="middle" fill="#6B5BAB" font-size="9">Purchase records · basket data</text>
 
         <!-- ── CENTRE: Connection method pills ── -->
-        <rect x="246" y="50" width="118" height="32" rx="16" fill="rgba(0,179,255,0.15)" stroke="#00B3FF" stroke-width="1.5"/>
-        <text x="305" y="63" text-anchor="middle" fill="#00B3FF" font-size="10" font-weight="700" letter-spacing="0.5">REST API</text>
-        <text x="305" y="76" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="8">Real-time stream</text>
+        <rect x="246" y="50" width="118" height="32" rx="16" fill="#E8F4FD" stroke="#0070D2" stroke-width="1.5"/>
+        <text x="305" y="63" text-anchor="middle" fill="#0070D2" font-size="10" font-weight="700" letter-spacing="0.5">REST API</text>
+        <text x="305" y="76" text-anchor="middle" fill="#445" font-size="8">Real-time stream</text>
 
-        <rect x="246" y="166" width="118" height="32" rx="16" fill="rgba(0,179,255,0.15)" stroke="#00B3FF" stroke-width="1.5"/>
-        <text x="305" y="179" text-anchor="middle" fill="#00B3FF" font-size="10" font-weight="700" letter-spacing="0.5">SFTP</text>
-        <text x="305" y="192" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="8">Scheduled batch</text>
+        <rect x="246" y="166" width="118" height="32" rx="16" fill="#E8F4FD" stroke="#0070D2" stroke-width="1.5"/>
+        <text x="305" y="179" text-anchor="middle" fill="#0070D2" font-size="10" font-weight="700" letter-spacing="0.5">SFTP</text>
+        <text x="305" y="192" text-anchor="middle" fill="#445" font-size="8">Scheduled batch</text>
 
-        <rect x="246" y="254" width="118" height="32" rx="16" fill="rgba(4,225,203,0.12)" stroke="#04E1CB" stroke-width="1.5"/>
-        <text x="305" y="267" text-anchor="middle" fill="#04E1CB" font-size="10" font-weight="700" letter-spacing="0.3">OOTB CONNECTORS</text>
-        <text x="305" y="280" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="8">Native schema map</text>
+        <rect x="246" y="254" width="118" height="32" rx="16" fill="#E6FAF8" stroke="#00A693" stroke-width="1.5"/>
+        <text x="305" y="267" text-anchor="middle" fill="#007A6C" font-size="10" font-weight="700" letter-spacing="0.3">OOTB CONNECTORS</text>
+        <text x="305" y="280" text-anchor="middle" fill="#445" font-size="8">Native schema map</text>
 
         <!-- Meiro → method arrows -->
-        <line x1="196" y1="56" x2="244" y2="66" stroke="#7B61FF" stroke-opacity="0.5" stroke-width="1.5" marker-end="url(#arr)"/>
-        <line x1="196" y1="108" x2="244" y2="74" stroke="#7B61FF" stroke-opacity="0.5" stroke-width="1.5" marker-end="url(#arr)"/>
-        <line x1="196" y1="160" x2="244" y2="176" stroke="#7B61FF" stroke-opacity="0.5" stroke-width="1.5" marker-end="url(#arr)"/>
-        <line x1="196" y1="212" x2="244" y2="182" stroke="#7B61FF" stroke-opacity="0.5" stroke-width="1.5" marker-end="url(#arr)"/>
-        <line x1="196" y1="264" x2="244" y2="270" stroke="#7B61FF" stroke-opacity="0.5" stroke-width="1.5" marker-end="url(#arr-teal)"/>
+        <line x1="196" y1="56" x2="244" y2="66" stroke="#6B4FCC" stroke-opacity="0.6" stroke-width="1.5" marker-end="url(#arr-purple)"/>
+        <line x1="196" y1="108" x2="244" y2="74" stroke="#6B4FCC" stroke-opacity="0.6" stroke-width="1.5" marker-end="url(#arr-purple)"/>
+        <line x1="196" y1="160" x2="244" y2="176" stroke="#6B4FCC" stroke-opacity="0.6" stroke-width="1.5" marker-end="url(#arr-purple)"/>
+        <line x1="196" y1="212" x2="244" y2="182" stroke="#6B4FCC" stroke-opacity="0.6" stroke-width="1.5" marker-end="url(#arr-purple)"/>
+        <line x1="196" y1="264" x2="244" y2="270" stroke="#6B4FCC" stroke-opacity="0.6" stroke-width="1.5" marker-end="url(#arr-teal)"/>
 
         <!-- method → DC arrows -->
-        <line x1="364" y1="66" x2="420" y2="120" stroke="#00B3FF" stroke-opacity="0.6" stroke-width="1.5" marker-end="url(#arr)"/>
-        <line x1="364" y1="182" x2="420" y2="150" stroke="#00B3FF" stroke-opacity="0.6" stroke-width="1.5" marker-end="url(#arr)"/>
-        <line x1="364" y1="270" x2="420" y2="182" stroke="#04E1CB" stroke-opacity="0.6" stroke-width="1.5" marker-end="url(#arr-teal)"/>
+        <line x1="364" y1="66" x2="420" y2="120" stroke="#0070D2" stroke-opacity="0.7" stroke-width="1.5" marker-end="url(#arr)"/>
+        <line x1="364" y1="182" x2="420" y2="150" stroke="#0070D2" stroke-opacity="0.7" stroke-width="1.5" marker-end="url(#arr)"/>
+        <line x1="364" y1="270" x2="420" y2="182" stroke="#00A693" stroke-opacity="0.7" stroke-width="1.5" marker-end="url(#arr-teal)"/>
 
-        <!-- ── RIGHT: Salesforce Data Cloud zone (navy/blue) ── -->
-        <rect x="408" y="8" width="548" height="348" rx="10" fill="rgba(27,94,199,0.1)" stroke="rgba(0,120,255,0.3)" stroke-width="1.5" stroke-dasharray="5 3"/>
-        <text x="682" y="27" text-anchor="middle" fill="rgba(100,170,255,0.95)" font-size="10" font-weight="700" letter-spacing="1.2">SALESFORCE DATA CLOUD</text>
+        <!-- ── RIGHT: Salesforce Data Cloud zone ── -->
+        <rect x="408" y="8" width="548" height="318" rx="10" fill="#EEF3FB" stroke="#1B5EC7" stroke-width="1.5" stroke-dasharray="5 3"/>
+        <text x="682" y="27" text-anchor="middle" fill="#0C2D72" font-size="10" font-weight="700" letter-spacing="1.2">SALESFORCE DATA CLOUD</text>
 
         <!-- Ingestion row -->
-        <rect x="422" y="36" width="156" height="76" rx="8" fill="rgba(27,94,199,0.3)" stroke="rgba(0,120,255,0.4)" stroke-width="1"/>
-        <text x="500" y="56" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">Data Streams</text>
-        <text x="500" y="72" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-size="9">Ingestion · schema map</text>
-        <text x="500" y="84" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-size="9">Data normalisation</text>
-        <text x="500" y="104" text-anchor="middle" fill="rgba(255,255,255,0.35)" font-size="8">← Meiro · Snowflake · POS</text>
+        <rect x="422" y="36" width="156" height="76" rx="8" fill="#D6E6F7" stroke="#1B5EC7" stroke-width="1"/>
+        <text x="500" y="56" text-anchor="middle" fill="#0C2D72" font-size="11" font-weight="700">Data Streams</text>
+        <text x="500" y="72" text-anchor="middle" fill="#2A5298" font-size="9">Ingestion · schema map</text>
+        <text x="500" y="84" text-anchor="middle" fill="#2A5298" font-size="9">Data normalisation</text>
+        <text x="500" y="104" text-anchor="middle" fill="#6B87C0" font-size="8">← Meiro · Snowflake · POS</text>
 
-        <rect x="592" y="36" width="156" height="76" rx="8" fill="rgba(27,94,199,0.3)" stroke="rgba(0,120,255,0.4)" stroke-width="1"/>
-        <text x="670" y="56" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">Identity Resolution</text>
-        <text x="670" y="72" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-size="9">Cross-source matching</text>
-        <text x="670" y="84" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-size="9">Meiro + Snowflake merge</text>
-        <text x="670" y="104" text-anchor="middle" fill="rgba(255,255,255,0.35)" font-size="8">One person · all signals</text>
+        <rect x="592" y="36" width="156" height="76" rx="8" fill="#D6E6F7" stroke="#1B5EC7" stroke-width="1"/>
+        <text x="670" y="56" text-anchor="middle" fill="#0C2D72" font-size="11" font-weight="700">Identity Resolution</text>
+        <text x="670" y="72" text-anchor="middle" fill="#2A5298" font-size="9">Cross-source matching</text>
+        <text x="670" y="84" text-anchor="middle" fill="#2A5298" font-size="9">Meiro + Snowflake merge</text>
+        <text x="670" y="104" text-anchor="middle" fill="#6B87C0" font-size="8">One person · all signals</text>
 
-        <rect x="762" y="36" width="180" height="76" rx="8" fill="rgba(27,94,199,0.3)" stroke="rgba(0,120,255,0.4)" stroke-width="1"/>
-        <text x="852" y="56" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">Calculated Insights</text>
-        <text x="852" y="72" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-size="9">Depletion window per SKU</text>
-        <text x="852" y="84" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-size="9">Einstein propensity scores</text>
-        <text x="852" y="104" text-anchor="middle" fill="rgba(255,255,255,0.35)" font-size="8">Lifetime value metrics</text>
+        <rect x="762" y="36" width="180" height="76" rx="8" fill="#D6E6F7" stroke="#1B5EC7" stroke-width="1"/>
+        <text x="852" y="56" text-anchor="middle" fill="#0C2D72" font-size="11" font-weight="700">Calculated Insights</text>
+        <text x="852" y="72" text-anchor="middle" fill="#2A5298" font-size="9">Depletion window per SKU</text>
+        <text x="852" y="84" text-anchor="middle" fill="#2A5298" font-size="9">Einstein propensity scores</text>
+        <text x="852" y="104" text-anchor="middle" fill="#6B87C0" font-size="8">Lifetime value metrics</text>
 
         <!-- Unified profile band -->
-        <rect x="500" y="130" width="324" height="44" rx="8" fill="rgba(0,120,255,0.35)" stroke="#00B3FF" stroke-width="2"/>
+        <rect x="500" y="130" width="324" height="44" rx="8" fill="#1B5EC7" stroke="#0C2D72" stroke-width="1.5"/>
         <text x="662" y="150" text-anchor="middle" fill="#fff" font-size="13" font-weight="700">UNIFIED CUSTOMER PROFILE</text>
-        <text x="662" y="167" text-anchor="middle" fill="rgba(255,255,255,0.6)" font-size="9">Single identity · all signals · real-time</text>
+        <text x="662" y="167" text-anchor="middle" fill="rgba(255,255,255,0.75)" font-size="9">Single identity · all signals · real-time</text>
 
         <!-- Output row -->
-        <rect x="422" y="196" width="156" height="62" rx="8" fill="rgba(27,94,199,0.25)" stroke="rgba(0,120,255,0.35)" stroke-width="1"/>
-        <text x="500" y="216" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">Segmentation</text>
-        <text x="500" y="232" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-size="9">AI-scored audiences</text>
-        <text x="500" y="248" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-size="9">Waterfall logic</text>
+        <rect x="422" y="196" width="156" height="62" rx="8" fill="#C8DBF4" stroke="#1B5EC7" stroke-width="1"/>
+        <text x="500" y="216" text-anchor="middle" fill="#0C2D72" font-size="11" font-weight="700">Segmentation</text>
+        <text x="500" y="232" text-anchor="middle" fill="#2A5298" font-size="9">AI-scored audiences</text>
+        <text x="500" y="248" text-anchor="middle" fill="#2A5298" font-size="9">Waterfall logic</text>
 
-        <rect x="592" y="196" width="156" height="62" rx="8" fill="rgba(27,94,199,0.25)" stroke="rgba(0,120,255,0.35)" stroke-width="1"/>
-        <text x="670" y="216" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">Data Graph</text>
-        <text x="670" y="232" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-size="9">Product recommendations</text>
-        <text x="670" y="248" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-size="9">Dynamic content + fallback</text>
+        <rect x="592" y="196" width="156" height="62" rx="8" fill="#C8DBF4" stroke="#1B5EC7" stroke-width="1"/>
+        <text x="670" y="216" text-anchor="middle" fill="#0C2D72" font-size="11" font-weight="700">Data Graph</text>
+        <text x="670" y="232" text-anchor="middle" fill="#2A5298" font-size="9">Product recommendations</text>
+        <text x="670" y="248" text-anchor="middle" fill="#2A5298" font-size="9">Dynamic content + fallback</text>
 
-        <rect x="762" y="196" width="180" height="62" rx="8" fill="rgba(4,225,203,0.12)" stroke="#04E1CB" stroke-width="1.5"/>
-        <text x="852" y="216" text-anchor="middle" fill="#04E1CB" font-size="11" font-weight="700">Activation</text>
-        <text x="852" y="232" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-size="9">Journey Builder triggers</text>
-        <text x="852" y="248" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-size="9">Email · SMS · Push · WhatsApp</text>
+        <rect x="762" y="196" width="180" height="62" rx="8" fill="#D9F5F2" stroke="#00A693" stroke-width="1.5"/>
+        <text x="852" y="216" text-anchor="middle" fill="#005C52" font-size="11" font-weight="700">Activation</text>
+        <text x="852" y="232" text-anchor="middle" fill="#007A6C" font-size="9">Journey Builder triggers</text>
+        <text x="852" y="248" text-anchor="middle" fill="#007A6C" font-size="9">Email · SMS · Push · WhatsApp</text>
 
         <!-- Internal DC arrows -->
-        <line x1="500" y1="112" x2="570" y2="130" stroke="#00B3FF" stroke-opacity="0.45" stroke-width="1.2" marker-end="url(#arr)"/>
-        <line x1="670" y1="112" x2="670" y2="130" stroke="#00B3FF" stroke-opacity="0.45" stroke-width="1.2" marker-end="url(#arr)"/>
-        <line x1="852" y1="112" x2="770" y2="130" stroke="#00B3FF" stroke-opacity="0.45" stroke-width="1.2" marker-end="url(#arr)"/>
-        <line x1="578" y1="174" x2="520" y2="196" stroke="#00B3FF" stroke-opacity="0.35" stroke-width="1.2" marker-end="url(#arr)"/>
-        <line x1="662" y1="174" x2="662" y2="196" stroke="#00B3FF" stroke-opacity="0.35" stroke-width="1.2" marker-end="url(#arr)"/>
-        <line x1="746" y1="174" x2="800" y2="196" stroke="#04E1CB" stroke-opacity="0.45" stroke-width="1.2" marker-end="url(#arr-teal)"/>
+        <line x1="500" y1="112" x2="570" y2="130" stroke="#0070D2" stroke-opacity="0.5" stroke-width="1.2" marker-end="url(#arr)"/>
+        <line x1="670" y1="112" x2="670" y2="130" stroke="#0070D2" stroke-opacity="0.5" stroke-width="1.2" marker-end="url(#arr)"/>
+        <line x1="852" y1="112" x2="770" y2="130" stroke="#0070D2" stroke-opacity="0.5" stroke-width="1.2" marker-end="url(#arr)"/>
+        <line x1="578" y1="174" x2="520" y2="196" stroke="#0070D2" stroke-opacity="0.4" stroke-width="1.2" marker-end="url(#arr)"/>
+        <line x1="662" y1="174" x2="662" y2="196" stroke="#0070D2" stroke-opacity="0.4" stroke-width="1.2" marker-end="url(#arr)"/>
+        <line x1="746" y1="174" x2="800" y2="196" stroke="#00A693" stroke-opacity="0.5" stroke-width="1.2" marker-end="url(#arr-teal)"/>
 
         <!-- Source boxes -->
-        <rect x="500" y="286" width="120" height="32" rx="6" fill="rgba(41,182,246,0.1)" stroke="rgba(41,182,246,0.4)" stroke-width="1"/>
-        <text x="560" y="300" text-anchor="middle" fill="rgba(41,182,246,0.9)" font-size="10" font-weight="700">SNOWFLAKE</text>
-        <text x="560" y="312" text-anchor="middle" fill="rgba(255,255,255,0.4)" font-size="8">Zero-copy connector</text>
+        <rect x="500" y="288" width="120" height="30" rx="6" fill="#E0F4FD" stroke="#1EB4E0" stroke-width="1"/>
+        <text x="560" y="302" text-anchor="middle" fill="#0A6887" font-size="10" font-weight="700">SNOWFLAKE</text>
+        <text x="560" y="313" text-anchor="middle" fill="#2A7A9A" font-size="8">Zero-copy connector</text>
 
-        <rect x="640" y="286" width="120" height="32" rx="6" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
-        <text x="700" y="300" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="10" font-weight="700">TRANSACTIONAL</text>
-        <text x="700" y="312" text-anchor="middle" fill="rgba(255,255,255,0.4)" font-size="8">POS · eComm · orders</text>
+        <rect x="640" y="288" width="120" height="30" rx="6" fill="#F0F0F0" stroke="#AAAAAA" stroke-width="1"/>
+        <text x="700" y="302" text-anchor="middle" fill="#333" font-size="10" font-weight="700">TRANSACTIONAL</text>
+        <text x="700" y="313" text-anchor="middle" fill="#666" font-size="8">POS · eComm · orders</text>
 
-        <line x1="560" y1="286" x2="510" y2="258" stroke="rgba(41,182,246,0.4)" stroke-width="1" marker-end="url(#arr)"/>
-        <line x1="700" y1="286" x2="640" y2="258" stroke="rgba(255,255,255,0.2)" stroke-width="1" marker-end="url(#arr)"/>
+        <line x1="560" y1="288" x2="510" y2="258" stroke="#1EB4E0" stroke-opacity="0.5" stroke-width="1" marker-end="url(#arr)"/>
+        <line x1="700" y1="288" x2="650" y2="258" stroke="#999" stroke-width="1" marker-end="url(#arr)"/>
       </svg>
     </div>
   </div>
@@ -862,138 +865,138 @@
   </div>
 
   <!-- ── SLIDE 9: ORAL-B JOURNEY ARCHITECTURE DIAGRAM ── -->
-  <div class="slide bg-dark" data-section="Journey Build">
+  <div class="slide bg-white" data-section="Journey Build">
     <p class="eyebrow">Oral-B replenishment — end-to-end architecture</p>
     <h2 class="section-title" style="margin-bottom: 16px; font-size: clamp(20px,2.2vw,30px);">One journey handles 20+ SKUs — here's how</h2>
     <div style="width:100%; max-width:960px;">
       <svg viewBox="0 0 960 370" width="100%" height="auto" font-family="inherit" font-size="12">
         <defs>
-          <marker id="ja" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><polygon points="0 0,7 3.5,0 7" fill="rgba(0,179,255,0.7)"/></marker>
-          <marker id="jg" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><polygon points="0 0,7 3.5,0 7" fill="rgba(4,225,203,0.7)"/></marker>
-          <marker id="jr" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><polygon points="0 0,7 3.5,0 7" fill="rgba(228,0,43,0.6)"/></marker>
+          <marker id="ja" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><polygon points="0 0,7 3.5,0 7" fill="#0070D2"/></marker>
+          <marker id="jg" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><polygon points="0 0,7 3.5,0 7" fill="#00A693"/></marker>
+          <marker id="jr" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><polygon points="0 0,7 3.5,0 7" fill="#C00020"/></marker>
         </defs>
 
         <!-- ── ROW 1: DATA LAYER ── -->
-        <text x="8" y="28" fill="rgba(255,255,255,0.35)" font-size="9" font-weight="700" letter-spacing="1.2">DATA LAYER — Salesforce Data Cloud</text>
-        <rect x="0" y="34" width="960" height="72" rx="8" fill="rgba(27,94,199,0.18)" stroke="rgba(0,120,255,0.25)" stroke-width="1"/>
+        <text x="8" y="28" fill="#6B87C0" font-size="9" font-weight="700" letter-spacing="1.2">DATA LAYER — Salesforce Data Cloud</text>
+        <rect x="0" y="34" width="960" height="72" rx="8" fill="#EEF3FB" stroke="#C0D4EE" stroke-width="1"/>
 
-        <rect x="10" y="44" width="172" height="52" rx="6" fill="rgba(27,94,199,0.45)" stroke="rgba(0,120,255,0.45)" stroke-width="1"/>
-        <text x="96" y="63" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">Calculated Insights</text>
-        <text x="96" y="77" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-size="9">Depletion window per SKU</text>
-        <text x="96" y="88" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-size="9">Einstein propensity score</text>
+        <rect x="10" y="44" width="172" height="52" rx="6" fill="#D6E6F7" stroke="#1B5EC7" stroke-width="1"/>
+        <text x="96" y="63" text-anchor="middle" fill="#0C2D72" font-size="11" font-weight="700">Calculated Insights</text>
+        <text x="96" y="77" text-anchor="middle" fill="#2A5298" font-size="9">Depletion window per SKU</text>
+        <text x="96" y="88" text-anchor="middle" fill="#2A5298" font-size="9">Einstein propensity score</text>
 
-        <rect x="196" y="44" width="172" height="52" rx="6" fill="rgba(27,94,199,0.45)" stroke="rgba(0,120,255,0.45)" stroke-width="1"/>
-        <text x="282" y="63" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">Segmentation</text>
-        <text x="282" y="77" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-size="9">Oral-B buyers + lapsed</text>
-        <text x="282" y="88" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-size="9">"Is In" — 20+ SKU list</text>
+        <rect x="196" y="44" width="172" height="52" rx="6" fill="#D6E6F7" stroke="#1B5EC7" stroke-width="1"/>
+        <text x="282" y="63" text-anchor="middle" fill="#0C2D72" font-size="11" font-weight="700">Segmentation</text>
+        <text x="282" y="77" text-anchor="middle" fill="#2A5298" font-size="9">Oral-B buyers + lapsed</text>
+        <text x="282" y="88" text-anchor="middle" fill="#2A5298" font-size="9">"Is In" — 20+ SKU list</text>
 
-        <rect x="382" y="44" width="172" height="52" rx="6" fill="rgba(27,94,199,0.45)" stroke="rgba(0,120,255,0.45)" stroke-width="1"/>
-        <text x="468" y="63" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">Data Graph</text>
-        <text x="468" y="77" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-size="9">Dynamic product insert</text>
-        <text x="468" y="88" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-size="9">Fallback on OOS</text>
+        <rect x="382" y="44" width="172" height="52" rx="6" fill="#D6E6F7" stroke="#1B5EC7" stroke-width="1"/>
+        <text x="468" y="63" text-anchor="middle" fill="#0C2D72" font-size="11" font-weight="700">Data Graph</text>
+        <text x="468" y="77" text-anchor="middle" fill="#2A5298" font-size="9">Dynamic product insert</text>
+        <text x="468" y="88" text-anchor="middle" fill="#2A5298" font-size="9">Fallback on OOS</text>
 
-        <rect x="568" y="44" width="172" height="52" rx="6" fill="rgba(27,94,199,0.45)" stroke="rgba(0,120,255,0.45)" stroke-width="1"/>
-        <text x="654" y="63" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">Unified Profile</text>
-        <text x="654" y="77" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-size="9">Last purchase date</text>
-        <text x="654" y="88" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-size="9">Channel preference</text>
+        <rect x="568" y="44" width="172" height="52" rx="6" fill="#D6E6F7" stroke="#1B5EC7" stroke-width="1"/>
+        <text x="654" y="63" text-anchor="middle" fill="#0C2D72" font-size="11" font-weight="700">Unified Profile</text>
+        <text x="654" y="77" text-anchor="middle" fill="#2A5298" font-size="9">Last purchase date</text>
+        <text x="654" y="88" text-anchor="middle" fill="#2A5298" font-size="9">Channel preference</text>
 
-        <rect x="754" y="44" width="198" height="52" rx="6" fill="rgba(27,94,199,0.45)" stroke="rgba(0,120,255,0.45)" stroke-width="1"/>
-        <text x="853" y="63" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">Einstein Metrics Guard</text>
-        <text x="853" y="77" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-size="9">Machine opens filtered</text>
-        <text x="853" y="88" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-size="9">Real engagement signals only</text>
+        <rect x="754" y="44" width="198" height="52" rx="6" fill="#D6E6F7" stroke="#1B5EC7" stroke-width="1"/>
+        <text x="853" y="63" text-anchor="middle" fill="#0C2D72" font-size="11" font-weight="700">Einstein Metrics Guard</text>
+        <text x="853" y="77" text-anchor="middle" fill="#2A5298" font-size="9">Machine opens filtered</text>
+        <text x="853" y="88" text-anchor="middle" fill="#2A5298" font-size="9">Real engagement only</text>
 
         <!-- ── ROW 2: JOURNEY BUILDER ── -->
-        <text x="8" y="124" fill="rgba(255,255,255,0.35)" font-size="9" font-weight="700" letter-spacing="1.2">JOURNEY BUILDER</text>
+        <text x="8" y="124" fill="#445" font-size="9" font-weight="700" letter-spacing="1.2">JOURNEY BUILDER</text>
 
-        <rect x="10" y="132" width="142" height="48" rx="6" fill="rgba(228,0,43,0.14)" stroke="#FF3352" stroke-width="1.5"/>
-        <text x="81" y="151" text-anchor="middle" fill="#FF3352" font-size="11" font-weight="700">ENTRY TRIGGER</text>
-        <text x="81" y="165" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-size="9">Depletion window fires</text>
-        <text x="81" y="175" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-size="9">→ customer enters journey</text>
+        <rect x="10" y="132" width="142" height="48" rx="6" fill="#FFF0F2" stroke="#C00020" stroke-width="1.5"/>
+        <text x="81" y="151" text-anchor="middle" fill="#C00020" font-size="11" font-weight="700">ENTRY TRIGGER</text>
+        <text x="81" y="165" text-anchor="middle" fill="#665" font-size="9">Depletion window fires</text>
+        <text x="81" y="175" text-anchor="middle" fill="#665" font-size="9">→ customer enters journey</text>
 
-        <rect x="172" y="132" width="140" height="48" rx="6" fill="rgba(27,94,199,0.35)" stroke="rgba(0,120,255,0.45)" stroke-width="1"/>
-        <text x="242" y="151" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">Email Send</text>
-        <text x="242" y="165" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-size="9">Dynamic SKU content block</text>
-        <text x="242" y="175" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-size="9">Personalised subject line</text>
+        <rect x="172" y="132" width="140" height="48" rx="6" fill="#D6E6F7" stroke="#1B5EC7" stroke-width="1"/>
+        <text x="242" y="151" text-anchor="middle" fill="#0C2D72" font-size="11" font-weight="700">Email Send</text>
+        <text x="242" y="165" text-anchor="middle" fill="#2A5298" font-size="9">Dynamic SKU content block</text>
+        <text x="242" y="175" text-anchor="middle" fill="#2A5298" font-size="9">Personalised subject line</text>
 
-        <rect x="332" y="132" width="148" height="48" rx="6" fill="rgba(0,179,255,0.12)" stroke="#00B3FF" stroke-width="1.5"/>
-        <text x="406" y="151" text-anchor="middle" fill="#00B3FF" font-size="11" font-weight="700">Wait + Decision</text>
-        <text x="406" y="165" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-size="9">3 days · clicked? converted?</text>
-        <text x="406" y="175" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-size="9">Branch: yes / no</text>
+        <rect x="332" y="132" width="148" height="48" rx="6" fill="#E8F4FD" stroke="#0070D2" stroke-width="1.5"/>
+        <text x="406" y="151" text-anchor="middle" fill="#004A99" font-size="11" font-weight="700">Wait + Decision</text>
+        <text x="406" y="165" text-anchor="middle" fill="#2A5298" font-size="9">3 days · clicked? converted?</text>
+        <text x="406" y="175" text-anchor="middle" fill="#2A5298" font-size="9">Branch: yes / no</text>
 
-        <rect x="500" y="132" width="140" height="48" rx="6" fill="rgba(27,94,199,0.35)" stroke="rgba(0,120,255,0.45)" stroke-width="1"/>
-        <text x="570" y="151" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">SMS / Push</text>
-        <text x="570" y="165" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-size="9">Channel escalation path</text>
-        <text x="570" y="175" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-size="9">Non-engaged only</text>
+        <rect x="500" y="132" width="140" height="48" rx="6" fill="#D6E6F7" stroke="#1B5EC7" stroke-width="1"/>
+        <text x="570" y="151" text-anchor="middle" fill="#0C2D72" font-size="11" font-weight="700">SMS / Push</text>
+        <text x="570" y="165" text-anchor="middle" fill="#2A5298" font-size="9">Channel escalation path</text>
+        <text x="570" y="175" text-anchor="middle" fill="#2A5298" font-size="9">Non-engaged only</text>
 
-        <rect x="660" y="132" width="148" height="48" rx="6" fill="rgba(4,225,203,0.12)" stroke="#04E1CB" stroke-width="1.5"/>
-        <text x="734" y="151" text-anchor="middle" fill="#04E1CB" font-size="11" font-weight="700">EXIT — Purchased</text>
-        <text x="734" y="165" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-size="9">Conversion event fires</text>
-        <text x="734" y="175" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-size="9">Removed from journey</text>
+        <rect x="660" y="132" width="148" height="48" rx="6" fill="#D9F5F2" stroke="#00A693" stroke-width="1.5"/>
+        <text x="734" y="151" text-anchor="middle" fill="#005C52" font-size="11" font-weight="700">EXIT — Purchased</text>
+        <text x="734" y="165" text-anchor="middle" fill="#007A6C" font-size="9">Conversion event fires</text>
+        <text x="734" y="175" text-anchor="middle" fill="#007A6C" font-size="9">Removed from journey</text>
 
-        <rect x="826" y="132" width="130" height="48" rx="6" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
-        <text x="891" y="151" text-anchor="middle" fill="rgba(255,255,255,0.6)" font-size="11" font-weight="700">Exit — Lapsed</text>
-        <text x="891" y="165" text-anchor="middle" fill="rgba(255,255,255,0.4)" font-size="9">No conversion 14 days</text>
-        <text x="891" y="175" text-anchor="middle" fill="rgba(255,255,255,0.4)" font-size="9">→ win-back journey</text>
+        <rect x="826" y="132" width="130" height="48" rx="6" fill="#F4F4F4" stroke="#CCCCCC" stroke-width="1"/>
+        <text x="891" y="151" text-anchor="middle" fill="#444" font-size="11" font-weight="700">Exit — Lapsed</text>
+        <text x="891" y="165" text-anchor="middle" fill="#666" font-size="9">No conversion 14 days</text>
+        <text x="891" y="175" text-anchor="middle" fill="#666" font-size="9">→ win-back journey</text>
 
         <!-- Journey step arrows (horizontal) -->
-        <line x1="152" y1="156" x2="170" y2="156" stroke="#00B3FF" stroke-opacity="0.7" stroke-width="1.5" marker-end="url(#ja)"/>
-        <line x1="312" y1="156" x2="330" y2="156" stroke="#00B3FF" stroke-opacity="0.7" stroke-width="1.5" marker-end="url(#ja)"/>
-        <line x1="480" y1="156" x2="498" y2="156" stroke="#00B3FF" stroke-opacity="0.7" stroke-width="1.5" marker-end="url(#ja)"/>
-        <line x1="640" y1="156" x2="658" y2="156" stroke="#04E1CB" stroke-opacity="0.7" stroke-width="1.5" marker-end="url(#jg)"/>
-        <line x1="808" y1="156" x2="824" y2="156" stroke="rgba(255,255,255,0.25)" stroke-width="1.5" marker-end="url(#ja)"/>
+        <line x1="152" y1="156" x2="170" y2="156" stroke="#0070D2" stroke-width="1.5" marker-end="url(#ja)"/>
+        <line x1="312" y1="156" x2="330" y2="156" stroke="#0070D2" stroke-width="1.5" marker-end="url(#ja)"/>
+        <line x1="480" y1="156" x2="498" y2="156" stroke="#0070D2" stroke-width="1.5" marker-end="url(#ja)"/>
+        <line x1="640" y1="156" x2="658" y2="156" stroke="#00A693" stroke-width="1.5" marker-end="url(#jg)"/>
+        <line x1="808" y1="156" x2="824" y2="156" stroke="#AAAAAA" stroke-width="1.5" marker-end="url(#ja)"/>
 
         <!-- Data layer → Journey dashed feeds -->
-        <line x1="96" y1="96" x2="81" y2="132" stroke="rgba(0,120,255,0.3)" stroke-width="1" stroke-dasharray="3 2" marker-end="url(#ja)"/>
-        <line x1="282" y1="96" x2="242" y2="132" stroke="rgba(0,120,255,0.3)" stroke-width="1" stroke-dasharray="3 2" marker-end="url(#ja)"/>
-        <line x1="468" y1="96" x2="406" y2="132" stroke="rgba(0,120,255,0.3)" stroke-width="1" stroke-dasharray="3 2" marker-end="url(#ja)"/>
-        <line x1="654" y1="96" x2="570" y2="132" stroke="rgba(0,120,255,0.3)" stroke-width="1" stroke-dasharray="3 2" marker-end="url(#ja)"/>
-        <line x1="853" y1="96" x2="734" y2="132" stroke="rgba(0,120,255,0.3)" stroke-width="1" stroke-dasharray="3 2" marker-end="url(#ja)"/>
+        <line x1="96" y1="96" x2="81" y2="132" stroke="#1B5EC7" stroke-opacity="0.35" stroke-width="1" stroke-dasharray="3 2" marker-end="url(#ja)"/>
+        <line x1="282" y1="96" x2="242" y2="132" stroke="#1B5EC7" stroke-opacity="0.35" stroke-width="1" stroke-dasharray="3 2" marker-end="url(#ja)"/>
+        <line x1="468" y1="96" x2="406" y2="132" stroke="#1B5EC7" stroke-opacity="0.35" stroke-width="1" stroke-dasharray="3 2" marker-end="url(#ja)"/>
+        <line x1="654" y1="96" x2="570" y2="132" stroke="#1B5EC7" stroke-opacity="0.35" stroke-width="1" stroke-dasharray="3 2" marker-end="url(#ja)"/>
+        <line x1="853" y1="96" x2="734" y2="132" stroke="#1B5EC7" stroke-opacity="0.35" stroke-width="1" stroke-dasharray="3 2" marker-end="url(#ja)"/>
 
         <!-- ── ROW 3: CHANNELS ── -->
-        <text x="8" y="202" fill="rgba(255,255,255,0.35)" font-size="9" font-weight="700" letter-spacing="1.2">CHANNELS</text>
+        <text x="8" y="202" fill="#445" font-size="9" font-weight="700" letter-spacing="1.2">CHANNELS</text>
 
-        <rect x="172" y="208" width="80" height="34" rx="6" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
-        <text x="212" y="224" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="10" font-weight="600">Email</text>
-        <text x="212" y="236" text-anchor="middle" fill="rgba(255,255,255,0.4)" font-size="8">SFMC</text>
+        <rect x="172" y="208" width="80" height="34" rx="6" fill="#F0F4FA" stroke="#C0D4EE" stroke-width="1"/>
+        <text x="212" y="224" text-anchor="middle" fill="#0C2D72" font-size="10" font-weight="600">Email</text>
+        <text x="212" y="236" text-anchor="middle" fill="#6B87C0" font-size="8">SFMC</text>
 
-        <rect x="262" y="208" width="80" height="34" rx="6" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
-        <text x="302" y="224" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="10" font-weight="600">SMS</text>
-        <text x="302" y="236" text-anchor="middle" fill="rgba(255,255,255,0.4)" font-size="8">MobileConnect</text>
+        <rect x="262" y="208" width="80" height="34" rx="6" fill="#F0F4FA" stroke="#C0D4EE" stroke-width="1"/>
+        <text x="302" y="224" text-anchor="middle" fill="#0C2D72" font-size="10" font-weight="600">SMS</text>
+        <text x="302" y="236" text-anchor="middle" fill="#6B87C0" font-size="8">MobileConnect</text>
 
-        <rect x="500" y="208" width="80" height="34" rx="6" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
-        <text x="540" y="224" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="10" font-weight="600">Push</text>
-        <text x="540" y="236" text-anchor="middle" fill="rgba(255,255,255,0.4)" font-size="8">MobilePush</text>
+        <rect x="500" y="208" width="80" height="34" rx="6" fill="#F0F4FA" stroke="#C0D4EE" stroke-width="1"/>
+        <text x="540" y="224" text-anchor="middle" fill="#0C2D72" font-size="10" font-weight="600">Push</text>
+        <text x="540" y="236" text-anchor="middle" fill="#6B87C0" font-size="8">MobilePush</text>
 
-        <rect x="592" y="208" width="80" height="34" rx="6" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
-        <text x="632" y="224" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="10" font-weight="600">WhatsApp</text>
-        <text x="632" y="236" text-anchor="middle" fill="rgba(255,255,255,0.4)" font-size="8">Two-way</text>
+        <rect x="592" y="208" width="80" height="34" rx="6" fill="#F0F4FA" stroke="#C0D4EE" stroke-width="1"/>
+        <text x="632" y="224" text-anchor="middle" fill="#0C2D72" font-size="10" font-weight="600">WhatsApp</text>
+        <text x="632" y="236" text-anchor="middle" fill="#6B87C0" font-size="8">Two-way</text>
 
-        <line x1="242" y1="180" x2="212" y2="208" stroke="rgba(0,120,255,0.3)" stroke-width="1" marker-end="url(#ja)"/>
-        <line x1="242" y1="180" x2="302" y2="208" stroke="rgba(0,120,255,0.3)" stroke-width="1" marker-end="url(#ja)"/>
-        <line x1="570" y1="180" x2="540" y2="208" stroke="rgba(0,120,255,0.3)" stroke-width="1" marker-end="url(#ja)"/>
-        <line x1="570" y1="180" x2="632" y2="208" stroke="rgba(0,120,255,0.3)" stroke-width="1" marker-end="url(#ja)"/>
+        <line x1="242" y1="180" x2="212" y2="208" stroke="#1B5EC7" stroke-opacity="0.4" stroke-width="1" marker-end="url(#ja)"/>
+        <line x1="242" y1="180" x2="302" y2="208" stroke="#1B5EC7" stroke-opacity="0.4" stroke-width="1" marker-end="url(#ja)"/>
+        <line x1="570" y1="180" x2="540" y2="208" stroke="#1B5EC7" stroke-opacity="0.4" stroke-width="1" marker-end="url(#ja)"/>
+        <line x1="570" y1="180" x2="632" y2="208" stroke="#1B5EC7" stroke-opacity="0.4" stroke-width="1" marker-end="url(#ja)"/>
 
         <!-- ── ROW 4: OUTCOMES ── -->
-        <text x="8" y="264" fill="rgba(255,255,255,0.35)" font-size="9" font-weight="700" letter-spacing="1.2">OUTCOMES</text>
+        <text x="8" y="264" fill="#445" font-size="9" font-weight="700" letter-spacing="1.2">OUTCOMES</text>
 
-        <rect x="90" y="270" width="220" height="52" rx="6" fill="rgba(4,225,203,0.1)" stroke="#04E1CB" stroke-width="1"/>
-        <text x="200" y="290" text-anchor="middle" fill="#04E1CB" font-size="11" font-weight="700">Purchase conversion</text>
-        <text x="200" y="305" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="9">Exit → cross-sell journey enters</text>
-        <text x="200" y="316" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="9">Attribution in Marketing Intelligence</text>
+        <rect x="90" y="270" width="220" height="52" rx="6" fill="#D9F5F2" stroke="#00A693" stroke-width="1"/>
+        <text x="200" y="290" text-anchor="middle" fill="#005C52" font-size="11" font-weight="700">Purchase conversion</text>
+        <text x="200" y="305" text-anchor="middle" fill="#007A6C" font-size="9">Exit → cross-sell journey enters</text>
+        <text x="200" y="316" text-anchor="middle" fill="#007A6C" font-size="9">Attribution in Marketing Intelligence</text>
 
-        <rect x="370" y="270" width="220" height="52" rx="6" fill="rgba(0,179,255,0.08)" stroke="rgba(0,179,255,0.35)" stroke-width="1"/>
-        <text x="480" y="290" text-anchor="middle" fill="#00B3FF" font-size="11" font-weight="700">Engagement signal</text>
-        <text x="480" y="305" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="9">Click updates Einstein profile score</text>
-        <text x="480" y="316" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="9">Machine opens filtered at source</text>
+        <rect x="370" y="270" width="220" height="52" rx="6" fill="#E8F4FD" stroke="#0070D2" stroke-width="1"/>
+        <text x="480" y="290" text-anchor="middle" fill="#004A99" font-size="11" font-weight="700">Engagement signal</text>
+        <text x="480" y="305" text-anchor="middle" fill="#2A5298" font-size="9">Click updates Einstein profile score</text>
+        <text x="480" y="316" text-anchor="middle" fill="#2A5298" font-size="9">Machine opens filtered at source</text>
 
-        <rect x="650" y="270" width="220" height="52" rx="6" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.14)" stroke-width="1"/>
-        <text x="760" y="290" text-anchor="middle" fill="rgba(255,255,255,0.65)" font-size="11" font-weight="700">No conversion</text>
-        <text x="760" y="305" text-anchor="middle" fill="rgba(255,255,255,0.4)" font-size="9">14-day lapse → win-back journey</text>
-        <text x="760" y="316" text-anchor="middle" fill="rgba(255,255,255,0.4)" font-size="9">Suppressed from replenishment</text>
+        <rect x="650" y="270" width="220" height="52" rx="6" fill="#F4F4F4" stroke="#CCCCCC" stroke-width="1"/>
+        <text x="760" y="290" text-anchor="middle" fill="#333" font-size="11" font-weight="700">No conversion</text>
+        <text x="760" y="305" text-anchor="middle" fill="#666" font-size="9">14-day lapse → win-back journey</text>
+        <text x="760" y="316" text-anchor="middle" fill="#666" font-size="9">Suppressed from replenishment</text>
 
-        <line x1="734" y1="180" x2="200" y2="270" stroke="rgba(4,225,203,0.35)" stroke-width="1" marker-end="url(#jg)"/>
-        <line x1="406" y1="180" x2="480" y2="270" stroke="rgba(0,120,255,0.3)" stroke-width="1" marker-end="url(#ja)"/>
-        <line x1="891" y1="180" x2="760" y2="270" stroke="rgba(255,255,255,0.18)" stroke-width="1" marker-end="url(#ja)"/>
+        <line x1="734" y1="180" x2="200" y2="270" stroke="#00A693" stroke-opacity="0.45" stroke-width="1" marker-end="url(#jg)"/>
+        <line x1="406" y1="180" x2="480" y2="270" stroke="#0070D2" stroke-opacity="0.4" stroke-width="1" marker-end="url(#ja)"/>
+        <line x1="891" y1="180" x2="760" y2="270" stroke="#AAAAAA" stroke-width="1" marker-end="url(#ja)"/>
       </svg>
     </div>
   </div>
