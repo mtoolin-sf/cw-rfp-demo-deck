@@ -533,63 +533,254 @@
     </div>
   </div>
 
-  <!-- ── SLIDE 3: SF ADVANTAGE ── -->
-  <div class="slide bg-dark" data-section="Platform Overview">
-    <p class="eyebrow">Salesforce advantage</p>
-    <h1 class="headline">One platform.<br><em>Every channel. Every moment.</em></h1>
-    <div class="card-row cols-3" style="max-width: 900px;">
-      <div class="card-item">
-        <p class="eyebrow">Data Foundation</p>
-        <p class="card-title">Data Cloud 360</p>
-        <p class="card-body">Unified customer profiles from every source — Meiro, Snowflake, transactional, behavioural. <strong>One identity. Real time.</strong></p>
+  <!-- ── SLIDE 3: SF PLATFORM ARCHITECTURE ── -->
+  <div class="slide bg-dark" data-section="Platform Overview" style="padding: 48px 72px;">
+    <p class="eyebrow">Platform architecture</p>
+    <h2 class="section-title" style="margin-bottom: 20px; font-size: clamp(22px,2.4vw,34px);">Built for the next generation of marketing</h2>
+    <div style="display:grid; grid-template-columns:1fr 180px; gap:24px; max-width:940px; width:100%;">
+      <!-- LEFT: three-tier bands -->
+      <div style="display:flex; flex-direction:column; gap:10px;">
+        <!-- Tier 1: Agentforce -->
+        <div style="background:rgba(0,25,80,0.7); border:1px solid rgba(0,120,255,0.3); border-radius:10px; padding:14px 18px;">
+          <p style="font-size:10px; font-weight:700; letter-spacing:0.12em; color:rgba(0,179,255,0.9); margin-bottom:10px; text-transform:uppercase;">Agentforce</p>
+          <div style="display:flex; gap:8px; flex-wrap:wrap;">
+            <span style="background:rgba(0,60,140,0.6); border:1px solid rgba(0,120,255,0.3); color:rgba(255,255,255,0.85); font-size:11px; padding:5px 12px; border-radius:16px; white-space:nowrap;">Campaign planning &amp; creation</span>
+            <span style="background:rgba(0,60,140,0.6); border:1px solid rgba(0,120,255,0.3); color:rgba(255,255,255,0.85); font-size:11px; padding:5px 12px; border-radius:16px; white-space:nowrap;">Autonomous personalisation</span>
+            <span style="background:rgba(0,60,140,0.6); border:1px solid rgba(0,120,255,0.3); color:rgba(255,255,255,0.85); font-size:11px; padding:5px 12px; border-radius:16px; white-space:nowrap;">Real-time recs &amp; offers</span>
+            <span style="background:rgba(0,60,140,0.6); border:1px solid rgba(0,120,255,0.3); color:rgba(255,255,255,0.85); font-size:11px; padding:5px 12px; border-radius:16px; white-space:nowrap;">Two-way conversations</span>
+            <span style="background:rgba(0,60,140,0.6); border:1px solid rgba(0,120,255,0.3); color:rgba(255,255,255,0.85); font-size:11px; padding:5px 12px; border-radius:16px; white-space:nowrap;">Self-optimising campaigns</span>
+          </div>
+        </div>
+        <!-- Tier 2: Agentforce Marketing -->
+        <div style="background:rgba(0,40,110,0.6); border:1px solid rgba(0,100,220,0.3); border-radius:10px; padding:14px 18px;">
+          <p style="font-size:10px; font-weight:700; letter-spacing:0.12em; color:rgba(100,160,255,0.9); margin-bottom:10px; text-transform:uppercase;">Agentforce Marketing</p>
+          <div style="display:flex; gap:8px; flex-wrap:wrap;">
+            <span style="background:rgba(0,50,130,0.55); border:1px solid rgba(0,100,200,0.3); color:rgba(255,255,255,0.85); font-size:11px; padding:5px 12px; border-radius:16px; white-space:nowrap;">Email</span>
+            <span style="background:rgba(0,50,130,0.55); border:1px solid rgba(0,100,200,0.3); color:rgba(255,255,255,0.85); font-size:11px; padding:5px 12px; border-radius:16px; white-space:nowrap;">SMS &amp; Push</span>
+            <span style="background:rgba(0,50,130,0.55); border:1px solid rgba(0,100,200,0.3); color:rgba(255,255,255,0.85); font-size:11px; padding:5px 12px; border-radius:16px; white-space:nowrap;">WhatsApp</span>
+            <span style="background:rgba(0,50,130,0.55); border:1px solid rgba(0,100,200,0.3); color:rgba(255,255,255,0.85); font-size:11px; padding:5px 12px; border-radius:16px; white-space:nowrap;">Web Push</span>
+            <span style="background:rgba(0,50,130,0.55); border:1px solid rgba(0,100,200,0.3); color:rgba(255,255,255,0.85); font-size:11px; padding:5px 12px; border-radius:16px; white-space:nowrap;">Journey orchestration</span>
+            <span style="background:rgba(0,50,130,0.55); border:1px solid rgba(0,100,200,0.3); color:rgba(255,255,255,0.85); font-size:11px; padding:5px 12px; border-radius:16px; white-space:nowrap;">Personalisation</span>
+            <span style="background:rgba(0,50,130,0.55); border:1px solid rgba(0,100,200,0.3); color:rgba(255,255,255,0.85); font-size:11px; padding:5px 12px; border-radius:16px; white-space:nowrap;">Marketing Intelligence</span>
+          </div>
+        </div>
+        <!-- Tier 3: Data 360 -->
+        <div style="background:rgba(0,55,130,0.45); border:1px solid rgba(0,90,200,0.3); border-radius:10px; padding:14px 18px;">
+          <p style="font-size:10px; font-weight:700; letter-spacing:0.12em; color:rgba(150,200,255,0.9); margin-bottom:10px; text-transform:uppercase;">Data Cloud 360</p>
+          <div style="display:flex; gap:8px; flex-wrap:wrap;">
+            <span style="background:rgba(0,60,130,0.45); border:1px solid rgba(0,90,180,0.3); color:rgba(255,255,255,0.75); font-size:11px; padding:5px 12px; border-radius:16px; white-space:nowrap;">Unified profiles</span>
+            <span style="background:rgba(0,60,130,0.45); border:1px solid rgba(0,90,180,0.3); color:rgba(255,255,255,0.75); font-size:11px; padding:5px 12px; border-radius:16px; white-space:nowrap;">Identity resolution</span>
+            <span style="background:rgba(0,60,130,0.45); border:1px solid rgba(0,90,180,0.3); color:rgba(255,255,255,0.75); font-size:11px; padding:5px 12px; border-radius:16px; white-space:nowrap;">Calculated Insights</span>
+            <span style="background:rgba(0,60,130,0.45); border:1px solid rgba(0,90,180,0.3); color:rgba(255,255,255,0.75); font-size:11px; padding:5px 12px; border-radius:16px; white-space:nowrap;">Real-time segments</span>
+            <span style="background:rgba(0,60,130,0.45); border:1px solid rgba(0,90,180,0.3); color:rgba(255,255,255,0.75); font-size:11px; padding:5px 12px; border-radius:16px; white-space:nowrap;">Data Graph</span>
+            <span style="background:rgba(0,60,130,0.45); border:1px solid rgba(0,90,180,0.3); color:rgba(255,255,255,0.75); font-size:11px; padding:5px 12px; border-radius:16px; white-space:nowrap;">Zero-copy (Snowflake)</span>
+            <span style="background:rgba(0,60,130,0.45); border:1px solid rgba(0,90,180,0.3); color:rgba(255,255,255,0.75); font-size:11px; padding:5px 12px; border-radius:16px; white-space:nowrap;">Meiro connector</span>
+          </div>
+        </div>
       </div>
-      <div class="card-item">
-        <p class="eyebrow">Activation</p>
-        <p class="card-title">Marketing Cloud Next</p>
-        <p class="card-body">Email, SMS, Push, WhatsApp, Web Push. Triggered journeys with <strong>AI-powered decisioning</strong> at every step.</p>
-      </div>
-      <div class="card-item">
-        <p class="eyebrow">Intelligence</p>
-        <p class="card-title">Marketing Intelligence</p>
-        <p class="card-body">Multi-touch attribution, campaign optimisation, and <strong>true engagement signals</strong> — machine opens filtered out.</p>
+      <!-- RIGHT: tier labels -->
+      <div style="display:flex; flex-direction:column; gap:10px;">
+        <div style="flex:1; display:flex; align-items:center;">
+          <div>
+            <p style="font-size:10px; color:rgba(255,255,255,0.35); font-weight:700; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:4px;">AI agents</p>
+            <p style="font-size:11px; color:rgba(255,255,255,0.5); line-height:1.4;">Any LLM</p>
+          </div>
+        </div>
+        <div style="flex:1; display:flex; align-items:center;">
+          <div>
+            <p style="font-size:10px; color:rgba(255,255,255,0.35); font-weight:700; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:4px;">Activation</p>
+            <p style="font-size:11px; color:rgba(255,255,255,0.5); line-height:1.4;">Any channel</p>
+          </div>
+        </div>
+        <div style="flex:1; display:flex; align-items:center;">
+          <div>
+            <p style="font-size:10px; color:rgba(255,255,255,0.35); font-weight:700; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:4px;">Data</p>
+            <p style="font-size:11px; color:rgba(255,255,255,0.5); line-height:1.4;">Any connector or app</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 
   <!-- ── SLIDE 4: MEIRO INTEGRATION ── -->
   <div class="slide bg-offwhite" data-section="Platform Overview">
-    <p class="eyebrow">Integration approach</p>
-    <h2 class="section-title">How Meiro connects to Salesforce</h2>
+    <p class="eyebrow">Integration approach — amplifying what you already have</p>
+    <h2 class="section-title">Meiro stays. Salesforce amplifies its value.</h2>
     <div class="two-col wide-left">
       <div>
+        <p style="font-size:14px; color:#445; line-height:1.6; margin-bottom:20px; max-width:520px;">CW's Meiro CDP is the source of truth for customer identity. Salesforce Data Cloud doesn't replace that — it reads from it, enriches it, and turns it into real-time activation across every channel.</p>
         <div class="card-row cols-3" style="margin-bottom: 0;">
           <div class="card-item">
             <p class="eyebrow">REST API</p>
-            <p class="card-title">Real-time events</p>
-            <p class="card-body">Behavioural signals and profile updates streamed directly into Data Cloud.</p>
+            <p class="card-title">Real-time event stream</p>
+            <p class="card-body">Behavioural signals and profile updates from Meiro streamed live into Data Cloud Data Streams.</p>
           </div>
           <div class="card-item">
             <p class="eyebrow">SFTP</p>
-            <p class="card-title">Batch data loads</p>
-            <p class="card-body">Scheduled file drops for transaction history, product catalogues, depletion windows.</p>
+            <p class="card-title">Scheduled batch sync</p>
+            <p class="card-body">Transaction history, product catalogues, and depletion window metadata loaded on cadence.</p>
           </div>
           <div class="card-item">
             <p class="eyebrow">OOTB Connectors</p>
-            <p class="card-title">Pre-built pipelines</p>
-            <p class="card-body">Native Data Cloud connectors for common CDP schemas — minimal custom development.</p>
+            <p class="card-title">Native CDP pipelines</p>
+            <p class="card-body">Pre-built Data Cloud connectors map common CDP schemas — no custom middleware needed.</p>
           </div>
         </div>
       </div>
       <div>
-        <p class="eyebrow" style="color: var(--sf-blue);">What Meiro sends</p>
+        <p class="eyebrow" style="color: var(--sf-blue);">What flows from Meiro into Data Cloud</p>
         <ul class="bullet-list" style="margin-top: 8px;">
-          <li>Unified customer identity &amp; attributes</li>
-          <li>Purchase history &amp; product SKUs</li>
-          <li>Browse and engagement behaviour</li>
-          <li>Segment membership &amp; scores</li>
-          <li>Depletion window metadata per product</li>
+          <li>Unified customer identity &amp; resolved attributes</li>
+          <li>Purchase history &amp; product SKU data</li>
+          <li>Browse behaviour &amp; engagement signals</li>
+          <li>Segment membership &amp; propensity scores</li>
+          <li>Depletion window metadata per product category</li>
         </ul>
+        <div style="margin-top:20px; padding:14px 16px; border-radius:10px; background:rgba(0,30,91,0.06); border:1px solid rgba(0,30,91,0.1);">
+          <p style="font-size:12px; color:var(--sf-blue); font-weight:700; margin-bottom:4px;">What Salesforce adds on top</p>
+          <p style="font-size:12px; color:#556; line-height:1.5;">Identity resolution across Meiro + Snowflake + transactional. Calculated Insights for depletion windows. Einstein scoring. Journey activation across Email, SMS, Push, WhatsApp.</p>
+        </div>
       </div>
+    </div>
+  </div>
+
+  <!-- ── SLIDE 4b: MEIRO INTEGRATION FLOW DIAGRAM ── -->
+  <div class="slide bg-dark" data-section="Platform Overview">
+    <p class="eyebrow">Data integration architecture</p>
+    <h2 class="section-title" style="margin-bottom: 20px;">Meiro amplifies what Salesforce activates</h2>
+    <div style="width:100%; max-width:960px; position:relative;">
+      <svg viewBox="0 0 960 420" width="100%" height="auto" font-family="inherit" font-size="12">
+        <defs>
+          <marker id="arr" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+            <polygon points="0 0, 7 3.5, 0 7" fill="rgba(0,179,255,0.7)" />
+          </marker>
+          <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+            <polygon points="0 0, 7 3.5, 0 7" fill="rgba(4,225,203,0.7)" />
+          </marker>
+        </defs>
+
+        <!-- ── LEFT: Meiro CDP domain ── -->
+        <rect x="0" y="10" width="210" height="390" rx="12" fill="rgba(0,120,200,0.1)" stroke="rgba(0,179,255,0.25)" stroke-width="1.5" stroke-dasharray="5 3"/>
+        <text x="105" y="32" text-anchor="middle" fill="rgba(0,179,255,0.9)" font-size="10" font-weight="700" letter-spacing="1">MEIRO CDP</text>
+
+        <!-- Meiro boxes -->
+        <rect x="18" y="44" width="174" height="38" rx="7" fill="rgba(0,179,255,0.12)" stroke="rgba(0,179,255,0.3)" stroke-width="1"/>
+        <text x="105" y="60" text-anchor="middle" fill="rgba(255,255,255,0.9)" font-size="11" font-weight="600">Unified Customer Profiles</text>
+        <text x="105" y="75" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="10">Identity graph · attributes · scores</text>
+
+        <rect x="18" y="96" width="174" height="38" rx="7" fill="rgba(0,179,255,0.12)" stroke="rgba(0,179,255,0.3)" stroke-width="1"/>
+        <text x="105" y="112" text-anchor="middle" fill="rgba(255,255,255,0.9)" font-size="11" font-weight="600">Behavioural Signals</text>
+        <text x="105" y="127" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="10">Browse · email · purchase events</text>
+
+        <rect x="18" y="148" width="174" height="38" rx="7" fill="rgba(0,179,255,0.12)" stroke="rgba(0,179,255,0.3)" stroke-width="1"/>
+        <text x="105" y="164" text-anchor="middle" fill="rgba(255,255,255,0.9)" font-size="11" font-weight="600">Segment Membership</text>
+        <text x="105" y="179" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="10">Audience lists · propensity scores</text>
+
+        <rect x="18" y="200" width="174" height="38" rx="7" fill="rgba(0,179,255,0.12)" stroke="rgba(0,179,255,0.3)" stroke-width="1"/>
+        <text x="105" y="216" text-anchor="middle" fill="rgba(255,255,255,0.9)" font-size="11" font-weight="600">Product Depletion Windows</text>
+        <text x="105" y="231" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="10">SKU-level replenishment timing</text>
+
+        <rect x="18" y="252" width="174" height="38" rx="7" fill="rgba(0,179,255,0.12)" stroke="rgba(0,179,255,0.3)" stroke-width="1"/>
+        <text x="105" y="268" text-anchor="middle" fill="rgba(255,255,255,0.9)" font-size="11" font-weight="600">Transaction History</text>
+        <text x="105" y="283" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="10">Purchase records · basket data</text>
+
+        <!-- ── CENTRE: Integration methods ── -->
+        <!-- REST API -->
+        <rect x="248" y="52" width="130" height="34" rx="17" fill="rgba(0,179,255,0.18)" stroke="rgba(0,179,255,0.5)" stroke-width="1.5"/>
+        <text x="313" y="66" text-anchor="middle" fill="rgba(0,179,255,1)" font-size="10" font-weight="700" letter-spacing="0.5">REST API</text>
+        <text x="313" y="79" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-size="9">Real-time streaming</text>
+
+        <!-- SFTP -->
+        <rect x="248" y="172" width="130" height="34" rx="17" fill="rgba(0,179,255,0.18)" stroke="rgba(0,179,255,0.5)" stroke-width="1.5"/>
+        <text x="313" y="186" text-anchor="middle" fill="rgba(0,179,255,1)" font-size="10" font-weight="700" letter-spacing="0.5">SFTP</text>
+        <text x="313" y="199" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-size="9">Scheduled batch loads</text>
+
+        <!-- OOTB Connectors -->
+        <rect x="248" y="264" width="130" height="34" rx="17" fill="rgba(4,225,203,0.15)" stroke="rgba(4,225,203,0.5)" stroke-width="1.5"/>
+        <text x="313" y="278" text-anchor="middle" fill="rgba(4,225,203,1)" font-size="10" font-weight="700" letter-spacing="0.5">OOTB CONNECTORS</text>
+        <text x="313" y="291" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-size="9">Native CDP schema mapping</text>
+
+        <!-- Arrows: Meiro → connectors -->
+        <line x1="192" y1="63" x2="246" y2="69" stroke="rgba(0,179,255,0.5)" stroke-width="1.5" marker-end="url(#arr)"/>
+        <line x1="192" y1="115" x2="246" y2="82" stroke="rgba(0,179,255,0.5)" stroke-width="1.5" marker-end="url(#arr)"/>
+        <line x1="192" y1="167" x2="246" y2="180" stroke="rgba(0,179,255,0.5)" stroke-width="1.5" marker-end="url(#arr)"/>
+        <line x1="192" y1="219" x2="246" y2="186" stroke="rgba(0,179,255,0.5)" stroke-width="1.5" marker-end="url(#arr)"/>
+        <line x1="192" y1="271" x2="246" y2="278" stroke="rgba(4,225,203,0.5)" stroke-width="1.5" marker-end="url(#arr-green)"/>
+
+        <!-- Arrows: connectors → Data Cloud -->
+        <line x1="378" y1="69" x2="440" y2="130" stroke="rgba(0,179,255,0.5)" stroke-width="1.5" marker-end="url(#arr)"/>
+        <line x1="378" y1="189" x2="440" y2="160" stroke="rgba(0,179,255,0.5)" stroke-width="1.5" marker-end="url(#arr)"/>
+        <line x1="378" y1="281" x2="440" y2="190" stroke="rgba(4,225,203,0.5)" stroke-width="1.5" marker-end="url(#arr-green)"/>
+
+        <!-- ── RIGHT: Salesforce Data Cloud domain ── -->
+        <rect x="430" y="10" width="520" height="390" rx="12" fill="rgba(0,30,91,0.3)" stroke="rgba(0,120,255,0.25)" stroke-width="1.5" stroke-dasharray="5 3"/>
+        <text x="690" y="32" text-anchor="middle" fill="rgba(100,160,255,0.9)" font-size="10" font-weight="700" letter-spacing="1">SALESFORCE DATA CLOUD</text>
+
+        <!-- Data Streams -->
+        <rect x="448" y="44" width="148" height="80" rx="8" fill="rgba(0,60,140,0.4)" stroke="rgba(0,120,255,0.3)" stroke-width="1"/>
+        <text x="522" y="62" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="11" font-weight="700">Data Streams</text>
+        <text x="522" y="78" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="9">Ingestion layer</text>
+        <text x="522" y="91" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="9">Schema mapping</text>
+        <text x="522" y="104" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="9">Data normalisation</text>
+
+        <!-- Identity Resolution -->
+        <rect x="614" y="44" width="148" height="80" rx="8" fill="rgba(0,60,140,0.4)" stroke="rgba(0,120,255,0.3)" stroke-width="1"/>
+        <text x="688" y="62" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="11" font-weight="700">Identity Resolution</text>
+        <text x="688" y="78" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="9">Cross-source matching</text>
+        <text x="688" y="91" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="9">Meiro + Snowflake</text>
+        <text x="688" y="104" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="9">+ transactional merge</text>
+
+        <!-- Calculated Insights -->
+        <rect x="780" y="44" width="148" height="80" rx="8" fill="rgba(0,60,140,0.4)" stroke="rgba(0,120,255,0.3)" stroke-width="1"/>
+        <text x="854" y="62" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="11" font-weight="700">Calculated Insights</text>
+        <text x="854" y="78" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="9">Depletion window logic</text>
+        <text x="854" y="91" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="9">Propensity scores</text>
+        <text x="854" y="104" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="9">Lifetime value metrics</text>
+
+        <!-- Unified Profile (centre of DC) -->
+        <rect x="530" y="150" width="280" height="50" rx="8" fill="rgba(0,100,210,0.5)" stroke="rgba(0,179,255,0.6)" stroke-width="2"/>
+        <text x="670" y="172" text-anchor="middle" fill="#fff" font-size="13" font-weight="700">UNIFIED CUSTOMER PROFILE</text>
+        <text x="670" y="189" text-anchor="middle" fill="rgba(255,255,255,0.6)" font-size="10">Single identity · all signals · real-time</text>
+
+        <!-- Segmentation -->
+        <rect x="448" y="228" width="148" height="60" rx="8" fill="rgba(0,60,140,0.4)" stroke="rgba(0,120,255,0.3)" stroke-width="1"/>
+        <text x="522" y="248" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="11" font-weight="700">Segmentation</text>
+        <text x="522" y="264" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="9">AI-scored audiences</text>
+        <text x="522" y="277" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="9">Waterfall logic</text>
+
+        <!-- Data Graph -->
+        <rect x="614" y="228" width="148" height="60" rx="8" fill="rgba(0,60,140,0.4)" stroke="rgba(0,120,255,0.3)" stroke-width="1"/>
+        <text x="688" y="248" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="11" font-weight="700">Data Graph</text>
+        <text x="688" y="264" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="9">Product recommendations</text>
+        <text x="688" y="277" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="9">Dynamic content · fallback</text>
+
+        <!-- Activation output -->
+        <rect x="780" y="228" width="148" height="60" rx="8" fill="rgba(4,225,203,0.12)" stroke="rgba(4,225,203,0.4)" stroke-width="1"/>
+        <text x="854" y="248" text-anchor="middle" fill="rgba(4,225,203,0.9)" font-size="11" font-weight="700">Activation</text>
+        <text x="854" y="264" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="9">Journey Builder triggers</text>
+        <text x="854" y="277" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="9">Email · SMS · Push · WhatsApp</text>
+
+        <!-- Internal DC arrows -->
+        <line x1="522" y1="124" x2="600" y2="150" stroke="rgba(0,120,255,0.4)" stroke-width="1.5" marker-end="url(#arr)"/>
+        <line x1="688" y1="124" x2="688" y2="150" stroke="rgba(0,120,255,0.4)" stroke-width="1.5" marker-end="url(#arr)"/>
+        <line x1="854" y1="124" x2="740" y2="150" stroke="rgba(0,120,255,0.4)" stroke-width="1.5" marker-end="url(#arr)"/>
+        <line x1="600" y1="196" x2="538" y2="228" stroke="rgba(0,120,255,0.4)" stroke-width="1.5" marker-end="url(#arr)"/>
+        <line x1="690" y1="200" x2="690" y2="228" stroke="rgba(0,120,255,0.4)" stroke-width="1.5" marker-end="url(#arr)"/>
+        <line x1="740" y1="196" x2="818" y2="228" stroke="rgba(4,225,203,0.4)" stroke-width="1.5" marker-end="url(#arr-green)"/>
+
+        <!-- Snowflake source (bottom of DC) -->
+        <rect x="530" y="320" width="130" height="34" rx="7" fill="rgba(41,182,246,0.12)" stroke="rgba(41,182,246,0.4)" stroke-width="1"/>
+        <text x="595" y="335" text-anchor="middle" fill="rgba(41,182,246,0.9)" font-size="10" font-weight="700">SNOWFLAKE</text>
+        <text x="595" y="348" text-anchor="middle" fill="rgba(255,255,255,0.45)" font-size="9">Zero-copy connector</text>
+
+        <!-- Transactional source -->
+        <rect x="680" y="320" width="130" height="34" rx="7" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+        <text x="745" y="335" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="10" font-weight="700">TRANSACTIONAL</text>
+        <text x="745" y="348" text-anchor="middle" fill="rgba(255,255,255,0.45)" font-size="9">POS · eComm · orders</text>
+
+        <line x1="595" y1="320" x2="595" y2="306" stroke="rgba(41,182,246,0.4)" stroke-width="1.5" marker-end="url(#arr)"/>
+        <line x1="745" y1="320" x2="690" y2="306" stroke="rgba(255,255,255,0.25)" stroke-width="1.5" marker-end="url(#arr)"/>
+      </svg>
     </div>
   </div>
 
@@ -672,45 +863,148 @@
     </div>
   </div>
 
-  <!-- ── SLIDE 9: JOURNEY FLOW DIAGRAM ── -->
+  <!-- ── SLIDE 9: ORAL-B JOURNEY ARCHITECTURE DIAGRAM ── -->
   <div class="slide bg-dark" data-section="Journey Build">
-    <p class="eyebrow">Oral-B replenishment — journey architecture</p>
-    <h2 class="section-title" style="margin-bottom: 28px;">How the journey runs end-to-end</h2>
-    <div class="journey-flow">
-      <div class="flow-step">
-        <div class="step-icon">🎯</div>
-        <div class="step-label">Entry trigger</div>
-        <div class="step-desc">Purchase date + depletion window<br>20+ SKUs via "Is In" operator</div>
-      </div>
-      <div class="flow-arrow">→</div>
-      <div class="flow-step">
-        <div class="step-icon">📧</div>
-        <div class="step-label">Email</div>
-        <div class="step-desc">Dynamic SKU insert<br>Personalised + fallback</div>
-      </div>
-      <div class="flow-arrow">→</div>
-      <div class="flow-step" style="border-color: rgba(0,179,255,0.3); background: rgba(0,179,255,0.08);">
-        <div class="step-icon">⚡</div>
-        <div class="step-label">Decision split</div>
-        <div class="step-desc">Engagement click<br>or conversion event</div>
-      </div>
-      <div class="flow-arrow">→</div>
-      <div class="flow-step">
-        <div class="step-icon">💬</div>
-        <div class="step-label">SMS / Push</div>
-        <div class="step-desc">Non-engaged path<br>channel escalation</div>
-      </div>
-      <div class="flow-arrow">→</div>
-      <div class="flow-step" style="border-color: rgba(4,225,203,0.3); background: rgba(4,225,203,0.08);">
-        <div class="step-icon">✅</div>
-        <div class="step-label">Exit on purchase</div>
-        <div class="step-desc">Activates cross-sell<br>journey via Data Cloud</div>
-      </div>
-    </div>
-    <div style="margin-top: 28px; display: flex; gap: 10px; flex-wrap: wrap;">
-      <span class="chip chip-blue">Calculated Insight — depletion per SKU</span>
-      <span class="chip chip-green">Data Graph — personalisation + fallback</span>
-      <span class="chip chip-white">Debug Mode — channel sequencing preview</span>
+    <p class="eyebrow">Oral-B replenishment — end-to-end architecture</p>
+    <h2 class="section-title" style="margin-bottom: 16px; font-size: clamp(20px,2.2vw,30px);">One journey handles 20+ SKUs — here's how</h2>
+    <div style="width:100%; max-width:960px;">
+      <svg viewBox="0 0 960 370" width="100%" height="auto" font-family="inherit" font-size="12">
+        <defs>
+          <marker id="ja" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><polygon points="0 0,7 3.5,0 7" fill="rgba(0,179,255,0.7)"/></marker>
+          <marker id="jg" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><polygon points="0 0,7 3.5,0 7" fill="rgba(4,225,203,0.7)"/></marker>
+          <marker id="jr" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><polygon points="0 0,7 3.5,0 7" fill="rgba(228,0,43,0.6)"/></marker>
+        </defs>
+
+        <!-- ── ROW 1: DATA LAYER label ── -->
+        <text x="8" y="30" fill="rgba(255,255,255,0.3)" font-size="9" font-weight="700" letter-spacing="1">DATA LAYER</text>
+        <!-- Data Cloud band -->
+        <rect x="0" y="36" width="960" height="76" rx="8" fill="rgba(0,40,120,0.35)" stroke="rgba(0,120,255,0.25)" stroke-width="1"/>
+
+        <!-- Data Cloud components -->
+        <rect x="12" y="46" width="150" height="56" rx="6" fill="rgba(0,60,150,0.5)" stroke="rgba(0,120,255,0.35)" stroke-width="1"/>
+        <text x="87" y="66" text-anchor="middle" fill="rgba(255,255,255,0.9)" font-size="11" font-weight="700">Calculated Insights</text>
+        <text x="87" y="81" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="9">Depletion window per SKU</text>
+        <text x="87" y="93" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="9">Einstein propensity score</text>
+
+        <rect x="180" y="46" width="150" height="56" rx="6" fill="rgba(0,60,150,0.5)" stroke="rgba(0,120,255,0.35)" stroke-width="1"/>
+        <text x="255" y="66" text-anchor="middle" fill="rgba(255,255,255,0.9)" font-size="11" font-weight="700">Segmentation</text>
+        <text x="255" y="81" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="9">Oral-B buyers + lapsed</text>
+        <text x="255" y="93" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="9">"Is In" 20+ SKU list</text>
+
+        <rect x="348" y="46" width="150" height="56" rx="6" fill="rgba(0,60,150,0.5)" stroke="rgba(0,120,255,0.35)" stroke-width="1"/>
+        <text x="423" y="66" text-anchor="middle" fill="rgba(255,255,255,0.9)" font-size="11" font-weight="700">Data Graph</text>
+        <text x="423" y="81" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="9">Dynamic product insert</text>
+        <text x="423" y="93" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="9">Fallback logic on OOS</text>
+
+        <rect x="516" y="46" width="150" height="56" rx="6" fill="rgba(0,60,150,0.5)" stroke="rgba(0,120,255,0.35)" stroke-width="1"/>
+        <text x="591" y="66" text-anchor="middle" fill="rgba(255,255,255,0.9)" font-size="11" font-weight="700">Unified Profile</text>
+        <text x="591" y="81" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="9">Last purchase date</text>
+        <text x="591" y="93" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="9">Channel preference</text>
+
+        <rect x="684" y="46" width="150" height="56" rx="6" fill="rgba(0,60,150,0.5)" stroke="rgba(0,120,255,0.35)" stroke-width="1"/>
+        <text x="759" y="66" text-anchor="middle" fill="rgba(255,255,255,0.9)" font-size="11" font-weight="700">Einstein Metrics Guard</text>
+        <text x="759" y="81" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="9">Machine opens filtered</text>
+        <text x="759" y="93" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="9">Real engagement only</text>
+
+        <!-- ── ROW 2: JOURNEY BUILDER label ── -->
+        <text x="8" y="132" fill="rgba(255,255,255,0.3)" font-size="9" font-weight="700" letter-spacing="1">JOURNEY BUILDER</text>
+
+        <!-- Entry trigger -->
+        <rect x="12" y="140" width="130" height="50" rx="6" fill="rgba(228,0,43,0.15)" stroke="rgba(228,0,43,0.45)" stroke-width="1.5"/>
+        <text x="77" y="159" text-anchor="middle" fill="#FF3352" font-size="11" font-weight="700">ENTRY TRIGGER</text>
+        <text x="77" y="174" text-anchor="middle" fill="rgba(255,255,255,0.6)" font-size="9">Depletion window fires</text>
+        <text x="77" y="184" text-anchor="middle" fill="rgba(255,255,255,0.6)" font-size="9">→ enters journey</text>
+
+        <!-- Email send -->
+        <rect x="175" y="140" width="120" height="50" rx="6" fill="rgba(0,60,150,0.4)" stroke="rgba(0,120,255,0.35)" stroke-width="1"/>
+        <text x="235" y="159" text-anchor="middle" fill="rgba(255,255,255,0.9)" font-size="11" font-weight="700">Email Send</text>
+        <text x="235" y="174" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="9">Dynamic SKU content</text>
+        <text x="235" y="184" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="9">Personalised subject line</text>
+
+        <!-- Wait + Decision -->
+        <rect x="328" y="140" width="130" height="50" rx="6" fill="rgba(0,179,255,0.12)" stroke="rgba(0,179,255,0.4)" stroke-width="1.5"/>
+        <text x="393" y="159" text-anchor="middle" fill="rgba(0,179,255,0.9)" font-size="11" font-weight="700">Wait + Decision</text>
+        <text x="393" y="174" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="9">3 days · clicked?</text>
+        <text x="393" y="184" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="9">Converted?</text>
+
+        <!-- SMS / Push -->
+        <rect x="491" y="140" width="120" height="50" rx="6" fill="rgba(0,60,150,0.4)" stroke="rgba(0,120,255,0.35)" stroke-width="1"/>
+        <text x="551" y="159" text-anchor="middle" fill="rgba(255,255,255,0.9)" font-size="11" font-weight="700">SMS / Push</text>
+        <text x="551" y="174" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="9">Channel escalation</text>
+        <text x="551" y="184" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="9">Non-engaged path</text>
+
+        <!-- Exit: purchase -->
+        <rect x="644" y="140" width="130" height="50" rx="6" fill="rgba(4,225,203,0.12)" stroke="rgba(4,225,203,0.45)" stroke-width="1.5"/>
+        <text x="709" y="159" text-anchor="middle" fill="rgba(4,225,203,0.9)" font-size="11" font-weight="700">EXIT — Purchased</text>
+        <text x="709" y="174" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="9">Conversion event fires</text>
+        <text x="709" y="184" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="9">Removed from journey</text>
+
+        <!-- Exit: lapsed -->
+        <rect x="807" y="140" width="130" height="50" rx="6" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
+        <text x="872" y="159" text-anchor="middle" fill="rgba(255,255,255,0.6)" font-size="11" font-weight="700">Exit — Lapsed</text>
+        <text x="872" y="174" text-anchor="middle" fill="rgba(255,255,255,0.4)" font-size="9">No conversion after</text>
+        <text x="872" y="184" text-anchor="middle" fill="rgba(255,255,255,0.4)" font-size="9">14 days → wins-back</text>
+
+        <!-- Journey arrows -->
+        <line x1="142" y1="165" x2="173" y2="165" stroke="rgba(0,179,255,0.6)" stroke-width="1.5" marker-end="url(#ja)"/>
+        <line x1="295" y1="165" x2="326" y2="165" stroke="rgba(0,179,255,0.6)" stroke-width="1.5" marker-end="url(#ja)"/>
+        <line x1="458" y1="165" x2="489" y2="165" stroke="rgba(0,179,255,0.6)" stroke-width="1.5" marker-end="url(#ja)"/>
+        <line x1="611" y1="165" x2="642" y2="165" stroke="rgba(4,225,203,0.6)" stroke-width="1.5" marker-end="url(#jg)"/>
+        <line x1="774" y1="165" x2="805" y2="165" stroke="rgba(255,255,255,0.25)" stroke-width="1.5" marker-end="url(#ja)"/>
+
+        <!-- Data layer to journey arrows -->
+        <line x1="87" y1="102" x2="77" y2="140" stroke="rgba(0,120,255,0.35)" stroke-width="1" stroke-dasharray="3 2" marker-end="url(#ja)"/>
+        <line x1="255" y1="102" x2="235" y2="140" stroke="rgba(0,120,255,0.35)" stroke-width="1" stroke-dasharray="3 2" marker-end="url(#ja)"/>
+        <line x1="423" y1="102" x2="393" y2="140" stroke="rgba(0,120,255,0.35)" stroke-width="1" stroke-dasharray="3 2" marker-end="url(#ja)"/>
+        <line x1="591" y1="102" x2="551" y2="140" stroke="rgba(0,120,255,0.35)" stroke-width="1" stroke-dasharray="3 2" marker-end="url(#ja)"/>
+        <line x1="759" y1="102" x2="709" y2="140" stroke="rgba(0,120,255,0.35)" stroke-width="1" stroke-dasharray="3 2" marker-end="url(#ja)"/>
+
+        <!-- ── ROW 3: CHANNELS ── -->
+        <text x="8" y="212" fill="rgba(255,255,255,0.3)" font-size="9" font-weight="700" letter-spacing="1">CHANNELS</text>
+
+        <rect x="175" y="218" width="76" height="36" rx="6" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+        <text x="213" y="234" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="10" font-weight="600">Email</text>
+        <text x="213" y="247" text-anchor="middle" fill="rgba(255,255,255,0.4)" font-size="8">SFMC send</text>
+
+        <rect x="261" y="218" width="76" height="36" rx="6" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+        <text x="299" y="234" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="10" font-weight="600">SMS</text>
+        <text x="299" y="247" text-anchor="middle" fill="rgba(255,255,255,0.4)" font-size="8">MobileConnect</text>
+
+        <rect x="491" y="218" width="76" height="36" rx="6" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+        <text x="529" y="234" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="10" font-weight="600">Push</text>
+        <text x="529" y="247" text-anchor="middle" fill="rgba(255,255,255,0.4)" font-size="8">MobilePush</text>
+
+        <rect x="577" y="218" width="76" height="36" rx="6" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+        <text x="615" y="234" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="10" font-weight="600">WhatsApp</text>
+        <text x="615" y="247" text-anchor="middle" fill="rgba(255,255,255,0.4)" font-size="8">Two-way</text>
+
+        <line x1="235" y1="190" x2="213" y2="218" stroke="rgba(0,120,255,0.3)" stroke-width="1" marker-end="url(#ja)"/>
+        <line x1="235" y1="190" x2="299" y2="218" stroke="rgba(0,120,255,0.3)" stroke-width="1" marker-end="url(#ja)"/>
+        <line x1="551" y1="190" x2="529" y2="218" stroke="rgba(0,120,255,0.3)" stroke-width="1" marker-end="url(#ja)"/>
+        <line x1="551" y1="190" x2="615" y2="218" stroke="rgba(0,120,255,0.3)" stroke-width="1" marker-end="url(#ja)"/>
+
+        <!-- ── ROW 4: OUTCOMES ── -->
+        <text x="8" y="276" fill="rgba(255,255,255,0.3)" font-size="9" font-weight="700" letter-spacing="1">OUTCOMES</text>
+
+        <rect x="100" y="282" width="200" height="50" rx="6" fill="rgba(4,225,203,0.1)" stroke="rgba(4,225,203,0.3)" stroke-width="1"/>
+        <text x="200" y="302" text-anchor="middle" fill="rgba(4,225,203,0.9)" font-size="11" font-weight="700">Purchase conversion</text>
+        <text x="200" y="317" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="9">Event fires → exit journey → cross-sell enters</text>
+        <text x="200" y="327" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="9">Attribution captured in Marketing Intelligence</text>
+
+        <rect x="380" y="282" width="200" height="50" rx="6" fill="rgba(0,179,255,0.1)" stroke="rgba(0,179,255,0.3)" stroke-width="1"/>
+        <text x="480" y="302" text-anchor="middle" fill="rgba(0,179,255,0.9)" font-size="11" font-weight="700">Engagement signal</text>
+        <text x="480" y="317" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="9">Click → Einstein scoring updates profile</text>
+        <text x="480" y="327" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="9">Machine opens filtered at source</text>
+
+        <rect x="660" y="282" width="200" height="50" rx="6" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+        <text x="760" y="302" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="11" font-weight="700">No conversion</text>
+        <text x="760" y="317" text-anchor="middle" fill="rgba(255,255,255,0.4)" font-size="9">14-day lapse → win-back journey</text>
+        <text x="760" y="327" text-anchor="middle" fill="rgba(255,255,255,0.4)" font-size="9">Suppression from future replenishment</text>
+
+        <line x1="709" y1="190" x2="200" y2="282" stroke="rgba(4,225,203,0.3)" stroke-width="1" marker-end="url(#jg)"/>
+        <line x1="393" y1="190" x2="480" y2="282" stroke="rgba(0,120,255,0.3)" stroke-width="1" marker-end="url(#ja)"/>
+        <line x1="872" y1="190" x2="760" y2="282" stroke="rgba(255,255,255,0.2)" stroke-width="1" marker-end="url(#ja)"/>
+      </svg>
     </div>
   </div>
 
