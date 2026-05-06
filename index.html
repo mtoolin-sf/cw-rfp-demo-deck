@@ -416,27 +416,27 @@
     /* ── Nav arrows ── */
     .nav-btn {
       position: fixed;
-      top: 50%;
-      transform: translateY(-50%);
+      bottom: 18px;
       background: rgba(255,255,255,0.85);
       border: 1px solid #E5E5E5;
       color: #022AC0;
-      width: 44px;
-      height: 44px;
+      width: 32px;
+      height: 32px;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
       z-index: 100;
-      font-size: 18px;
+      font-size: 16px;
       transition: all 0.2s;
       backdrop-filter: blur(4px);
+      transform: none;
     }
 
     .nav-btn:hover { background: #022AC0; color: #fff; border-color: #022AC0; }
-    .nav-btn.prev { left: 20px; }
-    .nav-btn.next { right: 20px; }
+    .nav-btn.prev { left: calc(50% - 80px); }
+    .nav-btn.next { right: calc(50% - 80px); }
 
     /* ── Slide counter ── */
     .slide-counter {
@@ -650,7 +650,7 @@
     <h2 class="section-title">Meiro unifies. Salesforce activates.</h2>
     <div class="two-col wide-left">
       <div>
-        <p class="lead" style="margin-bottom:20px; max-width:520px;">Meiro is CW's unifying platform — the source of truth for customer identity across every touchpoint. Salesforce reads from that unified actionable profile, enriches it with AI scoring, and activates it in real time across every channel. One profile. Infinite activation.</p>
+        <p class="lead" style="margin-bottom:20px; max-width:520px;">Meiro is Chemist Warehouse's unification platform — a source of truth for customer identity matching, but a platform marketers are unable to activate from. Salesforce builds on that customer identity lens, enriching it with campaign, promotional, advertising, web engagement and AI scoring to activate segments and campaigns in real time across any channel.</p>
         <div class="card-row cols-3" style="margin-bottom: 0;">
           <div class="card-item">
             <p class="eyebrow">REST API</p>
