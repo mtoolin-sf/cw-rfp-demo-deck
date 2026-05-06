@@ -391,15 +391,22 @@
     .bg-white .bullet-list li strong,
     .bg-offwhite .bullet-list li strong { color: var(--sf-navy); }
 
-    /* ── Progress dots ── */
-    .progress {
+    /* ── Nav controls wrapper ── */
+    .nav-controls {
       position: fixed;
-      bottom: 28px;
+      bottom: 18px;
       left: 50%;
       transform: translateX(-50%);
       display: flex;
-      gap: 8px;
+      align-items: center;
+      gap: 12px;
       z-index: 100;
+    }
+
+    /* ── Progress dots ── */
+    .progress {
+      display: flex;
+      gap: 8px;
     }
 
     .dot {
@@ -415,8 +422,6 @@
 
     /* ── Nav arrows ── */
     .nav-btn {
-      position: fixed;
-      bottom: 18px;
       background: rgba(255,255,255,0.85);
       border: 1px solid #E5E5E5;
       color: #022AC0;
@@ -427,16 +432,13 @@
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      z-index: 100;
       font-size: 16px;
       transition: all 0.2s;
       backdrop-filter: blur(4px);
-      transform: none;
+      flex-shrink: 0;
     }
 
     .nav-btn:hover { background: #022AC0; color: #fff; border-color: #022AC0; }
-    .nav-btn.prev { left: calc(50% - 80px); }
-    .nav-btn.next { right: calc(50% - 80px); }
 
     /* ── Slide counter ── */
     .slide-counter {
@@ -542,7 +544,7 @@
       margin-bottom: 12px;
     }
 
-    /* ── CW Requirement bar ── */
+    /* ── Chemist Warehouse Requirement bar ── */
     .req-bar {
       position: absolute;
       bottom: 60px;
@@ -655,7 +657,7 @@
           <div class="card-item">
             <p class="eyebrow">REST API</p>
             <p class="card-title">Real-time event stream</p>
-            <p class="card-body">Behavioural signals and profile updates from Meiro streamed live into Data Cloud Data Streams.</p>
+            <p class="card-body">Behavioural signals and profile updates from Meiro streamed live into D360 Data Streams.</p>
           </div>
           <div class="card-item">
             <p class="eyebrow">SFTP</p>
@@ -665,172 +667,26 @@
           <div class="card-item">
             <p class="eyebrow">OOTB Connectors</p>
             <p class="card-title">Native CDP pipelines</p>
-            <p class="card-body">Pre-built Data Cloud connectors map common CDP schemas — no custom middleware needed.</p>
+            <p class="card-body">Pre-built D360 connectors map common CDP schemas — no custom middleware needed.</p>
           </div>
         </div>
       </div>
       <div>
-        <p class="eyebrow" style="color: var(--sf-blue);">What Meiro's unified profile feeds into Salesforce</p>
+        <p class="eyebrow" style="color: var(--sf-blue);">What Salesforce adds on top of Meiro</p>
         <ul class="bullet-list" style="margin-top: 8px;">
-          <li>Unified customer identity &amp; resolved attributes</li>
-          <li>Purchase history &amp; product SKU data</li>
-          <li>Browse behaviour &amp; engagement signals</li>
-          <li>Segment membership &amp; propensity scores</li>
-          <li>Depletion window metadata per product category</li>
+          <li>Identity resolution</li>
+          <li>Calculated Insights for depletion windows</li>
+          <li>Einstein scoring &amp; predictive propensity</li>
+          <li>Journey activation across Email, SMS, Push, WhatsApp &amp; Web Push</li>
+          <li>Single household view — aggregated spend across all family members</li>
         </ul>
-        <div style="margin-top:20px; padding:14px 16px; border-radius:10px; background:#EAF5FE; border:1px solid #022AC0;">
-          <p style="font-size:12px; color:var(--sf-blue); font-weight:700; margin-bottom:4px;">What Salesforce adds on top</p>
-          <p style="font-size:12px; color:#5A5C61; line-height:1.5;">Identity resolution across Meiro + Snowflake + transactional. Calculated Insights for depletion windows. Einstein scoring. Journey activation across Email, SMS, Push, WhatsApp.</p>
-        </div>
       </div>
     </div>
   </div>
 
-  <!-- ── SLIDE 4b: MEIRO INTEGRATION FLOW DIAGRAM ── -->
-  <div class="slide bg-white" data-section="Platform Overview">
-    <p class="eyebrow">Data integration architecture</p>
-    <h2 class="section-title" style="margin-bottom: 16px;">Meiro amplifies what Salesforce activates</h2>
-    <!-- Colour legend -->
-    <div style="display:flex; gap:20px; margin-bottom:14px; flex-wrap:wrap;">
-      <span style="display:flex; align-items:center; gap:6px; font-size:10px; color:#444447;"><span style="width:10px;height:10px;border-radius:3px;background:#730394;display:inline-block;"></span>Meiro CDP</span>
-      <span style="display:flex; align-items:center; gap:6px; font-size:10px; color:#444447;"><span style="width:10px;height:10px;border-radius:3px;background:#066AFE;display:inline-block;"></span>Integration methods</span>
-      <span style="display:flex; align-items:center; gap:6px; font-size:10px; color:#444447;"><span style="width:10px;height:10px;border-radius:3px;background:#022AC0;display:inline-block;"></span>Salesforce Data Cloud</span>
-      <span style="display:flex; align-items:center; gap:6px; font-size:10px; color:#444447;"><span style="width:10px;height:10px;border-radius:3px;background:#06A59A;display:inline-block;"></span>Activation output</span>
-    </div>
-    <div style="width:100%; max-width:960px; position:relative;">
-      <svg viewBox="0 0 960 370" width="100%" height="auto" font-family="inherit" font-size="12">
-        <defs>
-          <marker id="arr" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
-            <polygon points="0 0,7 3.5,0 7" fill="#066AFE" />
-          </marker>
-          <marker id="arr-teal" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
-            <polygon points="0 0,7 3.5,0 7" fill="#06A59A" />
-          </marker>
-          <marker id="arr-purple" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
-            <polygon points="0 0,7 3.5,0 7" fill="#730394" />
-          </marker>
-        </defs>
-
-        <!-- ── LEFT: Meiro zone ── -->
-        <rect x="0" y="8" width="212" height="318" rx="10" fill="#F9F0FF" stroke="#730394" stroke-width="1.5" stroke-dasharray="5 3"/>
-        <text x="106" y="27" text-anchor="middle" fill="#730394" font-size="10" font-weight="700" letter-spacing="1.2">MEIRO CDP</text>
-
-        <rect x="14" y="36" width="182" height="40" rx="7" fill="#F9F0FF" stroke="#D17DFE" stroke-width="1"/>
-        <text x="105" y="54" text-anchor="middle" fill="#481A54" font-size="11" font-weight="600">Unified Customer Profiles</text>
-        <text x="105" y="69" text-anchor="middle" fill="#730394" font-size="9">Identity graph · attributes · scores</text>
-
-        <rect x="14" y="88" width="182" height="40" rx="7" fill="#F9F0FF" stroke="#D17DFE" stroke-width="1"/>
-        <text x="105" y="106" text-anchor="middle" fill="#481A54" font-size="11" font-weight="600">Behavioural Signals</text>
-        <text x="105" y="121" text-anchor="middle" fill="#730394" font-size="9">Browse · email · purchase events</text>
-
-        <rect x="14" y="140" width="182" height="40" rx="7" fill="#F9F0FF" stroke="#D17DFE" stroke-width="1"/>
-        <text x="105" y="158" text-anchor="middle" fill="#481A54" font-size="11" font-weight="600">Segment Membership</text>
-        <text x="105" y="173" text-anchor="middle" fill="#730394" font-size="9">Audience lists · propensity scores</text>
-
-        <rect x="14" y="192" width="182" height="40" rx="7" fill="#F9F0FF" stroke="#D17DFE" stroke-width="1"/>
-        <text x="105" y="210" text-anchor="middle" fill="#481A54" font-size="11" font-weight="600">Product Depletion Windows</text>
-        <text x="105" y="225" text-anchor="middle" fill="#730394" font-size="9">SKU-level replenishment timing</text>
-
-        <rect x="14" y="244" width="182" height="40" rx="7" fill="#F9F0FF" stroke="#D17DFE" stroke-width="1"/>
-        <text x="105" y="262" text-anchor="middle" fill="#481A54" font-size="11" font-weight="600">Transaction History</text>
-        <text x="105" y="277" text-anchor="middle" fill="#730394" font-size="9">Purchase records · basket data</text>
-
-        <!-- ── CENTRE: Connection method pills ── -->
-        <rect x="246" y="50" width="118" height="32" rx="16" fill="#EAF5FE" stroke="#066AFE" stroke-width="1.5"/>
-        <text x="305" y="63" text-anchor="middle" fill="#066AFE" font-size="10" font-weight="700" letter-spacing="0.5">REST API</text>
-        <text x="305" y="76" text-anchor="middle" fill="#444447" font-size="8">Real-time stream</text>
-
-        <rect x="246" y="166" width="118" height="32" rx="16" fill="#EAF5FE" stroke="#066AFE" stroke-width="1.5"/>
-        <text x="305" y="179" text-anchor="middle" fill="#066AFE" font-size="10" font-weight="700" letter-spacing="0.5">SFTP</text>
-        <text x="305" y="192" text-anchor="middle" fill="#444447" font-size="8">Scheduled batch</text>
-
-        <rect x="246" y="254" width="118" height="32" rx="16" fill="#DEF9F3" stroke="#06A59A" stroke-width="1.5"/>
-        <text x="305" y="267" text-anchor="middle" fill="#06A59A" font-size="10" font-weight="700" letter-spacing="0.3">OOTB CONNECTORS</text>
-        <text x="305" y="280" text-anchor="middle" fill="#444447" font-size="8">Native schema map</text>
-
-        <!-- Meiro → method arrows -->
-        <line x1="196" y1="56" x2="244" y2="66" stroke="#730394" stroke-opacity="0.6" stroke-width="1.5" marker-end="url(#arr-purple)"/>
-        <line x1="196" y1="108" x2="244" y2="74" stroke="#730394" stroke-opacity="0.6" stroke-width="1.5" marker-end="url(#arr-purple)"/>
-        <line x1="196" y1="160" x2="244" y2="176" stroke="#730394" stroke-opacity="0.6" stroke-width="1.5" marker-end="url(#arr-purple)"/>
-        <line x1="196" y1="212" x2="244" y2="182" stroke="#730394" stroke-opacity="0.6" stroke-width="1.5" marker-end="url(#arr-purple)"/>
-        <line x1="196" y1="264" x2="244" y2="270" stroke="#730394" stroke-opacity="0.6" stroke-width="1.5" marker-end="url(#arr-teal)"/>
-
-        <!-- method → DC arrows -->
-        <line x1="364" y1="66" x2="420" y2="120" stroke="#066AFE" stroke-opacity="0.7" stroke-width="1.5" marker-end="url(#arr)"/>
-        <line x1="364" y1="182" x2="420" y2="150" stroke="#066AFE" stroke-opacity="0.7" stroke-width="1.5" marker-end="url(#arr)"/>
-        <line x1="364" y1="270" x2="420" y2="182" stroke="#06A59A" stroke-opacity="0.7" stroke-width="1.5" marker-end="url(#arr-teal)"/>
-
-        <!-- ── RIGHT: Salesforce Data Cloud zone ── -->
-        <rect x="408" y="8" width="548" height="318" rx="10" fill="#EAF5FE" stroke="#022AC0" stroke-width="1.5" stroke-dasharray="5 3"/>
-        <text x="682" y="27" text-anchor="middle" fill="#001E5B" font-size="10" font-weight="700" letter-spacing="1.2">SALESFORCE DATA CLOUD</text>
-
-        <!-- Ingestion row -->
-        <rect x="422" y="36" width="156" height="76" rx="8" fill="#EAF5FE" stroke="#022AC0" stroke-width="1"/>
-        <text x="500" y="56" text-anchor="middle" fill="#001E5B" font-size="11" font-weight="700">Data Streams</text>
-        <text x="500" y="72" text-anchor="middle" fill="#022AC0" font-size="9">Ingestion · schema map</text>
-        <text x="500" y="84" text-anchor="middle" fill="#022AC0" font-size="9">Data normalisation</text>
-        <text x="500" y="104" text-anchor="middle" fill="#90D0FE" font-size="8">← Meiro · Snowflake · POS</text>
-
-        <rect x="592" y="36" width="156" height="76" rx="8" fill="#EAF5FE" stroke="#022AC0" stroke-width="1"/>
-        <text x="670" y="56" text-anchor="middle" fill="#001E5B" font-size="11" font-weight="700">Identity Resolution</text>
-        <text x="670" y="72" text-anchor="middle" fill="#022AC0" font-size="9">Cross-source matching</text>
-        <text x="670" y="84" text-anchor="middle" fill="#022AC0" font-size="9">Meiro + Snowflake merge</text>
-        <text x="670" y="104" text-anchor="middle" fill="#90D0FE" font-size="8">One person · all signals</text>
-
-        <rect x="762" y="36" width="180" height="76" rx="8" fill="#EAF5FE" stroke="#022AC0" stroke-width="1"/>
-        <text x="852" y="56" text-anchor="middle" fill="#001E5B" font-size="11" font-weight="700">Calculated Insights</text>
-        <text x="852" y="72" text-anchor="middle" fill="#022AC0" font-size="9">Depletion window per SKU</text>
-        <text x="852" y="84" text-anchor="middle" fill="#022AC0" font-size="9">Einstein propensity scores</text>
-        <text x="852" y="104" text-anchor="middle" fill="#90D0FE" font-size="8">Lifetime value metrics</text>
-
-        <!-- Unified profile band -->
-        <rect x="500" y="130" width="324" height="44" rx="8" fill="#022AC0" stroke="#001E5B" stroke-width="1.5"/>
-        <text x="662" y="150" text-anchor="middle" fill="#fff" font-size="13" font-weight="700">UNIFIED CUSTOMER PROFILE</text>
-        <text x="662" y="167" text-anchor="middle" fill="rgba(255,255,255,0.75)" font-size="9">Single identity · all signals · real-time</text>
-
-        <!-- Output row -->
-        <rect x="422" y="196" width="156" height="62" rx="8" fill="#90D0FE" stroke="#022AC0" stroke-width="1"/>
-        <text x="500" y="216" text-anchor="middle" fill="#001E5B" font-size="11" font-weight="700">Segmentation</text>
-        <text x="500" y="232" text-anchor="middle" fill="#022AC0" font-size="9">Predictive scoring</text>
-        <text x="500" y="248" text-anchor="middle" fill="#022AC0" font-size="9">Waterfall logic</text>
-
-        <rect x="592" y="196" width="156" height="62" rx="8" fill="#90D0FE" stroke="#022AC0" stroke-width="1"/>
-        <text x="670" y="216" text-anchor="middle" fill="#001E5B" font-size="11" font-weight="700">Data Graph</text>
-        <text x="670" y="232" text-anchor="middle" fill="#022AC0" font-size="9">Product recommendations</text>
-        <text x="670" y="248" text-anchor="middle" fill="#022AC0" font-size="9">Dynamic content + fallback</text>
-
-        <rect x="762" y="196" width="180" height="62" rx="8" fill="#DEF9F3" stroke="#06A59A" stroke-width="1.5"/>
-        <text x="852" y="216" text-anchor="middle" fill="#023434" font-size="11" font-weight="700">Activation</text>
-        <text x="852" y="232" text-anchor="middle" fill="#06A59A" font-size="9">Journey Builder triggers</text>
-        <text x="852" y="248" text-anchor="middle" fill="#06A59A" font-size="9">Email · SMS · Push · WhatsApp</text>
-
-        <!-- Internal DC arrows -->
-        <line x1="500" y1="112" x2="570" y2="130" stroke="#066AFE" stroke-opacity="0.5" stroke-width="1.2" marker-end="url(#arr)"/>
-        <line x1="670" y1="112" x2="670" y2="130" stroke="#066AFE" stroke-opacity="0.5" stroke-width="1.2" marker-end="url(#arr)"/>
-        <line x1="852" y1="112" x2="770" y2="130" stroke="#066AFE" stroke-opacity="0.5" stroke-width="1.2" marker-end="url(#arr)"/>
-        <line x1="578" y1="174" x2="520" y2="196" stroke="#066AFE" stroke-opacity="0.4" stroke-width="1.2" marker-end="url(#arr)"/>
-        <line x1="662" y1="174" x2="662" y2="196" stroke="#066AFE" stroke-opacity="0.4" stroke-width="1.2" marker-end="url(#arr)"/>
-        <line x1="746" y1="174" x2="800" y2="196" stroke="#06A59A" stroke-opacity="0.5" stroke-width="1.2" marker-end="url(#arr-teal)"/>
-
-        <!-- Source boxes -->
-        <rect x="500" y="288" width="120" height="30" rx="6" fill="#EAF5FE" stroke="#00B3FF" stroke-width="1"/>
-        <text x="560" y="302" text-anchor="middle" fill="#001E5B" font-size="10" font-weight="700">SNOWFLAKE</text>
-        <text x="560" y="313" text-anchor="middle" fill="#022AC0" font-size="8">Zero-copy connector</text>
-
-        <rect x="640" y="288" width="120" height="30" rx="6" fill="#F3F3F3" stroke="#737479" stroke-width="1"/>
-        <text x="700" y="302" text-anchor="middle" fill="#181818" font-size="10" font-weight="700">TRANSACTIONAL</text>
-        <text x="700" y="313" text-anchor="middle" fill="#5A5C61" font-size="8">POS · eComm · orders</text>
-
-        <line x1="560" y1="288" x2="510" y2="258" stroke="#00B3FF" stroke-opacity="0.5" stroke-width="1" marker-end="url(#arr)"/>
-        <line x1="700" y1="288" x2="650" y2="258" stroke="#737479" stroke-width="1" marker-end="url(#arr)"/>
-      </svg>
-    </div>
-  </div>
-
-  <!-- ── SLIDE 5: ROADMAP — REMOVED ── -->
-  <!--
+  <!-- ── SLIDE 5: ROADMAP ── -->
   <div class="slide bg-offwhite" data-section="Platform Overview" style="padding: 48px 72px; overflow: hidden;">
-    <p class="eyebrow" style="margin-bottom: 8px;">Marketing Cloud — what this means for Chemist Warehouse</p>
+    <p class="eyebrow" style="margin-bottom: 8px;">Agentforce Marketing — what this means for Chemist Warehouse</p>
     <h2 class="section-title" style="margin-bottom: 20px;">Built for retail at scale — delivered &amp; coming</h2>
 
     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; width: 100%;">
@@ -838,15 +694,15 @@
       <!-- DELIVERED -->
       <div style="display: flex; flex-direction: column; gap: 0;">
         <div style="background: #1A7F4E; color: #fff; border-radius: 8px 8px 0 0; padding: 12px 20px;">
-          <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;">Already delivered — Spring '26</span>
+          <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;">Already delivered — Spring '26 (Feb 2026)</span>
         </div>
         <div style="background: #fff; border: 1.5px solid #1A7F4E; border-top: none; border-radius: 0 0 8px 8px; padding: 20px; display: flex; flex-direction: column; gap: 14px;">
 
           <div style="display: flex; gap: 12px; align-items: flex-start;">
             <svg style="width:16px; height:16px; flex-shrink:0; margin-top:1px;" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7.5" stroke="#1A7F4E"/><path d="M4.5 8.5l2.5 2.5 4.5-5" stroke="#1A7F4E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
             <div>
-              <p style="font-size: 13px; font-weight: 700; color: #001E5B; margin-bottom: 2px;">One profile. Every CW customer.</p>
-              <p style="font-size: 12px; color: #4a4a55; line-height: 1.5;">Out-of-the-box Identity Resolution stitches loyalty card, web browse and email into a single actionable record — no custom dev, no data team bottleneck.</p>
+              <p style="font-size: 13px; font-weight: 700; color: #001E5B; margin-bottom: 2px;">Single household view visibility.</p>
+              <p style="font-size: 12px; color: #4a4a55; line-height: 1.5;">New OOTB API integrations unify individual profiles into a household unit based on shared attributes — segment using household-level data aggregating total spend across all family members.</p>
             </div>
           </div>
 
@@ -862,15 +718,7 @@
             <svg style="width:16px; height:16px; flex-shrink:0; margin-top:1px;" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7.5" stroke="#1A7F4E"/><path d="M4.5 8.5l2.5 2.5 4.5-5" stroke="#1A7F4E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
             <div>
               <p style="font-size: 13px; font-weight: 700; color: #001E5B; margin-bottom: 2px;">40M+ sends — minutes, not hours.</p>
-              <p style="font-size: 12px; color: #4a4a55; line-height: 1.5;">Flash Sending Mobile and Dedicated IP Management mean CW's flash sales hit inboxes at scale with deliverability that protects the sender reputation you've built.</p>
-            </div>
-          </div>
-
-          <div style="display: flex; gap: 12px; align-items: flex-start;">
-            <svg style="width:16px; height:16px; flex-shrink:0; margin-top:1px;" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7.5" stroke="#1A7F4E"/><path d="M4.5 8.5l2.5 2.5 4.5-5" stroke="#1A7F4E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <div>
-              <p style="font-size: 13px; font-weight: 700; color: #001E5B; margin-bottom: 2px;">Loyalty offers — triggered from Marketing Cloud.</p>
-              <p style="font-size: 12px; color: #4a4a55; line-height: 1.5;">Loyalty Offer Management fires the right reward at the right moment — no middleware, no manual exports. Franchise pharmacies send localised campaigns within brand guardrails.</p>
+              <p style="font-size: 12px; color: #4a4a55; line-height: 1.5;">Flash Sending Mobile and Dedicated IP Management mean Chemist Warehouse flash sales hit inboxes at scale with deliverability that protects the sender reputation you've built.</p>
             </div>
           </div>
 
@@ -882,29 +730,45 @@
             </div>
           </div>
 
+          <div style="display: flex; gap: 12px; align-items: flex-start;">
+            <svg style="width:16px; height:16px; flex-shrink:0; margin-top:1px;" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7.5" stroke="#1A7F4E"/><path d="M4.5 8.5l2.5 2.5 4.5-5" stroke="#1A7F4E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <div>
+              <p style="font-size: 13px; font-weight: 700; color: #001E5B; margin-bottom: 2px;">Clean Rooms — unlock revenue opportunities.</p>
+              <p style="font-size: 12px; color: #4a4a55; line-height: 1.5;">Connect with partners across any major cloud to unite data and uncover new customer segments. Activate newly identified audiences directly into Data 360, AI, and Analytics — insights to action without leaving the platform.</p>
+            </div>
+          </div>
+
         </div>
       </div>
 
       <!-- COMING SOON -->
       <div style="display: flex; flex-direction: column; gap: 0;">
         <div style="background: #066AFE; color: #EAF5FE; border-radius: 8px 8px 0 0; padding: 12px 20px;">
-          <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;">Coming this year — Summer '26</span>
+          <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;">Coming this year — Summer '26 (Jun 2026)</span>
         </div>
         <div style="background: #fff; border: 1px solid rgba(6,106,254,0.12); border-top: none; border-radius: 0 0 8px 8px; padding: 20px; display: flex; flex-direction: column; gap: 14px;">
 
           <div style="display: flex; gap: 12px; align-items: flex-start;">
             <div style="width: 6px; height: 6px; border-radius: 50%; background: #066AFE; margin-top: 5px; flex-shrink: 0;"></div>
             <div>
-              <p style="font-size: 13px; font-weight: 700; color: #001E5B; margin-bottom: 2px;">AI that re-engages before you notice churn.</p>
-              <p style="font-size: 12px; color: #4a4a55; line-height: 1.5;">Customer Engagement Agent monitors disengagement signals across CW's subscriber base and triggers re-engagement automatically — no manual list pulls, no campaign brief.</p>
+              <p style="font-size: 13px; font-weight: 700; color: #001E5B; margin-bottom: 2px;">Web Push — reach customers without the app.</p>
+              <p style="font-size: 12px; color: #4a4a55; line-height: 1.5;">Native Web Push joins Email, SMS, Push and WhatsApp as a fifth activation channel — re-engage browsers and lapsed shoppers with personalised prompts, no app download required.</p>
             </div>
           </div>
 
           <div style="display: flex; gap: 12px; align-items: flex-start;">
             <div style="width: 6px; height: 6px; border-radius: 50%; background: #066AFE; margin-top: 5px; flex-shrink: 0;"></div>
             <div>
-              <p style="font-size: 13px; font-weight: 700; color: #001E5B; margin-bottom: 2px;">Retail triggers — live in days, not months.</p>
-              <p style="font-size: 12px; color: #4a4a55; line-height: 1.5;">Retail &amp; Commerce Event Trigger Library ships pre-built triggers for basket abandonment, replenishment and price drops. CW activates them without custom engineering.</p>
+              <p style="font-size: 13px; font-weight: 700; color: #001E5B; margin-bottom: 2px;">AI that re-engages before you notice churn.</p>
+              <p style="font-size: 12px; color: #4a4a55; line-height: 1.5;">Customer Engagement Agent monitors disengagement signals across Chemist Warehouse's subscriber base and triggers re-engagement automatically — no manual list pulls, no campaign brief.</p>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 12px; align-items: flex-start;">
+            <div style="width: 6px; height: 6px; border-radius: 50%; background: #066AFE; margin-top: 5px; flex-shrink: 0;"></div>
+            <div>
+              <p style="font-size: 13px; font-weight: 700; color: #001E5B; margin-bottom: 2px;">Retail triggers — configured in hours, not custom builds.</p>
+              <p style="font-size: 12px; color: #4a4a55; line-height: 1.5;">Retail &amp; Commerce Event Trigger Library ships pre-built triggers for basket abandonment, replenishment and price drops. Chemist Warehouse activates them without custom engineering.</p>
             </div>
           </div>
 
@@ -912,23 +776,15 @@
             <div style="width: 6px; height: 6px; border-radius: 50%; background: #066AFE; margin-top: 5px; flex-shrink: 0;"></div>
             <div>
               <p style="font-size: 13px; font-weight: 700; color: #001E5B; margin-bottom: 2px;">Prescription reminders that always arrive.</p>
-              <p style="font-size: 12px; color: #4a4a55; line-height: 1.5;">Enterprise Transactional Messaging guarantees delivery for prescription ready alerts, loyalty expiry notices and appointment confirmations — at any volume, any hour.</p>
+              <p style="font-size: 12px; color: #4a4a55; line-height: 1.5;">Enterprise Transactional Messaging guarantees delivery for prescription ready alerts and appointment confirmations — at any volume, any hour.</p>
             </div>
           </div>
 
           <div style="display: flex; gap: 12px; align-items: flex-start;">
             <div style="width: 6px; height: 6px; border-radius: 50%; background: #066AFE; margin-top: 5px; flex-shrink: 0;"></div>
             <div>
-              <p style="font-size: 13px; font-weight: 700; color: #001E5B; margin-bottom: 2px;">Rich SMS — no app required.</p>
-              <p style="font-size: 12px; color: #4a4a55; line-height: 1.5;">RCS and MMS support bring product images, carousels and tap-to-buy CTAs into the SMS inbox — beauty editorial, health launches and catalogue drops without the app install barrier.</p>
-            </div>
-          </div>
-
-          <div style="display: flex; gap: 12px; align-items: flex-start;">
-            <div style="width: 6px; height: 6px; border-radius: 50%; background: #066AFE; margin-top: 5px; flex-shrink: 0;"></div>
-            <div>
-              <p style="font-size: 13px; font-weight: 700; color: #001E5B; margin-bottom: 2px;">Ask questions. Get answers. No analyst.</p>
-              <p style="font-size: 12px; color: #4a4a55; line-height: 1.5;">Conversational Analytics and Agentic Dashboard let CW's marketers query performance in plain English and surface trends before anyone goes looking for them.</p>
+              <p style="font-size: 13px; font-weight: 700; color: #001E5B; margin-bottom: 2px;">Ask questions. Self-serve answers.</p>
+              <p style="font-size: 12px; color: #4a4a55; line-height: 1.5;">Conversational Analytics and Agentic Dashboard let Chemist Warehouse's marketers query performance in plain English and surface trends without analyst or IT support.</p>
             </div>
           </div>
 
@@ -937,16 +793,15 @@
 
     </div>
 
-    <p class="slide-note" style="margin-top: 12px; font-style: italic; color: #737479;">FY27 Product Roadmap — items selected for CW relevance. Full detail available under NDA.</p>
+    <p class="slide-note" style="margin-top: 12px; font-style: italic; color: #737479;">FY27 Product Roadmap — items selected for Chemist Warehouse relevance. Full detail available under NDA.</p>
   </div>
-  -->
 
   <!-- ── SLIDE 6: TELL — AUDIENCE & DATA ── -->
   <div class="slide bg-navy" data-section="Audience & Data">
     <div class="tell-badge">Coming up — Live Demo</div>
     <p class="eyebrow">Section 02 — Audience, Targeting &amp; Data Foundations</p>
     <h1 class="headline">Building the audience<br><em>that drives the journey.</em></h1>
-    <p class="lead">You're about to see how Meiro — CW's unifying data platform — feeds a unified actionable profile layer that Salesforce activates in real time across every channel.</p>
+    <p class="lead">You're about to see how Agentforce Marketing accesses a unified actionable profile to deliver real time customer journeys across every channel.</p>
     <div style="margin-top: 8px;">
       <p class="watch-for-label">Watch for</p>
       <div style="display: flex; gap: 10px; flex-wrap: wrap;">
@@ -958,38 +813,11 @@
       </div>
     </div>
     <div class="req-bar">
-      <span class="req-bar-label">CW Requirement</span>
+      <span class="req-bar-label">Chemist Warehouse Requirement</span>
       <span class="req-bar-text">Demonstrate a high-intent audience build using behavioural and engagement-based segmentation, inclusion/exclusion logic, predictive scoring, and how the platform handles machine opens.</span>
     </div>
   </div>
 
-  <!-- ── SLIDE 7: LAND — AUDIENCE & DATA ── -->
-  <div class="slide bg-offwhite" data-section="Audience & Data">
-    <div class="land-badge">What this means for Chemist Warehouse</div>
-    <p class="eyebrow">Section 02 — Key takeouts</p>
-    <h2 class="section-title">You saw the data foundation.<br>Here's what it unlocks.</h2>
-    <div class="req-bar-light">
-      <span class="req-bar-label">CW Requirement</span>
-      <span class="req-bar-text">Demonstrate a high-intent audience build using behavioural and engagement-based segmentation, inclusion/exclusion logic, predictive scoring, and how the platform handles machine opens.</span>
-    </div>
-    <div class="card-row cols-3">
-      <div class="card-item">
-        <p class="eyebrow">No more batch lag</p>
-        <p class="card-title">Real-time unified profiles</p>
-        <p class="card-body">Meiro's unified profile is the source of truth. Every signal lands in Salesforce within seconds. <strong>CW customers are known the moment they act</strong> — not the next morning.</p>
-      </div>
-      <div class="card-item">
-        <p class="eyebrow">True engagement only</p>
-        <p class="card-title">Einstein Metrics Guard</p>
-        <p class="card-body"><strong>Machine opens, MPP and proxy opens are filtered at source.</strong> Every metric in your reports reflects real human engagement — no inflated signals distorting campaign decisions.</p>
-      </div>
-      <div class="card-item">
-        <p class="eyebrow">Predictive, not reactive</p>
-        <p class="card-title">Predictive scoring</p>
-        <p class="card-body">Einstein scores tell you who's likely to buy, churn, or lapse — <strong>before they do.</strong> Reach them with the right message in the right window.</p>
-      </div>
-    </div>
-  </div>
 
   <!-- ── SLIDE 8: TELL — JOURNEY BUILD ── -->
   <div class="slide bg-navy" data-section="Journey Build">
@@ -1010,361 +838,86 @@
       </div>
     </div>
     <div class="req-bar">
-      <span class="req-bar-label">CW Requirement</span>
+      <span class="req-bar-label">Chemist Warehouse Requirement</span>
       <span class="req-bar-text">Build ONE automated lifecycle/replenishment journey for Oral-B handling 20+ SKUs, multi-channel delivery, dynamic branching on engagement or conversion, personalised product content with fallback, and exit on purchase into cross-sell or next lifecycle stage.</span>
     </div>
   </div>
 
-  <!-- ── SLIDE 9: ORAL-B JOURNEY ARCHITECTURE DIAGRAM ── -->
-  <div class="slide bg-white" data-section="Journey Build">
-    <p class="eyebrow">Oral-B replenishment — end-to-end architecture</p>
-    <h2 class="section-title" style="margin-bottom: 16px;">One journey handles 20+ SKUs — here's how</h2>
-    <div style="width:100%; max-width:960px;">
-      <svg viewBox="0 0 960 370" width="100%" height="auto" font-family="inherit" font-size="12">
-        <defs>
-          <marker id="ja" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><polygon points="0 0,7 3.5,0 7" fill="#066AFE"/></marker>
-          <marker id="jg" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><polygon points="0 0,7 3.5,0 7" fill="#06A59A"/></marker>
-          <marker id="jr" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><polygon points="0 0,7 3.5,0 7" fill="#C00020"/></marker>
-        </defs>
 
-        <!-- ── ROW 1: DATA LAYER ── -->
-        <text x="8" y="28" fill="#90D0FE" font-size="9" font-weight="700" letter-spacing="1.2">UNIFIED ACTIONABLE DATA LAYER — Meiro + Salesforce</text>
-        <rect x="0" y="34" width="960" height="72" rx="8" fill="#EAF5FE" stroke="#90D0FE" stroke-width="1"/>
-
-        <rect x="10" y="44" width="172" height="52" rx="6" fill="#EAF5FE" stroke="#022AC0" stroke-width="1"/>
-        <text x="96" y="63" text-anchor="middle" fill="#001E5B" font-size="11" font-weight="700">Calculated Insights</text>
-        <text x="96" y="77" text-anchor="middle" fill="#022AC0" font-size="9">Depletion window per SKU</text>
-        <text x="96" y="88" text-anchor="middle" fill="#022AC0" font-size="9">Einstein propensity score</text>
-
-        <rect x="196" y="44" width="172" height="52" rx="6" fill="#EAF5FE" stroke="#022AC0" stroke-width="1"/>
-        <text x="282" y="63" text-anchor="middle" fill="#001E5B" font-size="11" font-weight="700">Segmentation</text>
-        <text x="282" y="77" text-anchor="middle" fill="#022AC0" font-size="9">Oral-B buyers + lapsed</text>
-        <text x="282" y="88" text-anchor="middle" fill="#022AC0" font-size="9">"Is In" — 20+ SKU list</text>
-
-        <rect x="382" y="44" width="172" height="52" rx="6" fill="#EAF5FE" stroke="#022AC0" stroke-width="1"/>
-        <text x="468" y="63" text-anchor="middle" fill="#001E5B" font-size="11" font-weight="700">Data Graph</text>
-        <text x="468" y="77" text-anchor="middle" fill="#022AC0" font-size="9">Dynamic product insert</text>
-        <text x="468" y="88" text-anchor="middle" fill="#022AC0" font-size="9">Fallback on OOS</text>
-
-        <rect x="568" y="44" width="172" height="52" rx="6" fill="#EAF5FE" stroke="#022AC0" stroke-width="1"/>
-        <text x="654" y="63" text-anchor="middle" fill="#001E5B" font-size="11" font-weight="700">Unified Profile</text>
-        <text x="654" y="77" text-anchor="middle" fill="#022AC0" font-size="9">Last purchase date</text>
-        <text x="654" y="88" text-anchor="middle" fill="#022AC0" font-size="9">Channel preference</text>
-
-        <rect x="754" y="44" width="198" height="52" rx="6" fill="#EAF5FE" stroke="#022AC0" stroke-width="1"/>
-        <text x="853" y="63" text-anchor="middle" fill="#001E5B" font-size="11" font-weight="700">Einstein Metrics Guard</text>
-        <text x="853" y="77" text-anchor="middle" fill="#022AC0" font-size="9">Machine opens filtered</text>
-        <text x="853" y="88" text-anchor="middle" fill="#022AC0" font-size="9">Real engagement only</text>
-
-        <!-- ── ROW 2: JOURNEY BUILDER ── -->
-        <text x="8" y="124" fill="#444447" font-size="9" font-weight="700" letter-spacing="1.2">JOURNEY BUILDER</text>
-
-        <rect x="10" y="132" width="142" height="48" rx="6" fill="#FFF0F2" stroke="#C00020" stroke-width="1.5"/>
-        <text x="81" y="151" text-anchor="middle" fill="#C00020" font-size="11" font-weight="700">ENTRY TRIGGER</text>
-        <text x="81" y="165" text-anchor="middle" fill="#444447" font-size="9">Depletion window fires</text>
-        <text x="81" y="175" text-anchor="middle" fill="#444447" font-size="9">→ customer enters journey</text>
-
-        <rect x="172" y="132" width="140" height="48" rx="6" fill="#EAF5FE" stroke="#022AC0" stroke-width="1"/>
-        <text x="242" y="151" text-anchor="middle" fill="#001E5B" font-size="11" font-weight="700">Email Send</text>
-        <text x="242" y="165" text-anchor="middle" fill="#022AC0" font-size="9">Dynamic SKU content block</text>
-        <text x="242" y="175" text-anchor="middle" fill="#022AC0" font-size="9">Personalised subject line</text>
-
-        <rect x="332" y="132" width="148" height="48" rx="6" fill="#EAF5FE" stroke="#066AFE" stroke-width="1.5"/>
-        <text x="406" y="151" text-anchor="middle" fill="#022AC0" font-size="11" font-weight="700">Wait + Decision</text>
-        <text x="406" y="165" text-anchor="middle" fill="#022AC0" font-size="9">3 days · clicked? converted?</text>
-        <text x="406" y="175" text-anchor="middle" fill="#022AC0" font-size="9">Branch: yes / no</text>
-
-        <rect x="500" y="132" width="140" height="48" rx="6" fill="#EAF5FE" stroke="#022AC0" stroke-width="1"/>
-        <text x="570" y="151" text-anchor="middle" fill="#001E5B" font-size="11" font-weight="700">SMS / Push</text>
-        <text x="570" y="165" text-anchor="middle" fill="#022AC0" font-size="9">Channel escalation path</text>
-        <text x="570" y="175" text-anchor="middle" fill="#022AC0" font-size="9">Non-engaged only</text>
-
-        <rect x="660" y="132" width="148" height="48" rx="6" fill="#DEF9F3" stroke="#06A59A" stroke-width="1.5"/>
-        <text x="734" y="151" text-anchor="middle" fill="#023434" font-size="11" font-weight="700">EXIT — Purchased</text>
-        <text x="734" y="165" text-anchor="middle" fill="#06A59A" font-size="9">Conversion event fires</text>
-        <text x="734" y="175" text-anchor="middle" fill="#06A59A" font-size="9">Removed from journey</text>
-
-        <rect x="826" y="132" width="130" height="48" rx="6" fill="#F3F3F3" stroke="#E5E5E5" stroke-width="1"/>
-        <text x="891" y="151" text-anchor="middle" fill="#444447" font-size="11" font-weight="700">Exit — Lapsed</text>
-        <text x="891" y="165" text-anchor="middle" fill="#5A5C61" font-size="9">No conversion 14 days</text>
-        <text x="891" y="175" text-anchor="middle" fill="#5A5C61" font-size="9">→ win-back journey</text>
-
-        <!-- Journey step arrows (horizontal) -->
-        <line x1="152" y1="156" x2="170" y2="156" stroke="#066AFE" stroke-width="1.5" marker-end="url(#ja)"/>
-        <line x1="312" y1="156" x2="330" y2="156" stroke="#066AFE" stroke-width="1.5" marker-end="url(#ja)"/>
-        <line x1="480" y1="156" x2="498" y2="156" stroke="#066AFE" stroke-width="1.5" marker-end="url(#ja)"/>
-        <line x1="640" y1="156" x2="658" y2="156" stroke="#06A59A" stroke-width="1.5" marker-end="url(#jg)"/>
-        <line x1="808" y1="156" x2="824" y2="156" stroke="#737479" stroke-width="1.5" marker-end="url(#ja)"/>
-
-        <!-- Data layer → Journey dashed feeds -->
-        <line x1="96" y1="96" x2="81" y2="132" stroke="#022AC0" stroke-opacity="0.35" stroke-width="1" stroke-dasharray="3 2" marker-end="url(#ja)"/>
-        <line x1="282" y1="96" x2="242" y2="132" stroke="#022AC0" stroke-opacity="0.35" stroke-width="1" stroke-dasharray="3 2" marker-end="url(#ja)"/>
-        <line x1="468" y1="96" x2="406" y2="132" stroke="#022AC0" stroke-opacity="0.35" stroke-width="1" stroke-dasharray="3 2" marker-end="url(#ja)"/>
-        <line x1="654" y1="96" x2="570" y2="132" stroke="#022AC0" stroke-opacity="0.35" stroke-width="1" stroke-dasharray="3 2" marker-end="url(#ja)"/>
-        <line x1="853" y1="96" x2="734" y2="132" stroke="#022AC0" stroke-opacity="0.35" stroke-width="1" stroke-dasharray="3 2" marker-end="url(#ja)"/>
-
-        <!-- ── ROW 3: CHANNELS ── -->
-        <text x="8" y="202" fill="#444447" font-size="9" font-weight="700" letter-spacing="1.2">CHANNELS</text>
-
-        <rect x="172" y="208" width="80" height="34" rx="6" fill="#EAF5FE" stroke="#90D0FE" stroke-width="1"/>
-        <text x="212" y="224" text-anchor="middle" fill="#001E5B" font-size="10" font-weight="600">Email</text>
-        <text x="212" y="236" text-anchor="middle" fill="#90D0FE" font-size="8">SFMC</text>
-
-        <rect x="262" y="208" width="80" height="34" rx="6" fill="#EAF5FE" stroke="#90D0FE" stroke-width="1"/>
-        <text x="302" y="224" text-anchor="middle" fill="#001E5B" font-size="10" font-weight="600">SMS</text>
-        <text x="302" y="236" text-anchor="middle" fill="#90D0FE" font-size="8">MobileConnect</text>
-
-        <rect x="500" y="208" width="80" height="34" rx="6" fill="#EAF5FE" stroke="#90D0FE" stroke-width="1"/>
-        <text x="540" y="224" text-anchor="middle" fill="#001E5B" font-size="10" font-weight="600">Push</text>
-        <text x="540" y="236" text-anchor="middle" fill="#90D0FE" font-size="8">MobilePush</text>
-
-        <rect x="592" y="208" width="80" height="34" rx="6" fill="#EAF5FE" stroke="#90D0FE" stroke-width="1"/>
-        <text x="632" y="224" text-anchor="middle" fill="#001E5B" font-size="10" font-weight="600">WhatsApp</text>
-        <text x="632" y="236" text-anchor="middle" fill="#90D0FE" font-size="8">Two-way</text>
-
-        <line x1="242" y1="180" x2="212" y2="208" stroke="#022AC0" stroke-opacity="0.4" stroke-width="1" marker-end="url(#ja)"/>
-        <line x1="242" y1="180" x2="302" y2="208" stroke="#022AC0" stroke-opacity="0.4" stroke-width="1" marker-end="url(#ja)"/>
-        <line x1="570" y1="180" x2="540" y2="208" stroke="#022AC0" stroke-opacity="0.4" stroke-width="1" marker-end="url(#ja)"/>
-        <line x1="570" y1="180" x2="632" y2="208" stroke="#022AC0" stroke-opacity="0.4" stroke-width="1" marker-end="url(#ja)"/>
-
-        <!-- ── ROW 4: OUTCOMES ── -->
-        <text x="8" y="264" fill="#444447" font-size="9" font-weight="700" letter-spacing="1.2">OUTCOMES</text>
-
-        <rect x="90" y="270" width="220" height="52" rx="6" fill="#DEF9F3" stroke="#06A59A" stroke-width="1"/>
-        <text x="200" y="290" text-anchor="middle" fill="#023434" font-size="11" font-weight="700">Purchase conversion</text>
-        <text x="200" y="305" text-anchor="middle" fill="#06A59A" font-size="9">Exit → cross-sell journey enters</text>
-        <text x="200" y="316" text-anchor="middle" fill="#06A59A" font-size="9">Attribution in Marketing Intelligence</text>
-
-        <rect x="370" y="270" width="220" height="52" rx="6" fill="#EAF5FE" stroke="#066AFE" stroke-width="1"/>
-        <text x="480" y="290" text-anchor="middle" fill="#022AC0" font-size="11" font-weight="700">Engagement signal</text>
-        <text x="480" y="305" text-anchor="middle" fill="#022AC0" font-size="9">Click updates Einstein profile score</text>
-        <text x="480" y="316" text-anchor="middle" fill="#022AC0" font-size="9">Machine opens filtered at source</text>
-
-        <rect x="650" y="270" width="220" height="52" rx="6" fill="#F3F3F3" stroke="#E5E5E5" stroke-width="1"/>
-        <text x="760" y="290" text-anchor="middle" fill="#181818" font-size="11" font-weight="700">No conversion</text>
-        <text x="760" y="305" text-anchor="middle" fill="#5A5C61" font-size="9">14-day lapse → win-back journey</text>
-        <text x="760" y="316" text-anchor="middle" fill="#5A5C61" font-size="9">Suppressed from replenishment</text>
-
-        <line x1="734" y1="180" x2="200" y2="270" stroke="#06A59A" stroke-opacity="0.45" stroke-width="1" marker-end="url(#jg)"/>
-        <line x1="406" y1="180" x2="480" y2="270" stroke="#066AFE" stroke-opacity="0.4" stroke-width="1" marker-end="url(#ja)"/>
-        <line x1="891" y1="180" x2="760" y2="270" stroke="#737479" stroke-width="1" marker-end="url(#ja)"/>
-      </svg>
-    </div>
-  </div>
-
-  <!-- ── SLIDE 10: LAND — JOURNEY BUILD ── -->
-  <div class="slide bg-offwhite" data-section="Journey Build">
-    <div class="land-badge">What this means for Chemist Warehouse</div>
-    <p class="eyebrow">Section 03 — Key takeouts</p>
-    <h2 class="section-title" style="margin-bottom:12px;">One journey. 20+ products.<br>Zero manual duplication.</h2>
-    <div class="req-bar-light">
-      <span class="req-bar-label">CW Requirement</span>
-      <span class="req-bar-text">Build ONE automated lifecycle/replenishment journey for Oral-B handling 20+ SKUs, multi-channel delivery, dynamic branching on engagement or conversion, personalised product content with fallback, and exit on purchase into cross-sell or next lifecycle stage.</span>
-    </div>
-    <div class="card-row cols-4" style="max-width:960px;">
-      <div class="card-item">
-        <p class="eyebrow">Scale without complexity</p>
-        <p class="card-title">SKU logic in the data layer</p>
-        <p class="card-body">Product lists load into Data Cloud once. <strong>The journey never needs updating</strong> when you add or retire a SKU.</p>
-      </div>
-      <div class="card-item">
-        <p class="eyebrow">Always-on relevance</p>
-        <p class="card-title">Dynamic content + fallback</p>
-        <p class="card-body">The exact product a customer needs is inserted at send time. <strong>If it's out of stock, a fallback recommendation fires automatically.</strong></p>
-      </div>
-      <div class="card-item">
-        <p class="eyebrow">No wasted sends</p>
-        <p class="card-title">Purchase-triggered exit</p>
-        <p class="card-body">The moment a customer buys, they exit the replenishment flow and enter the <strong>cross-sell or next lifecycle stage</strong> — automatically.</p>
-      </div>
-      <div class="card-item">
-        <p class="eyebrow">Cross-channel reach</p>
-        <p class="card-title">Email → SMS → Push</p>
-        <p class="card-body">Customers who don't engage on email are <strong>reached on their preferred channel</strong> — no duplicate journeys required.</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- ── SLIDE 11: TELL — REPORTING ── -->
+  <!-- ── SLIDE 7: TELL — REPORTING ── -->
   <div class="slide bg-navy" data-section="Reporting">
     <div class="tell-badge">Coming up — Live Demo</div>
     <p class="eyebrow">Section 04 — Reporting &amp; Insights</p>
-    <h1 class="headline">Metrics you can<br><em>actually trust.</em></h1>
-    <p class="lead">You're about to see Marketing Intelligence — CW's command centre for campaign performance, multi-touch attribution, and the signal quality problem every email marketer has.</p>
+    <h1 class="headline">Metrics you can<br><em>trust.</em></h1>
+    <p class="lead">Marketing Intelligence gives Sigma Healthcare a single view of performance across Chemist Warehouse and Ultra Beauty — attribution modelling, spend optimisation, and Customer Intelligence with lifetime value scoring, all out of the box.</p>
     <div style="margin-top: 8px;">
       <p class="watch-for-label">Watch for</p>
       <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-        <span class="chip chip-blue">Performance KPIs — journey we just built</span>
-        <span class="chip chip-blue">Attribution methodology — beyond last click</span>
-        <span class="chip chip-blue">Machine opens (MPP, proxy opens) — true engagement vs inflated signals</span>
-        <span class="chip chip-blue">One optimisation decision driven by reporting</span>
+        <span class="chip chip-blue">Unified cross-brand performance view</span>
+        <span class="chip chip-blue">Attribution modelling — beyond last click</span>
+        <span class="chip chip-blue">Customer lifetime value &amp; behavioural analysis</span>
+        <span class="chip chip-blue">Spend optimisation insights</span>
       </div>
     </div>
     <div class="req-bar">
-      <span class="req-bar-label">CW Requirement</span>
-      <span class="req-bar-text">Reporting on the journey — performance metrics and KPIs, attribution methodology, a key insight or optimisation decision, and how engagement metrics handle machine opens (MPP, proxy opens) — true engagement vs inflated signals.</span>
-    </div>
-  </div>
-
-  <!-- ── SLIDE 12: LAND — REPORTING ── -->
-  <div class="slide bg-offwhite" data-section="Reporting">
-    <div class="land-badge">What this means for Chemist Warehouse</div>
-    <p class="eyebrow">Section 04 — Key takeouts</p>
-    <h2 class="section-title">Report on what's real.<br>Optimise what matters.</h2>
-    <div class="req-bar-light">
-      <span class="req-bar-label">CW Requirement</span>
-      <span class="req-bar-text">Reporting on the journey — performance metrics and KPIs, attribution methodology, a key insight or optimisation decision, and how engagement metrics handle machine opens (MPP, proxy opens) — true engagement vs inflated signals.</span>
-    </div>
-    <div class="card-row cols-3">
-      <div class="card-item">
-        <p class="eyebrow">Signal quality</p>
-        <p class="card-title">Machine opens — solved</p>
-        <p class="card-body">Einstein Metrics Guard scores every open and click. <strong>Bot activity never reaches your dashboards.</strong> Open rates, trigger logic, and reporting all reflect real humans only.</p>
-      </div>
-      <div class="card-item">
-        <p class="eyebrow">Attribution</p>
-        <p class="card-title">Beyond last click</p>
-        <p class="card-body">Multi-touch attribution shows the <strong>full journey a customer took before converting</strong> — email, SMS, push, paid media — so budget goes where it actually works.</p>
-      </div>
-      <div class="card-item">
-        <p class="eyebrow">Actionable intelligence</p>
-        <p class="card-title">Optimisation at the insight level</p>
-        <p class="card-body">Marketing Intelligence surfaces specific recommendations — <strong>not just what happened, but what to do next.</strong> Campaign optimisation built into the dashboard.</p>
-      </div>
+      <span class="req-bar-label">Chemist Warehouse Requirement</span>
+      <span class="req-bar-text">Demonstrate reporting on the journey — performance metrics and KPIs, attribution methodology (last-click vs multi-touch), and a key insight or optimisation decision driven by reporting. Must include how engagement metrics handle machine opens (MPP, proxy opens) — true engagement vs inflated signals.</span>
     </div>
   </div>
 
   <!-- ── SLIDE 13: DIFFERENTIATORS ── -->
-  <div class="slide bg-offwhite" data-section="Wrap-Up" style="padding: 48px 80px;">
+  <div class="slide bg-offwhite" data-section="Wrap-Up" style="padding: 32px 72px;">
     <p class="eyebrow">Why Salesforce</p>
-    <h1 class="headline" style="margin-bottom: 20px;">What you won't get<br><em>anywhere else.</em></h1>
-    <div class="card-row cols-2" style="max-width: 960px;">
-      <div class="card-item">
-        <p class="eyebrow">No CDP tax</p>
-        <p class="card-title">Data 360 native — one platform</p>
-        <p class="card-body">Identity resolution, advanced segmentation, and data transformation are <strong>built into the same platform as your journey builder.</strong> No third-party CDP required — no sync lag, no data contracts, no additional licensing.</p>
+    <h1 class="headline" style="margin-bottom: 12px; font-size: 32px;">What you won't get<br><em>anywhere else.</em></h1>
+    <div class="card-row cols-3" style="max-width: 960px; gap: 12px;">
+      <div class="card-item" style="padding: 18px 16px;">
+        <p class="eyebrow">Single platform, no vendor sprawl</p>
+        <p class="card-title" style="font-size:14px;">Agentforce Marketing on one stack</p>
+        <p class="card-body" style="font-size:12px;">Agentforce Marketing, D360, Personalisation and Intelligence natively built on one platform. No sync delays, no fragmented reporting, one governed enterprise stack.</p>
       </div>
-      <div class="card-item">
-        <p class="eyebrow">Full lifecycle, not just messaging</p>
-        <p class="card-title">Sales, Service &amp; Commerce connected</p>
-        <p class="card-body"><strong>Salesforce natively connects Marketing, Sales, Service and Commerce.</strong> A purchase in Commerce, a case in Service, and a journey in Marketing all share a single customer record — in real time, no integration required.</p>
+      <div class="card-item" style="padding: 18px 16px;">
+        <p class="eyebrow">API-first integration</p>
+        <p class="card-title" style="font-size:14px;">Native connectors, no middleware</p>
+        <p class="card-body" style="font-size:12px;">Native connectors for D365, SAP, Shopify and Google. Robust Ingestion APIs for Genesys and POS satisfy Sigma Healthcare's API-first and enterprise governance requirements.</p>
       </div>
-      <div class="card-item">
-        <p class="eyebrow">True two-way</p>
-        <p class="card-title">WhatsApp, SMS — NLP reply flows</p>
-        <p class="card-body"><strong>Every channel becomes a real conversation</strong> — AI-powered replies, natural language understanding, and automatic escalation to a live agent via Service Cloud. Not just automated responses.</p>
+      <div class="card-item" style="padding: 18px 16px;">
+        <p class="eyebrow">AI built in, not bolted on</p>
+        <p class="card-title" style="font-size:14px;">Einstein &amp; Agentforce native</p>
+        <p class="card-body" style="font-size:12px;">Send Time Optimisation, Engagement Scoring, Agentic Campaign Creation and Journey Decisioning included in the platform. Not sold as a separate AI layer.</p>
       </div>
-      <div class="card-item">
+      <div class="card-item" style="padding: 18px 16px;">
+        <p class="eyebrow">Two-way agentic messaging</p>
+        <p class="card-title" style="font-size:14px;">Email, SMS &amp; WhatsApp both ways</p>
+        <p class="card-body" style="font-size:12px;">Every channel becomes a real conversation. AI-powered replies, natural language understanding, and automatic escalation to a live agent via Service Cloud.</p>
+      </div>
+      <div class="card-item" style="padding: 18px 16px;">
+        <p class="eyebrow">Consent, privacy &amp; data sovereignty</p>
+        <p class="card-title" style="font-size:14px;">Hyperforce AU — compliance by design</p>
+        <p class="card-body" style="font-size:12px;">Consent enforced at contact point level across all channels, integrated with OneTrust in real time. All data hosted in Salesforce's Australia region. ISO 27001, SOC 1/2/3, IRAP-assessed. Australian Privacy Act and Spam Act compliant.</p>
+      </div>
+      <div class="card-item" style="padding: 18px 16px;">
         <p class="eyebrow">Reporting without the workaround</p>
-        <p class="card-title">Multi-touch attribution — in platform</p>
-        <p class="card-body"><strong>Marketing Intelligence does multi-touch attribution across email, SMS, push, and paid media natively</strong> — no data export, no third-party BI vendor, no technical resources needed to access your own results.</p>
+        <p class="card-title" style="font-size:14px;">Multi-touch attribution in platform</p>
+        <p class="card-body" style="font-size:12px;">Marketing Intelligence covers multi-touch attribution across email, SMS, push and paid media natively. No data export, no third-party BI tool, no IT resources needed.</p>
       </div>
     </div>
   </div>
 
   <!-- ── SLIDE 14: AGENTIC VS TRADITIONAL ── -->
-  <div class="slide bg-offwhite" data-section="Wrap-Up" style="padding: 48px 80px;">
-    <p class="eyebrow">The agentic advantage</p>
-    <h2 class="section-title" style="margin-bottom: 8px;">Your team's time back.<br><em style="color:var(--sf-blue); font-style:normal;">Weeks become hours.</em></h2>
-    <p style="font-size:13px; color:#737479; margin-bottom:20px; max-width:700px;">Traditional composable stacks put the burden on the marketer — technology first, customer second. Agentforce flips the model.</p>
-    <div style="display:grid; grid-template-columns:1fr 80px 1fr; gap:0; max-width:960px; width:100%; align-items:start;">
-
-      <!-- Composable column -->
-      <div style="background:#fff; border:1px solid #E5E5E5; border-radius:12px; overflow:hidden; box-shadow:0 2px 8px rgba(0,0,0,0.06);">
-        <div style="background:#F3F3F3; padding:12px 20px; border-bottom:1px solid #E5E5E5;">
-          <p style="font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:#737479;">Composable Marketing</p>
-        </div>
-        <div style="padding:8px 0;">
-          <div style="display:grid; grid-template-columns:1fr auto; padding:10px 20px; border-bottom:1px solid #F3F3F3; align-items:center;">
-            <span style="font-size:13px; color:#444447;">Composable Execution</span>
-            <span style="font-size:13px; font-weight:700; color:#C00020;">1 Week</span>
-          </div>
-          <div style="display:grid; grid-template-columns:1fr auto; padding:10px 20px; border-bottom:1px solid #F3F3F3; align-items:center;">
-            <span style="font-size:13px; color:#444447;">Approval Process &amp; Testing</span>
-            <span style="font-size:13px; font-weight:700; color:#C00020;">2 Days</span>
-          </div>
-          <div style="display:grid; grid-template-columns:1fr auto; padding:10px 20px; border-bottom:1px solid #F3F3F3; align-items:center;">
-            <span style="font-size:13px; color:#444447;">Execution Across MarTech Stack</span>
-            <span style="font-size:13px; font-weight:700; color:#C00020;">2 Days</span>
-          </div>
-          <div style="display:grid; grid-template-columns:1fr auto; padding:10px 20px; border-bottom:1px solid #F3F3F3; align-items:center;">
-            <span style="font-size:13px; color:#444447;">Creative/Content Creation</span>
-            <span style="font-size:13px; font-weight:700; color:#C00020;">1 Day</span>
-          </div>
-          <div style="display:grid; grid-template-columns:1fr auto; padding:10px 20px; border-bottom:1px solid #F3F3F3; align-items:center;">
-            <span style="font-size:13px; color:#444447;">Journey/Campaign Creation</span>
-            <span style="font-size:13px; font-weight:700; color:#C00020;">1 Day</span>
-          </div>
-          <div style="display:grid; grid-template-columns:1fr auto; padding:10px 20px; border-bottom:1px solid #F3F3F3; align-items:center;">
-            <span style="font-size:13px; color:#444447;">Audience Segmentation</span>
-            <span style="font-size:13px; font-weight:700; color:#C00020;">2 Days</span>
-          </div>
-          <div style="display:grid; grid-template-columns:1fr auto; padding:12px 20px; background:#FFF0F2; align-items:center;">
-            <span style="font-size:13px; font-weight:700; color:#001E5B;">Total time to execution</span>
-            <span style="font-size:14px; font-weight:700; color:#C00020;">~2 Weeks</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- VS label -->
-      <div style="display:flex; align-items:center; justify-content:center; padding-top: 40px;">
-        <span style="font-size:16px; font-weight:700; color:#737479;">VS</span>
-      </div>
-
-      <!-- Agentforce column -->
-      <div style="background:#fff; border:1.5px solid #022AC0; border-radius:12px; overflow:hidden; box-shadow:0 4px 16px rgba(2,42,192,0.15);">
-        <div style="background:#022AC0; padding:12px 20px;">
-          <p style="font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:#EAF5FE;">Agentforce Marketing — Headless</p>
-        </div>
-        <div style="padding:8px 0;">
-          <div style="display:grid; grid-template-columns:1fr auto; padding:10px 20px; border-bottom:1px solid #EAF5FE; align-items:center;">
-            <span style="font-size:13px; color:#444447;">Agentic Execution</span>
-            <span style="font-size:13px; font-weight:700; color:#022AC0;">1–5 Hours</span>
-          </div>
-          <div style="display:grid; grid-template-columns:1fr auto; padding:10px 20px; border-bottom:1px solid #EAF5FE; align-items:center;">
-            <span style="font-size:13px; color:#444447;">Approval Process &amp; Testing</span>
-            <span style="font-size:13px; font-weight:700; color:#022AC0;">2 Hours</span>
-          </div>
-          <div style="display:grid; grid-template-columns:1fr auto; padding:10px 20px; border-bottom:1px solid #EAF5FE; align-items:center;">
-            <span style="font-size:13px; color:#444447;">Execution Across MarTech Stack</span>
-            <span style="font-size:13px; font-weight:700; color:#022AC0;">1 Hour</span>
-          </div>
-          <div style="display:grid; grid-template-columns:1fr auto; padding:10px 20px; border-bottom:1px solid #EAF5FE; align-items:center;">
-            <span style="font-size:13px; color:#444447;">Creative/Content Creation</span>
-            <span style="font-size:13px; font-weight:700; color:#022AC0;">30 Min</span>
-          </div>
-          <div style="display:grid; grid-template-columns:1fr auto; padding:10px 20px; border-bottom:1px solid #EAF5FE; align-items:center;">
-            <span style="font-size:13px; color:#444447;">Journey/Campaign Creation</span>
-            <span style="font-size:13px; font-weight:700; color:#022AC0;">10 mins</span>
-          </div>
-          <div style="display:grid; grid-template-columns:1fr auto; padding:10px 20px; border-bottom:1px solid #EAF5FE; align-items:center;">
-            <span style="font-size:13px; color:#444447;">Audience Segmentation</span>
-            <span style="font-size:13px; font-weight:700; color:#022AC0;">10 mins</span>
-          </div>
-          <div style="display:grid; grid-template-columns:1fr auto; padding:12px 20px; background:#EAF5FE; align-items:center;">
-            <span style="font-size:13px; font-weight:700; color:#001E5B;">Total time to execution</span>
-            <span style="font-size:14px; font-weight:700; color:#022AC0;">1 Day</span>
-          </div>
-        </div>
-      </div>
-
-    </div>
-    <div style="margin-top:16px; display:flex; gap:32px; max-width:960px;">
-      <p style="font-size:12px; color:#737479; line-height:1.5; flex:1;"><strong style="color:#444447;">Composable approach:</strong> Marketers execute across a fragmented stack — each tool requires separate logins, briefings, and handoffs before anything reaches a customer.</p>
-      <p style="font-size:12px; color:#737479; line-height:1.5; flex:1;"><strong style="color:#022AC0;">Agentforce approach:</strong> Natural language prompts trigger the entire campaign workflow. Marketers focus on strategy — the agent handles the rest.</p>
-    </div>
+  <div class="slide" data-section="Wrap-Up" style="padding: 0; background: #cfe9fe;">
+    <img src="assets/agentic-vs-composable.png" alt="What actually changes in daily operations" style="width:100%; height:100%; object-fit:contain;" />
   </div>
 
   <!-- ── SLIDE 15: IMPLEMENTATION APPROACH ── -->
   <div class="slide bg-offwhite" data-section="Wrap-Up">
     <p class="eyebrow">Implementation approach</p>
-    <h2 class="section-title">It's all out of the box.<br><em style="color:var(--sf-blue); font-style:normal;">You're buying a platform, not a project.</em></h2>
+    <h2 class="section-title">It's all out of the box.</h2>
     <p class="lead" style="max-width:760px; margin-bottom:28px;">Everything you saw today is native Salesforce capability. No custom build. No bespoke engineering. Standard implementation scope — configured once, then self-managing.</p>
     <div class="card-row cols-4" style="max-width:960px;">
       <div class="card-item">
         <p class="eyebrow">Data foundation</p>
         <p class="card-title">Connected on day one</p>
-        <p class="card-body">Data Cloud connects to Meiro via REST API, SFTP, and native connectors. <strong>Identity resolution runs immediately</strong> — no custom middleware.</p>
+        <p class="card-body">D360 connects to Meiro via REST API, SFTP, and native connectors. <strong>Identity resolution runs immediately</strong> — no custom middleware.</p>
       </div>
       <div class="card-item">
         <p class="eyebrow">Journey &amp; channels</p>
@@ -1384,7 +937,7 @@
     </div>
   </div>
 
-  <!-- ── SLIDE 15: REQUIREMENTS MET ── -->
+  <!-- ── SLIDE 16: REQUIREMENTS MET ── -->
   <div class="slide bg-offwhite" data-section="Wrap-Up" style="padding: 52px 80px;">
     <p class="eyebrow">Today's demonstration</p>
     <h2 class="section-title" style="margin-bottom: 24px;">Everything on your list. Shown live.</h2>
@@ -1465,26 +1018,20 @@
     </div>
   </div>
 
-  <!-- ── SLIDE 16: THANK YOU / Q&A ── -->
+  <!-- ── SLIDE 17: THANK YOU / Q&A ── -->
   <div class="slide bg-dark" data-section="Wrap-Up">
-    <div class="lockup">
-      <img src="assets/logos/Salesforce-Corporate-Logo-Horiz-White-RGB.svg" alt="Salesforce" />
-      <div class="lockup-divider"></div>
-      <img src="assets/cw-logo.png" alt="Chemist Warehouse" style="height: 36px; filter: brightness(0) invert(1);" />
-    </div>
-    <p class="eyebrow">Thank you</p>
-    <h1 class="headline">Questions &amp; discussion.</h1>
-    <p class="lead">We're here for the next 10 minutes. No question is too detailed — limitations, edge cases, implementation approach, what we didn't show.</p>
+    <p class="eyebrow" style="font-size: 18px;">Thank you</p>
+    <h1 class="headline" style="font-size: 72px;">Questions &amp; discussion.</h1>
     <div style="margin-top: 24px; display: flex; gap: 10px; flex-wrap: wrap;">
       <span class="chip chip-blue">Platform &amp; Architecture</span>
       <span class="chip chip-blue">Audience &amp; AI</span>
       <span class="chip chip-blue">Journey Orchestration</span>
-      <span class="chip chip-blue">Personalisation</span>
+      <span class="chip chip-blue">Content &amp; Personalisation</span>
+      <span class="chip chip-blue">Campaign Ops &amp; Governance</span>
       <span class="chip chip-blue">Reporting &amp; Attribution</span>
       <span class="chip chip-blue">Usability</span>
     </div>
     <div style="margin-top: 36px; padding-top: 28px; border-top: 1px solid #022AC0;">
-      <p class="slide-note">Next steps: Proof of concept scoping session — we'll map Meiro schema to Data Cloud objects and define the Oral-B data model together.</p>
     </div>
   </div>
 
@@ -1498,9 +1045,11 @@
 </div>
 
 <!-- Navigation -->
-<button class="nav-btn prev" onclick="navigate(-1)">‹</button>
-<button class="nav-btn next" onclick="navigate(1)">›</button>
-<div class="progress" id="progress"></div>
+<div class="nav-controls">
+  <button class="nav-btn prev" onclick="navigate(-1)">‹</button>
+  <div class="progress" id="progress"></div>
+  <button class="nav-btn next" onclick="navigate(1)">›</button>
+</div>
 <div class="slide-counter" id="counter"></div>
 <div class="section-label" id="section-label"></div>
 
