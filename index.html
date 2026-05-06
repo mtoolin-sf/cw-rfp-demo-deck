@@ -442,11 +442,17 @@
     .slide-counter {
       position: fixed;
       bottom: 28px;
-      right: 32px;
-      font-size: 11px;
-      color: #737479;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: rgba(255,255,255,0.45);
       z-index: 100;
-      letter-spacing: 0.06em;
+      background: rgba(0,0,0,0.25);
+      padding: 4px 12px;
+      border-radius: 20px;
+      backdrop-filter: blur(4px);
     }
 
     /* ── Section divider label ── */
@@ -618,7 +624,6 @@
   <!-- ── SLIDE 1: BREAK — SOLUTION OVERVIEW ── -->
   <div class="slide bg-dark active" data-section="">
     <div class="tell-badge">Coming up</div>
-    <p class="eyebrow">RFP Response — Q2 FY27</p>
     <h1 class="headline">Solution Overview<br><em>&amp; Demo.</em></h1>
   </div>
 
